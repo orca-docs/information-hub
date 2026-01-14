@@ -29,93 +29,61 @@
     }
   },
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Home",
-        "groups": [
-          {
-            "group": "Home",
-            "pages": [
-              "index"
-            ]
-          }
+        "group": "Welcome",
+        "pages": ["index"]
+      },
+      {
+        "group": "Trading",
+        "pages": [
+          "trading/overview",
+          "trading/how-to-swap-solana",
+          "trading/understanding-slippage"
         ]
       },
       {
-        "tab": "User Guide",
-        "groups": [
-          {
-            "group": "Trading",
-            "pages": [
-              "trading/overview",
-              "trading/how-to-swap-solana",
-              "trading/understanding-slippage"
-            ]
-          },
-          {
-            "group": "Liquidity",
-            "pages": [
-              "liquidity/overview",
-              "liquidity/beginner-guide",
-              "liquidity/full-range-position",
-              "liquidity/custom-range-position",
-              "liquidity/creating-pool-tutorial"
-            ]
-          }
+        "group": "Liquidity",
+        "pages": [
+          "liquidity/overview",
+          "liquidity/beginner-guide",
+          "liquidity/full-range-position",
+          "liquidity/custom-range-position",
+          "liquidity/creating-pool-tutorial"
         ]
       },
       {
-        "tab": "Token Creators",
-        "groups": [
-          {
-            "group": "Launch",
-            "pages": [
-              "token-creators/overview",
-              "token-creators/splash-pools",
-              "token-creators/clmm-pools",
-              "token-creators/token-creation-tool"
-            ]
-          },
-          {
-            "group": "Listing",
-            "pages": [
-              "token-creators/orca-token-list",
-              "token-creators/adding-rewards"
-            ]
-          }
+        "group": "Token Creators",
+        "pages": [
+          "token-creators/overview",
+          "token-creators/splash-pools",
+          "token-creators/clmm-pools",
+          "token-creators/token-creation-tool",
+          "token-creators/orca-token-list",
+          "token-creators/adding-rewards"
         ]
       },
       {
-        "tab": "Developers",
-        "groups": [
-          {
-            "group": "Build",
-            "pages": [
-              "reference/developer-docs",
-              "reference/integrations",
-              "reference/definitions"
-            ]
-          }
+        "group": "Developers",
+        "pages": [
+          "reference/developer-docs",
+          "reference/integrations",
+          "reference/definitions"
         ]
       },
       {
-        "tab": "Resources",
-        "groups": [
-          {
-            "group": "Governance",
-            "pages": [
-              "staking/governance",
-              "staking/xorca-overview",
-              "staking/dao-council"
-            ]
-          },
-          {
-            "group": "Help",
-            "pages": [
-              "troubleshooting/faqs",
-              "troubleshooting/contact-support"
-            ]
-          }
+        "group": "Governance",
+        "pages": [
+          "staking/governance",
+          "staking/xorca-overview",
+          "staking/dao-council"
+        ]
+      },
+      {
+        "group": "Help",
+        "pages": [
+          "troubleshooting/faqs",
+          "troubleshooting/contact-support"
         ]
       }
     ]
