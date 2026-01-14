@@ -1,182 +1,43 @@
 ---
-mode: "custom"
-title: "Orca Documentation"
-description: "Your complete guide to trading, providing liquidity, and building on the most trusted DEX on Solana and Eclipse."
+title: Orca Documentation
+description: Learn how to trade, provide liquidity, and build on Orca.
 ---
 
-<div className="landing-hero">
-  <div className="hero-bg-gradient"></div>
-  <div className="hero-content">
-    <img src="/logo/orca-logo.png" alt="Orca" className="hero-logo" />
-    <h1 className="hero-title">Orca Documentation</h1>
-    <p className="hero-subtitle">
-      Your complete guide to trading, providing liquidity, and building on the most trusted DEX on Solana and Eclipse.
-    </p>
-  </div>
-</div>
+## Get Started
 
-<div className="landing-section">
-  <h2 className="section-title">Get Started</h2>
-  <p className="section-subtitle">Choose your path to start using Orca</p>
+<CardGroup cols={2}>
+  <Card title="Traders" icon="arrow-right-arrow-left" href="/trading/overview">
+    Swap tokens with minimal slippage
+  </Card>
+  <Card title="Liquidity Providers" icon="droplet" href="/liquidity/overview">
+    Earn fees by providing liquidity
+  </Card>
+  <Card title="Token Creators" icon="coins" href="/token-creators/overview">
+    Launch your token on Orca
+  </Card>
+  <Card title="Developers" icon="code" href="/reference/developer-docs">
+    Build with Orca's SDK
+  </Card>
+</CardGroup>
 
-  <CardGroup cols={4}>
-    <Card
-      title="Traders"
-      icon="arrow-right-arrow-left"
-      href="/trading/overview"
-    >
-      Swap tokens with minimal slippage and deep liquidity
-    </Card>
-    <Card
-      title="Liquidity Providers"
-      icon="droplet"
-      href="/liquidity/overview"
-    >
-      Earn trading fees by providing concentrated liquidity
-    </Card>
-    <Card
-      title="Token Creators"
-      icon="coins"
-      href="/token-creators/overview"
-    >
-      Launch tokens with Splash Pools or CLMM pools
-    </Card>
-    <Card
-      title="Builders"
-      icon="code"
-      href="/reference/developer-docs"
-    >
-      Integrate Orca using our open-source SDK
-    </Card>
-  </CardGroup>
-</div>
+## Products
 
-<div className="landing-section">
-  <h2 className="section-title">Networks</h2>
-  <p className="section-subtitle">Orca is live on multiple networks</p>
+<CardGroup cols={2}>
+  <Card title="Whirlpools" icon="water" href="/liquidity/overview">
+    Concentrated liquidity pools for efficient trading and maximized LP returns.
+  </Card>
+  <Card title="Splash Pools" icon="wand-magic-sparkles" href="/token-creators/splash-pools">
+    Simple pool creation for token launches.
+  </Card>
+</CardGroup>
 
-  <CardGroup cols={2}>
-    <Card
-      title="Solana"
-      icon="bolt"
-      href="/getting-started/welcome-to-orca"
-    >
-      The original deployment with thousands of token pairs and the deepest liquidity on Solana.
-    </Card>
-    <Card
-      title="Eclipse"
-      icon="moon"
-      href="/getting-started/eclipse-overview"
-    >
-      Orca on Eclipse — a Solana VM Layer 2 for Ethereum. Same UX, new possibilities.
-    </Card>
-  </CardGroup>
-</div>
+## Quick Links
 
-<div className="landing-section">
-  <h2 className="section-title">Quick Links</h2>
-  <p className="section-subtitle">Jump to popular guides and resources</p>
-
-  <CardGroup cols={3}>
-    <Card
-      title="How to Swap"
-      icon="repeat"
-      href="/trading/how-to-swap-solana"
-    >
-      Step-by-step trading guide
-    </Card>
-    <Card
-      title="Beginner LP Guide"
-      icon="book-open"
-      href="/liquidity/beginner-guide"
-    >
-      Start earning as a liquidity provider
-    </Card>
-    <Card
-      title="Create a Pool"
-      icon="plus"
-      href="/liquidity/creating-pool-tutorial"
-    >
-      Launch a new liquidity pool
-    </Card>
-    <Card
-      title="Governance"
-      icon="landmark"
-      href="/staking/governance"
-    >
-      Participate in Orca DAO decisions
-    </Card>
-    <Card
-      title="xORCA Staking"
-      icon="lock"
-      href="/staking/xorca-overview"
-    >
-      Stake ORCA for governance power
-    </Card>
-    <Card
-      title="FAQs"
-      icon="circle-question"
-      href="/troubleshooting/faqs"
-    >
-      Common questions answered
-    </Card>
-  </CardGroup>
-</div>
-
-<div className="landing-section products-section">
-  <h2 className="section-title">Core Products</h2>
-  <p className="section-subtitle">Explore Orca's DeFi infrastructure</p>
-
-  <CardGroup cols={3}>
-    <Card
-      title="Whirlpools"
-      icon="water"
-      href="/liquidity/overview"
-    >
-      Concentrated liquidity pools powering efficient swaps and maximizing LP returns.
-    </Card>
-    <Card
-      title="Splash Pools"
-      icon="wand-magic-sparkles"
-      href="/token-creators/splash-pools"
-    >
-      Simplified pool creation for new token launches with automatic liquidity.
-    </Card>
-    <Card
-      title="Token Terminal"
-      icon="terminal"
-      href="/liquidity/terminal-overview"
-    >
-      Advanced tools for creating and managing liquidity pools.
-    </Card>
-  </CardGroup>
-</div>
-
-<div className="landing-section community-section">
-  <h2 className="section-title">Join the Community</h2>
-  <p className="section-subtitle">Connect with Orca users and builders</p>
-
-  <CardGroup cols={3}>
-    <Card
-      title="Discord"
-      icon="discord"
-      href="https://discord.gg/orca-so"
-    >
-      Chat with the community and get support
-    </Card>
-    <Card
-      title="Twitter"
-      icon="x-twitter"
-      href="https://twitter.com/orca_so"
-    >
-      Follow for updates and announcements
-    </Card>
-    <Card
-      title="GitHub"
-      icon="github"
-      href="https://github.com/orca-so"
-    >
-      Explore open-source code and SDKs
-    </Card>
-  </CardGroup>
-</div>
+<CardGroup cols={3}>
+  <Card title="How to Swap" icon="repeat" href="/trading/how-to-swap-solana" />
+  <Card title="LP Guide" icon="book-open" href="/liquidity/beginner-guide" />
+  <Card title="Create Pool" icon="plus" href="/liquidity/creating-pool-tutorial" />
+  <Card title="Governance" icon="landmark" href="/staking/governance" />
+  <Card title="FAQs" icon="circle-question" href="/troubleshooting/faqs" />
+  <Card title="Support" icon="headset" href="/troubleshooting/contact-support" />
+</CardGroup>
