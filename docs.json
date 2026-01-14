@@ -15,11 +15,41 @@
   "appearance": {
     "default": "dark"
   },
+  "font": {
+    "headings": {
+      "family": "Inter",
+      "weight": 700
+    },
+    "body": {
+      "family": "Inter",
+      "weight": 400
+    }
+  },
+  "modeToggle": {
+    "default": "dark",
+    "isHidden": false
+  },
+  "search": {
+    "prompt": "Search Orca docs..."
+  },
+  "topbar": {
+    "style": "gradient"
+  },
+  "rounded": "relaxed",
+  "announcement": {
+    "title": "🐳 New! Splash Pools are now live for easy token launches",
+    "href": "/token-creators/splash-pools",
+    "dismissable": true
+  },
   "navbar": {
     "links": [
       {
         "label": "Discord",
         "href": "https://discord.gg/orca-so"
+      },
+      {
+        "label": "Blog",
+        "href": "https://orca.so/blog"
       }
     ],
     "primary": {
@@ -28,6 +58,41 @@
       "href": "https://www.orca.so"
     }
   },
+  "tabs": [
+    {
+      "name": "User Guide",
+      "url": "/"
+    },
+    {
+      "name": "Token Creators",
+      "url": "/token-creators"
+    },
+    {
+      "name": "Developers",
+      "url": "/reference"
+    },
+    {
+      "name": "Governance",
+      "url": "/staking"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Launch App",
+      "icon": "rocket",
+      "url": "https://www.orca.so"
+    },
+    {
+      "name": "API Reference",
+      "icon": "code",
+      "url": "/reference/developer-docs"
+    },
+    {
+      "name": "Community",
+      "icon": "discord",
+      "url": "https://discord.gg/orca-so"
+    }
+  ],
   "navigation": {
     "groups": [
       {
@@ -87,6 +152,14 @@
         ]
       }
     ]
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true,
+    "raiseIssue": true
+  },
+  "seo": {
+    "indexHiddenPages": false
   },
   "footer": {
     "socials": {

@@ -5,50 +5,84 @@ mode: wide
 sidebarHidden: true
 ---
 
+<div className="not-prose mb-12">
+  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-teal-500/20 via-cyan-500/10 to-blue-500/20 p-8 md:p-12">
+    <div className="relative z-10">
+      <div className="inline-flex items-center gap-2 rounded-full bg-teal-500/10 px-4 py-2 text-sm text-teal-400 mb-6 border border-teal-500/20">
+        <span className="relative flex h-2 w-2">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+        </span>
+        The most capital-efficient DEX on Solana
+      </div>
+      <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+        Welcome to Orca 🐳
+      </h1>
+      <p className="text-lg text-gray-400 max-w-2xl mb-8">
+        Trade tokens, provide liquidity, and earn yield with Orca's concentrated liquidity pools. Built for traders, LPs, and developers on Solana.
+      </p>
+      <div className="flex flex-wrap gap-4">
+        <a href="https://www.orca.so" className="inline-flex items-center gap-2 rounded-lg bg-teal-500 px-6 py-3 font-semibold text-white hover:bg-teal-400 transition-colors">
+          Launch App →
+        </a>
+        <a href="/trading/how-to-swap-solana" className="inline-flex items-center gap-2 rounded-lg bg-white/10 px-6 py-3 font-semibold text-white hover:bg-white/20 transition-colors border border-white/10">
+          Get Started
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
 ## Core Products
 
 Orca's concentrated liquidity pools power efficient trading across Solana. Choose the right product for your needs.
 
 <CardGroup cols={2}>
-  <Card title="Whirlpools" icon="water" href="liquidity/overview">
+  <Card title="Whirlpools" icon="water" href="liquidity/overview" iconType="duotone">
     Concentrated liquidity pools that maximize capital efficiency and LP returns through customizable price ranges.
   </Card>
-  <Card title="Splash Pools" icon="wand-magic-sparkles" href="token-creators/splash-pools">
+  <Card title="Splash Pools" icon="wand-magic-sparkles" href="token-creators/splash-pools" iconType="duotone">
     Simple full-range pools designed for easy token launches with automatic liquidity distribution.
   </Card>
 </CardGroup>
+
+<Tip>
+  **New to DeFi?** Start with our [Beginner's Guide](/liquidity/beginner-guide) to learn the basics of liquidity providing.
+</Tip>
 
 ## User Guide
 
 Step-by-step guides to help you get started with trading and providing liquidity.
 
 <CardGroup cols={2}>
-  <Card title="How to Swap" icon="arrow-right-arrow-left" href="trading/how-to-swap-solana">
+  <Card title="How to Swap" icon="arrow-right-arrow-left" href="trading/how-to-swap-solana" iconType="duotone">
     Trade tokens with minimal slippage using Orca's deep liquidity pools.
   </Card>
-  <Card title="Provide Liquidity" icon="droplet" href="liquidity/beginner-guide">
+  <Card title="Provide Liquidity" icon="droplet" href="liquidity/beginner-guide" iconType="duotone">
     Earn trading fees by depositing assets into liquidity pools.
   </Card>
-  <Card title="Create a Pool" icon="plus" href="liquidity/creating-pool-tutorial">
+  <Card title="Create a Pool" icon="plus" href="liquidity/creating-pool-tutorial" iconType="duotone">
     Launch a new liquidity pool for any token pair.
   </Card>
-  <Card title="Manage Positions" icon="chart-line" href="liquidity/full-range-position">
+  <Card title="Manage Positions" icon="chart-line" href="liquidity/full-range-position" iconType="duotone">
     Monitor and adjust your LP positions for optimal returns.
   </Card>
 </CardGroup>
 
 ## Token Creators
 
-Tools for launching and managing tokens on Orca.
+<Info>
+  Looking to launch your token? Splash Pools offer the easiest way to create liquidity for new tokens.
+</Info>
 
 <CardGroup cols={3}>
-  <Card title="Token Launch" icon="rocket" href="token-creators/overview">
+  <Card title="Token Launch" icon="rocket" href="token-creators/overview" iconType="duotone">
     Launch your token with instant liquidity
   </Card>
-  <Card title="Token List" icon="list" href="token-creators/orca-token-list">
+  <Card title="Token List" icon="list-check" href="token-creators/orca-token-list" iconType="duotone">
     Get your token verified and listed
   </Card>
-  <Card title="Pool Creation" icon="circle-plus" href="token-creators/token-creation-tool">
+  <Card title="Pool Creation" icon="circle-plus" href="token-creators/token-creation-tool" iconType="duotone">
     Create pools for your token
   </Card>
 </CardGroup>
@@ -58,24 +92,57 @@ Tools for launching and managing tokens on Orca.
 Build on Orca using our open-source SDK and smart contracts.
 
 <CardGroup cols={2}>
-  <Card title="SDK Documentation" icon="code" href="reference/developer-docs">
+  <Card title="SDK Documentation" icon="code" href="reference/developer-docs" iconType="duotone">
     Integrate Orca swaps and liquidity into your application.
   </Card>
-  <Card title="Integrations" icon="plug" href="reference/integrations">
+  <Card title="Integrations" icon="plug" href="reference/integrations" iconType="duotone">
     Explore existing integrations and partnership opportunities.
   </Card>
 </CardGroup>
 
+<Accordion title="Quick Integration Example">
+  ```typescript
+  import { WhirlpoolContext, buildWhirlpoolClient } from "@orca-so/whirlpools-sdk";
+
+  // Initialize the client
+  const ctx = WhirlpoolContext.from(connection, wallet);
+  const client = buildWhirlpoolClient(ctx);
+
+  // Get a pool and perform a swap
+  const pool = await client.getPool(poolAddress);
+  const quote = await pool.getQuote(amountIn, slippage);
+  ```
+</Accordion>
+
 ## Resources
 
 <CardGroup cols={3}>
-  <Card title="Governance" icon="landmark" href="staking/governance">
+  <Card title="Governance" icon="landmark" href="staking/governance" iconType="duotone">
     Participate in DAO decisions
   </Card>
-  <Card title="FAQs" icon="circle-question" href="troubleshooting/faqs">
+  <Card title="FAQs" icon="circle-question" href="troubleshooting/faqs" iconType="duotone">
     Common questions answered
   </Card>
-  <Card title="Support" icon="headset" href="troubleshooting/contact-support">
+  <Card title="Support" icon="headset" href="troubleshooting/contact-support" iconType="duotone">
     Get help from the team
   </Card>
 </CardGroup>
+
+---
+
+<div className="mt-8 rounded-xl border border-white/10 bg-gradient-to-r from-teal-500/5 to-cyan-500/5 p-6">
+  <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+    <div>
+      <h3 className="text-lg font-semibold mb-1">Join the Orca Community</h3>
+      <p className="text-gray-400 text-sm">Connect with other users, get support, and stay updated on the latest features.</p>
+    </div>
+    <div className="flex gap-3">
+      <a href="https://discord.gg/orca-so" className="inline-flex items-center gap-2 rounded-lg bg-[#5865F2] px-4 py-2 text-sm font-medium text-white hover:bg-[#4752C4] transition-colors">
+        <Icon icon="discord" /> Discord
+      </a>
+      <a href="https://twitter.com/orca_so" className="inline-flex items-center gap-2 rounded-lg bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20 transition-colors">
+        <Icon icon="x-twitter" /> Twitter
+      </a>
+    </div>
+  </div>
+</div>
