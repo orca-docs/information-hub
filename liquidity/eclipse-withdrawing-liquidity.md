@@ -4,7 +4,7 @@ description: Withdraw liquidity on Eclipse.
 icon: droplet
 ---
 
-* Navigate to your portfolio (<https://www.orca.so/portfolio>).
+* Navigate to your portfolio (https://www.orca.so/portfolio).
 * Click on the ellipsis button (`...`) to the right of your position.
 * Select `- Withdraw Liquidity`.
 

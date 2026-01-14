@@ -9,7 +9,7 @@ Using the Eclipse Canonical Bridge
 
 For the purpose of this guide Backpack wallet has been used, alternative wallets are available.
 
-* Navigate to <https://app.eclipse.xyz/bridge>
+* Navigate to https://app.eclipse.xyz/bridge
 * Click Connect Wallets
 
    ![](/images/image_180.jpg)

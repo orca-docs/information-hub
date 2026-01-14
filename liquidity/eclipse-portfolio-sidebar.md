@@ -7,7 +7,7 @@ sidebarTitle: How to use the Portfolio Management S...
 
 The Portfolio Management Sidebar incorporates many portfolio management functions in one place, allowing you to quickly monitor and manage your positions. The sidebar can be opened in two ways:
 
-* Navigate to<https://www.orca.so/portfolio>.
+* Navigate tohttps://www.orca.so/portfolio.
 * Click on the ellipsis button ( ... ) to the right of your position
 
 * Select `Position Details`, `+ Deposit Liquidity`, or `- Withdraw Liquidity`.
@@ -16,7 +16,7 @@ The Portfolio Management Sidebar incorporates many portfolio management function
 
 *Or*
 
-* Navigate to<https://www.orca.so/portfolio>.
+* Navigate tohttps://www.orca.so/portfolio.
 * Click somewhere on the line representing your position.
 
    ![](/images/image_186.jpg)

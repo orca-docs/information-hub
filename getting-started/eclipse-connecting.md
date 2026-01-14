@@ -11,7 +11,7 @@ Once you have installed a compatible wallet and bridged some assets you are read
 
 ### How to connect your wallet to Orca on Eclipse
 
-* Navigate to <https://www.orca.so>
+* Navigate to https://www.orca.so
 * Click on the network selection icon
 
    ![](/images/image_31.jpg)

@@ -11,7 +11,7 @@ However, managing a full-range position requires more active oversight and carri
 
 This added complexity makes it crucial for LPs to thoroughly understand the risks and actively manage their positions to optimize outcomes.
 
-* Navigate to the Liquidity page (<https://www.orca.so/pools?chainId=eclipse>).
+* Navigate to the Liquidity page (https://www.orca.so/pools?chainId=eclipse).
 * Ensure the UI and your wallet are set to the Solana network.
 
    ![](/images/image_39.jpg)

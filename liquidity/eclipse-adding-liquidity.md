@@ -6,7 +6,7 @@ icon: droplet
 
 Due to [divergence loss](https://pintail.medium.com/uniswap-a-good-deal-for-liquidity-providers-104c0b6816f2), you are not guaranteed a positive return!
 
-* Navigate to <https://www.orca.so/portfolio>
+* Navigate to https://www.orca.so/portfolio
 * Click on the ellipsis button (`...`) to the right of your position.
 * Select `+ Deposit Liquidity`.
 

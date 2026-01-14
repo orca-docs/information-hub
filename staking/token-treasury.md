@@ -18,13 +18,13 @@ The Orca Treasury includes the *Community ORCA Treasury* and the accumulating *O
 
 Orca strives for transparency and in that spirit discloses relevant wallet addresses as follows:
 
-* Orca Fee Treasury address (held as various tokens): <https://app.step.finance/en/dashboard?watching=DWo8SNtdBDuebAEeVDf7cWBQ6DUvoDbS7K4QTrQvYS1S>
-* Orca Climate Fund address (held as USDC): <https://app.step.finance/en/dashboard?watching=DrhE25wu3PRGtBCtzsry6ToiGjhwBzCnYGpvv53qxh9X>
+* Orca Fee Treasury address (held as various tokens): https://app.step.finance/en/dashboard?watching=DWo8SNtdBDuebAEeVDf7cWBQ6DUvoDbS7K4QTrQvYS1S
+* Orca Climate Fund address (held as USDC): https://app.step.finance/en/dashboard?watching=DrhE25wu3PRGtBCtzsry6ToiGjhwBzCnYGpvv53qxh9X
 
-* Community ORCA Treasury (ORCA tokens): <https://solscan.io/account/GwH3Hiv5mACLX3ufTw1pFsrhSPon5tdw252DBs4Rx4PV>
-* Account holding undistributed Solana fees: <https://app.step.finance/portfolio?wallet=CTgympSD3hkBhH2XYWfGCigrFh3ZHAvnxwAfm7nCbExY>
+* Community ORCA Treasury (ORCA tokens): https://solscan.io/account/GwH3Hiv5mACLX3ufTw1pFsrhSPon5tdw252DBs4Rx4PV
+* Account holding undistributed Solana fees: https://app.step.finance/portfolio?wallet=CTgympSD3hkBhH2XYWfGCigrFh3ZHAvnxwAfm7nCbExY
 
-* Account holding undistributed Eclipse fees: <https://eclipsescan.xyz/account/2tMvWHjA3xcnWxoVcrTHGGnHuPg7AmAtS8dQgKp8r9MP>
+* Account holding undistributed Eclipse fees: https://eclipsescan.xyz/account/2tMvWHjA3xcnWxoVcrTHGGnHuPg7AmAtS8dQgKp8r9MP
   Undistributed fees are collected fees (in various forms) that are yet to be converted and distributed to the appropriate treasury.
 
 ### Climate Fund

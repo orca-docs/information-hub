@@ -6,7 +6,7 @@ icon: droplet
 
 In addition to closing a position using the [*withdraw liquidity*](/liquidity/withdrawing-liquidity) function, a position can be closed directly using the *Close Position* function
 
-* Navigate to your portfolio (<https://www.orca.so/portfolio>)
+* Navigate to your portfolio (https://www.orca.so/portfolio)
 * Click on the ellipsis button (`...`) to the right of your position.
 * Select `× Close Position`.
 

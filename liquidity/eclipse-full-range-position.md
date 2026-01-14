@@ -9,7 +9,7 @@ sidebarTitle: How to Create a Full-Range Position o...
 
 The simplest way to provide liquidity on Orca is to create a full-range position. A full-range position is one that spreads your liquidity across the entire price range from 0 to ∞. In this sense, a full-range position is a close approximation to liquidity deposited in a traditional CPMM, sacrificing capital efficiency and enhanced yields but gaining ease of management and reduced exposure to divergence loss.
 
-* Navigate to the Liquidity page (<https://www.orca.so/pools?chainId=eclipse>).
+* Navigate to the Liquidity page (https://www.orca.so/pools?chainId=eclipse).
 * Ensure the UI and your wallet are set to the Solana network.
 
    * If you haven't done so already, connect your wallet.

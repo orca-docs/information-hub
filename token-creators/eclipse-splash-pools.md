@@ -30,7 +30,7 @@ If additional support is required, please reach out to Orca through an open comm
 UI tooltips are provided in the pool creation modal. These contain useful information, so be sure to read them as you go.
 
 * Before you can create a pool, your wallet must hold a quantity of each token in your planned pair, as well as sufficient ETH to pay any network fees.
-* Navigate to <https://www.orca.so/create-pool>[.](https://www.orca.so/create-pool)
+* Navigate to https://www.orca.so/create-pool[.](https://www.orca.so/create-pool)
 * Connect your wallet.
 * Select `Create Splash Pool`.
 * Click on `Select Token` to chose your token.

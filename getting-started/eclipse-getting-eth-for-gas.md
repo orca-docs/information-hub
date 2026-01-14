@@ -9,7 +9,7 @@ Using the Eclipse Canonical Gas Station
 
 Before you can use the Eclipse Canonical Gas Station to convert some SOL (or USDC) to ETH for gas, you will need to use the Hyperlane Nexus Bridge to send your chosen asset from Solana Mainnet to Eclipse. You can find a guide for that process [here](/getting-started/eclipse-bridging-solana).
 
-* Navigate to <https://app.eclipse.xyz/gas-station>
+* Navigate to https://app.eclipse.xyz/gas-station
 
    ![](/images/image_35.jpg)
 * Select your wallet and connect

@@ -10,7 +10,7 @@ icon: landmark
 
 ![](/images/image_122.jpg)
 
-**Staking Site**: <https://www.orca.so/stake>
+**Staking Site**: https://www.orca.so/stake
 
 **How it works**
 

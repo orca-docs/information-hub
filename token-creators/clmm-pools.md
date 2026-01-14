@@ -10,7 +10,7 @@ The *Concentrated Pool Creation Tool* is intended for expert and professional us
 
 NOTE: If you have not added your token to the Orca Token List (see [how to add a token to the Orca Token List](/token-creators/orca-token-list)), tickArray accounts may need separately initialising for your token to facilitate trade. This can be achieved by creating additional positions. [Orca Splash Pools](/token-creators/clmm-pools#how-to-create-a-pool-on-orca-permissionlessly) do not require tickArray management, and may be a better option for some users.
 
-You can view the state of your pool, including its tickArrays on Account Microscope (<https://everlastingsong.github.io/account-microscope/>).
+You can view the state of your pool, including its tickArrays on Account Microscope (https://everlastingsong.github.io/account-microscope/).
 If additional support is required, please reach out to Orca through an open communication channel or via [#❓│dev-questions](https://discord.com/channels/798712664590254081/838660851178274866) on Discord.
 
 ### How to Create a pool on Orca, permissionlessly
@@ -20,7 +20,7 @@ If additional support is required, please reach out to Orca through an open comm
 UI Tool tips are provided in the pool creation modal, these contain useful information so be sure to read them as you go.
 
 * Before you can create a pool your wallet must hold a quantity of each token in your planned pair, as well as sufficient SOL to pay any network fees.
-* Navigate to <https://www.orca.so/create-pool>.
+* Navigate to https://www.orca.so/create-pool.
 * Connect your wallet.
 * Select `Create Concentrated Pool`.
 * Click on `Select Token` to chose your token.
@@ -49,7 +49,7 @@ UI Tool tips are provided in the pool creation modal, these contain useful infor
 UI Tool tips are provided in the pool creation modal, these contain useful information so be sure to read them as you go.
 
 * Before you can create a pool your wallet must hold a quantity of each token in your planned pair, as well as sufficient SOL to pay any network fees.
-* Navigate to <https://www.orca.so/create-pool>.
+* Navigate to https://www.orca.so/create-pool.
 * Connect your wallet.
 * Select `Create Concentrated Pool`.
 * Click on `Select Token` to chose your token.

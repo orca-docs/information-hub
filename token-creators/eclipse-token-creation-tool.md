@@ -16,7 +16,7 @@ Whether you’re a new project on Solana or Eclipse, community, this tool elimin
 
 ### Step-by-Step Guide to Token Creation
 
-* Navigate to <https://www.orca.so/create-token> or open the `Create` menu (yellow box) then click on `Create Token` (red box)
+* Navigate to https://www.orca.so/create-token or open the `Create` menu (yellow box) then click on `Create Token` (red box)
 
    ![](/images/image_108.jpg)
 * If you have not already done so, connect your wallet.

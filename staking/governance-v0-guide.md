@@ -10,9 +10,9 @@ A realm is a Solana program launched by any DAO to support its governance throug
 
 *Note that Orca may or may not adopt Realms for the next iteration of the Orca Governance program; Orca is using Realms for Governance v0 to prototype and gather feedback!*
 
-**Realms for Orca Governance v0** can be accessed here:<https://governance.orca.so/>
+**Realms for Orca Governance v0** can be accessed here:https://governance.orca.so/
 
-**Forum to discuss proposals for Orca Governance v0** ca be accessed here <https://forums.orca.so/>
+**Forum to discuss proposals for Orca Governance v0** ca be accessed here https://forums.orca.so/
 
 #### Deposit Tokens
 

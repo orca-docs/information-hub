@@ -15,7 +15,7 @@ Harvest all positions
 
 ### How to harvest pending yield from a single position.
 
-* Navigate to your portfolio (<https://www.orca.so/portfolio>).
+* Navigate to your portfolio (https://www.orca.so/portfolio).
 * Click on the ellipsis button (`...`) to the right of your position
 
    ![](/images/image_91.jpg)
@@ -29,7 +29,7 @@ You can also harvest yield from a single position using the [Portfolio Managemen
 
 ### How to harvest pending yield for all your positions
 
-* Navigate to your portfolio (<https://www.orca.so/portfolio>)
+* Navigate to your portfolio (https://www.orca.so/portfolio)
 * Click on the `Harvest All` button to the top right.
 
    ![](/images/image_93.jpg)
