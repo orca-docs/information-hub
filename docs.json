@@ -1,13 +1,14 @@
 {
+  "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Orca",
+  "name": "Orca Documentation",
   "colors": {
     "primary": "#14b8a6",
     "light": "#2dd4bf",
     "dark": "#0d9488"
   },
   "fonts": {
-    "family": "Inter"
+    "family": "Plus Jakarta Sans"
   },
   "favicon": "/favicon.png",
   "contextual": {
@@ -232,31 +233,25 @@
     "links": [
       {
         "label": "App",
-        "href": "https://www.orca.so"
-      },
-      {
-        "label": "Blog",
-        "href": "https://orca.so/blog"
+        "href": "https://www.orca.so",
+        "icon": "rocket"
       },
       {
         "label": "Support",
-        "href": "https://discord.gg/orca-so"
+        "href": "https://discord.gg/orca-so",
+        "icon": "discord"
       }
     ]
   },
   "styling": {
     "codeblocks": "system",
+    "primaryTab": "Trading",
     "accentColor": {
       "light": "#14b8a6",
       "dark": "#2dd4bf"
     }
   },
   "anchors": [
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://orca.so/blog"
-    },
     {
       "name": "GitHub",
       "icon": "github",
@@ -272,7 +267,36 @@
     "socials": {
       "discord": "https://discord.gg/orca-so",
       "x": "https://twitter.com/orca_so",
-      "github": "https://github.com/orca-so"
-    }
+      "github": "https://github.com/orca-so",
+      "youtube": "https://www.youtube.com/@orca_so"
+    },
+    "links": [
+      {
+        "header": "Orca",
+        "items": [
+          {
+            "label": "Launch App",
+            "href": "https://www.orca.so"
+          },
+          {
+            "label": "Terms of Service",
+            "href": "https://www.orca.so/terms"
+          }
+        ]
+      },
+      {
+        "header": "Resources",
+        "items": [
+          {
+            "label": "Developer Docs",
+            "href": "/reference/developer-docs"
+          },
+          {
+            "label": "Brand Assets",
+            "href": "/reference/brand-assets"
+          }
+        ]
+      }
+    ]
   }
 }
