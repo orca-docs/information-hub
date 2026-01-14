@@ -44,6 +44,12 @@
         "tab": "Documentation",
         "groups": [
           {
+            "group": "Overview",
+            "pages": [
+              "index"
+            ]
+          },
+          {
             "group": "Getting Started",
             "pages": [
               "getting-started/welcome-to-orca",
