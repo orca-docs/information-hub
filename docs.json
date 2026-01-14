@@ -1,16 +1,15 @@
 {
-  "theme": "maple",
+  "theme": "mint",
   "name": "Orca",
-  "logo": {
-    "dark": "/logo/orca-logo.png",
-    "light": "/logo/orca-logo.png"
-  },
-  "favicon": "/favicon.png",
   "colors": {
     "primary": "#14b8a6",
     "light": "#2dd4bf",
     "dark": "#0d9488"
   },
+  "fonts": {
+    "family": "Inter"
+  },
+  "favicon": "/favicon.png",
   "contextual": {
     "options": [
       "copy",
@@ -19,163 +18,276 @@
       "claude"
     ]
   },
-  "background": {
-    "decoration": "gradient"
-  },
   "appearance": {
     "default": "dark"
   },
-  "font": {
-    "headings": {
-      "family": "Inter",
-      "weight": 700
-    },
-    "body": {
-      "family": "Inter",
-      "weight": 400
+  "background": {
+    "decoration": "gradient"
+  },
+  "api": {
+    "playground": {
+      "display": "interactive"
     }
   },
-  "modeToggle": {
-    "default": "dark",
-    "isHidden": false
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Home",
+        "groups": [
+          {
+            "group": " ",
+            "pages": [
+              "index"
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Launch App",
+              "href": "https://www.orca.so",
+              "icon": "rocket"
+            },
+            {
+              "anchor": "Support",
+              "href": "https://discord.gg/orca-so",
+              "icon": "discord"
+            }
+          ]
+        }
+      },
+      {
+        "tab": "Trading",
+        "groups": [
+          {
+            "group": "Trading",
+            "pages": [
+              "trading/overview",
+              "trading/how-to-swap-solana",
+              "trading/understanding-slippage"
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Launch App",
+              "href": "https://www.orca.so",
+              "icon": "rocket"
+            },
+            {
+              "anchor": "Support",
+              "href": "https://discord.gg/orca-so",
+              "icon": "discord"
+            }
+          ]
+        }
+      },
+      {
+        "tab": "Liquidity",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "liquidity/overview",
+              "liquidity/beginner-guide"
+            ]
+          },
+          {
+            "group": "Managing Positions",
+            "pages": [
+              "liquidity/full-range-position",
+              "liquidity/custom-range-position",
+              "liquidity/creating-pool-tutorial"
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Launch App",
+              "href": "https://www.orca.so",
+              "icon": "rocket"
+            },
+            {
+              "anchor": "Support",
+              "href": "https://discord.gg/orca-so",
+              "icon": "discord"
+            }
+          ]
+        }
+      },
+      {
+        "tab": "Token Creators",
+        "groups": [
+          {
+            "group": "Token Creators",
+            "pages": [
+              "token-creators/overview",
+              "token-creators/splash-pools",
+              "token-creators/clmm-pools",
+              "token-creators/token-creation-tool",
+              "token-creators/orca-token-list",
+              "token-creators/adding-rewards"
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Launch App",
+              "href": "https://www.orca.so",
+              "icon": "rocket"
+            },
+            {
+              "anchor": "Support",
+              "href": "https://discord.gg/orca-so",
+              "icon": "discord"
+            }
+          ]
+        }
+      },
+      {
+        "tab": "Developers",
+        "groups": [
+          {
+            "group": "Developer Resources",
+            "pages": [
+              "reference/developer-docs",
+              "reference/integrations",
+              "reference/definitions"
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "GitHub",
+              "href": "https://github.com/orca-so",
+              "icon": "github"
+            },
+            {
+              "anchor": "Support",
+              "href": "https://discord.gg/orca-so",
+              "icon": "discord"
+            }
+          ]
+        }
+      },
+      {
+        "tab": "Governance",
+        "groups": [
+          {
+            "group": "Governance",
+            "pages": [
+              "staking/governance",
+              "staking/xorca-overview",
+              "staking/dao-council"
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Launch App",
+              "href": "https://www.orca.so",
+              "icon": "rocket"
+            },
+            {
+              "anchor": "Support",
+              "href": "https://discord.gg/orca-so",
+              "icon": "discord"
+            }
+          ]
+        }
+      },
+      {
+        "tab": "Help",
+        "groups": [
+          {
+            "group": "Help & Support",
+            "pages": [
+              "troubleshooting/faqs",
+              "troubleshooting/contact-support"
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Discord",
+              "href": "https://discord.gg/orca-so",
+              "icon": "discord"
+            }
+          ]
+        }
+      }
+    ]
   },
-  "search": {
-    "prompt": "Search Orca docs..."
-  },
-  "topbar": {
-    "style": "gradient"
-  },
-  "rounded": "relaxed",
-  "announcement": {
-    "title": "🐳 New! Splash Pools are now live for easy token launches",
-    "href": "/token-creators/splash-pools",
-    "dismissable": true
+  "logo": {
+    "light": "/logo/orca-logo.png",
+    "dark": "/logo/orca-logo.png"
   },
   "navbar": {
     "links": [
       {
-        "label": "Discord",
-        "href": "https://discord.gg/orca-so"
+        "label": "App",
+        "href": "https://www.orca.so"
       },
       {
         "label": "Blog",
         "href": "https://orca.so/blog"
+      },
+      {
+        "label": "Support",
+        "href": "https://discord.gg/orca-so"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Launch App",
-      "href": "https://www.orca.so"
+    ]
+  },
+  "styling": {
+    "codeblocks": "system",
+    "accentColor": {
+      "light": "#14b8a6",
+      "dark": "#2dd4bf"
     }
   },
-  "tabs": [
-    {
-      "name": "User Guide",
-      "url": "/"
-    },
-    {
-      "name": "Token Creators",
-      "url": "/token-creators"
-    },
-    {
-      "name": "Developers",
-      "url": "/reference"
-    },
-    {
-      "name": "Governance",
-      "url": "/staking"
-    }
-  ],
   "anchors": [
     {
-      "name": "Launch App",
-      "icon": "rocket",
-      "url": "https://www.orca.so"
+      "name": "Blog",
+      "icon": "newspaper",
+      "url": "https://orca.so/blog"
     },
     {
-      "name": "API Reference",
-      "icon": "code",
-      "url": "/reference/developer-docs"
+      "name": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/orca-so"
     },
     {
-      "name": "Community",
+      "name": "Discord",
       "icon": "discord",
       "url": "https://discord.gg/orca-so"
     }
   ],
-  "navigation": {
-    "groups": [
+  "footer": {
+    "socials": {
+      "discord": "https://discord.gg/orca-so",
+      "x": "https://twitter.com/orca_so",
+      "github": "https://github.com/orca-so"
+    },
+    "links": [
       {
-        "group": "Welcome",
-        "pages": ["index"]
-      },
-      {
-        "group": "Trading",
-        "pages": [
-          "trading/overview",
-          "trading/how-to-swap-solana",
-          "trading/understanding-slippage"
-        ]
-      },
-      {
-        "group": "Liquidity",
-        "pages": [
-          "liquidity/overview",
-          "liquidity/beginner-guide",
-          "liquidity/full-range-position",
-          "liquidity/custom-range-position",
-          "liquidity/creating-pool-tutorial"
-        ]
-      },
-      {
-        "group": "Token Creators",
-        "pages": [
-          "token-creators/overview",
-          "token-creators/splash-pools",
-          "token-creators/clmm-pools",
-          "token-creators/token-creation-tool",
-          "token-creators/orca-token-list",
-          "token-creators/adding-rewards"
-        ]
-      },
-      {
-        "group": "Developers",
-        "pages": [
-          "reference/developer-docs",
-          "reference/integrations",
-          "reference/definitions"
-        ]
-      },
-      {
-        "group": "Governance",
-        "pages": [
-          "staking/governance",
-          "staking/xorca-overview",
-          "staking/dao-council"
-        ]
-      },
-      {
-        "group": "Help",
-        "pages": [
-          "troubleshooting/faqs",
-          "troubleshooting/contact-support"
+        "header": "Orca",
+        "items": [
+          {
+            "label": "Launch App",
+            "href": "https://www.orca.so"
+          },
+          {
+            "label": "Blog",
+            "href": "https://orca.so/blog"
+          }
         ]
       }
     ]
-  },
-  "feedback": {
-    "thumbsRating": true,
-    "suggestEdit": true,
-    "raiseIssue": true
-  },
-  "seo": {
-    "indexHiddenPages": false
-  },
-  "footer": {
-    "socials": {
-      "x": "https://twitter.com/orca_so",
-      "discord": "https://discord.gg/orca-so",
-      "github": "https://github.com/orca-so"
-    }
   }
 }
