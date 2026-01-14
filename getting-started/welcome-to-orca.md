@@ -39,7 +39,7 @@ After multiple product iterations, Orca launched its v2 UI in 2024, catering to 
 * **Token Creators:** creators of new tokens can create permissionless pools for their token launches on Orca using nearly any SPL token on Solana.
 * **Builders:** fellow ecosystem builders can tap into the most efficient source of liquidity on Solana, build quickly and easily using Orca's double-audited, open-source smart contract and SDK, and join the growing number of projects integrating with Orca.
 
-For more information, check out [Orca for Traders](/trading/overview), [Orca for Liquidity Providers](/liquidity/beginner-guide)[, Orca for Token Creators](/token-creators/overview), and [Orca for Builders](/builders/overview).
+For more information, check out [Orca for Traders](/trading/overview), [Orca for Liquidity Providers](/liquidity/beginner-guide), [Orca for Token Creators](/token-creators/overview), and [Orca for Builders](/reference/developer-docs).
 
 Today, Orca is structured as a DAO with powers delegated to a DAO Council, established and elected through an ORCA holder vote. Holders of the ORCA token [can engage in governance](/staking/governance) by formulating, discussing, and refining proposals (see Governance), and help chart Orca DAO's course through the DeFi seas.
 

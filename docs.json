@@ -15,52 +15,30 @@
   "appearance": {
     "default": "dark"
   },
-  "topbarLinks": [
-    {
-      "name": "App",
-      "url": "https://www.orca.so"
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "https://discord.gg/orca-so"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Launch App",
+      "href": "https://www.orca.so"
     }
-  ],
-  "topbarCtaButton": {
-    "name": "Launch App",
-    "url": "https://www.orca.so"
   },
-  "anchors": [
-    {
-      "name": "Discord",
-      "icon": "discord",
-      "url": "https://discord.gg/orca-so"
-    },
-    {
-      "name": "GitHub",
-      "icon": "github",
-      "url": "https://github.com/orca-so"
-    }
-  ],
   "navigation": {
     "tabs": [
       {
-        "tab": "Documentation",
+        "tab": "Solana",
         "groups": [
           {
             "group": "Overview",
             "pages": [
-              "index"
-            ]
-          },
-          {
-            "group": "Getting Started",
-            "pages": [
+              "index",
               "getting-started/welcome-to-orca",
-              "getting-started/supported-wallets",
-              "getting-started/eclipse-connecting",
-              "getting-started/eclipse-getting-started",
-              "getting-started/eclipse-bridging-eth",
-              "getting-started/eclipse-bridging-solana",
-              "getting-started/eclipse-getting-eth-for-gas",
-              "getting-started/eclipse-faq",
-              "getting-started/eclipse-overview",
-              "getting-started/eclipse-introduction"
+              "getting-started/supported-wallets"
             ]
           },
           {
@@ -70,50 +48,65 @@
               "trading/how-to-guides",
               "trading/how-to-swap-solana",
               "trading/range-orders-solana",
-              "trading/understanding-slippage",
-              "trading/eclipse-overview",
-              "trading/eclipse-how-to-guides",
-              "trading/eclipse-how-to-swap",
-              "trading/eclipse-range-orders"
+              "trading/understanding-slippage"
             ]
           },
           {
             "group": "Providing Liquidity",
             "pages": [
-              "liquidity/overview",
-              "liquidity/beginner-guide",
-              "liquidity/full-range-position",
-              "liquidity/advanced-guide",
-              "liquidity/custom-range-position",
-              "liquidity/managing-portfolio",
-              "liquidity/position-sidebar",
-              "liquidity/adding-liquidity",
-              "liquidity/withdrawing-liquidity",
-              "liquidity/harvesting-yield",
-              "liquidity/closing-position",
-              "liquidity/creating-alerts",
-              "liquidity/terminal-guides",
-              "liquidity/terminal-overview",
-              "liquidity/price-chart-interface",
-              "liquidity/creating-pool-tutorial",
-              "liquidity/understanding-impermanent-loss",
-              "liquidity/adaptive-fee-pools",
-              "liquidity/trading-fees",
-              "liquidity/trading-fees-info",
-              "liquidity/ticks-and-fee-tiers",
-              "liquidity/harvest-yield-legacy",
-              "liquidity/pool-tutorial-legacy",
-              "liquidity/eclipse-overview",
-              "liquidity/eclipse-beginner-guide",
-              "liquidity/eclipse-full-range-position",
-              "liquidity/eclipse-advanced-guide",
-              "liquidity/eclipse-custom-range-position",
-              "liquidity/eclipse-managing-portfolio",
-              "liquidity/eclipse-portfolio-sidebar",
-              "liquidity/eclipse-adding-liquidity",
-              "liquidity/eclipse-withdrawing-liquidity",
-              "liquidity/eclipse-harvesting-yield",
-              "liquidity/eclipse-closing-position"
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "liquidity/overview",
+                  "liquidity/beginner-guide",
+                  "liquidity/full-range-position"
+                ]
+              },
+              {
+                "group": "Advanced Strategies",
+                "pages": [
+                  "liquidity/advanced-guide",
+                  "liquidity/custom-range-position",
+                  "liquidity/understanding-impermanent-loss"
+                ]
+              },
+              {
+                "group": "Managing Positions",
+                "pages": [
+                  "liquidity/managing-portfolio",
+                  "liquidity/position-sidebar",
+                  "liquidity/adding-liquidity",
+                  "liquidity/withdrawing-liquidity",
+                  "liquidity/harvesting-yield",
+                  "liquidity/closing-position",
+                  "liquidity/creating-alerts"
+                ]
+              },
+              {
+                "group": "Pool Creation",
+                "pages": [
+                  "liquidity/terminal-guides",
+                  "liquidity/terminal-overview",
+                  "liquidity/price-chart-interface",
+                  "liquidity/creating-pool-tutorial"
+                ]
+              },
+              {
+                "group": "Fees & Mechanics",
+                "pages": [
+                  "liquidity/adaptive-fee-pools",
+                  "liquidity/trading-fees",
+                  "liquidity/trading-fees-info",
+                  "liquidity/ticks-and-fee-tiers"
+                ]
+              },
+              {
+                "group": "Legacy Guides",
+                "pages": [
+                  "liquidity/harvest-yield-legacy",
+                  "liquidity/pool-tutorial-legacy"
+                ]
+              }
             ]
           },
           {
@@ -131,9 +124,109 @@
               "token-creators/token-extensions",
               "token-creators/asset-listers-legacy",
               "token-creators/coingecko-legacy",
-              "token-creators/token-list-legacy",
-              "token-creators/eclipse-how-to-guides",
+              "token-creators/token-list-legacy"
+            ]
+          },
+          {
+            "group": "Staking & Governance",
+            "pages": [
+              {
+                "group": "xORCA Staking",
+                "pages": [
+                  "staking/xorca-overview",
+                  "staking/staking-faq"
+                ]
+              },
+              {
+                "group": "Governance",
+                "pages": [
+                  "staking/governance-overview",
+                  "staking/governance",
+                  "staking/dao-council",
+                  "staking/governance-tutorials",
+                  "staking/governance-v0-guide",
+                  "staking/token-treasury"
+                ]
+              },
+              {
+                "group": "Participate",
+                "pages": [
+                  "staking/governance-how-to",
+                  "staking/how-to-participate",
+                  "staking/contribution-guidelines",
+                  "staking/proposal-guidelines"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Eclipse",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "getting-started/eclipse-overview",
+              "getting-started/eclipse-introduction",
+              "getting-started/eclipse-connecting",
+              "getting-started/eclipse-getting-started"
+            ]
+          },
+          {
+            "group": "Bridging Assets",
+            "pages": [
+              "getting-started/eclipse-bridging-eth",
+              "getting-started/eclipse-bridging-solana",
+              "getting-started/eclipse-getting-eth-for-gas",
+              "getting-started/eclipse-faq"
+            ]
+          },
+          {
+            "group": "Trading",
+            "pages": [
+              "trading/eclipse-overview",
+              "trading/eclipse-how-to-guides",
+              "trading/eclipse-how-to-swap",
+              "trading/eclipse-range-orders"
+            ]
+          },
+          {
+            "group": "Providing Liquidity",
+            "pages": [
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "liquidity/eclipse-overview",
+                  "liquidity/eclipse-beginner-guide",
+                  "liquidity/eclipse-full-range-position"
+                ]
+              },
+              {
+                "group": "Advanced",
+                "pages": [
+                  "liquidity/eclipse-advanced-guide",
+                  "liquidity/eclipse-custom-range-position"
+                ]
+              },
+              {
+                "group": "Managing Positions",
+                "pages": [
+                  "liquidity/eclipse-managing-portfolio",
+                  "liquidity/eclipse-portfolio-sidebar",
+                  "liquidity/eclipse-adding-liquidity",
+                  "liquidity/eclipse-withdrawing-liquidity",
+                  "liquidity/eclipse-harvesting-yield",
+                  "liquidity/eclipse-closing-position"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Token Creators",
+            "pages": [
               "token-creators/eclipse-overview",
+              "token-creators/eclipse-how-to-guides",
               "token-creators/eclipse-token-creation-tool",
               "token-creators/eclipse-splash-pools",
               "token-creators/eclipse-clmm-pools",
@@ -143,22 +236,16 @@
             ]
           },
           {
-            "group": "Staking & Governance",
+            "group": "For Builders",
             "pages": [
-              "staking/xorca-overview",
-              "staking/staking-faq",
-              "staking/governance-overview",
-              "staking/governance",
-              "staking/dao-council",
-              "staking/governance-tutorials",
-              "staking/governance-v0-guide",
-              "staking/token-treasury",
-              "staking/governance-how-to",
-              "staking/how-to-participate",
-              "staking/contribution-guidelines",
-              "staking/proposal-guidelines"
+              "reference/eclipse-builders"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "tab": "Resources",
+        "groups": [
           {
             "group": "Reference",
             "pages": [
@@ -171,8 +258,7 @@
               "reference/pool-network-fees",
               "reference/nfts-profile-pictures",
               "reference/brand-assets",
-              "reference/solana-overview",
-              "reference/eclipse-builders"
+              "reference/solana-overview"
             ]
           },
           {
@@ -196,9 +282,11 @@
       }
     ]
   },
-  "footerSocials": {
-    "twitter": "https://twitter.com/orca_so",
-    "discord": "https://discord.gg/orca-so",
-    "github": "https://github.com/orca-so"
+  "footer": {
+    "socials": {
+      "x": "https://twitter.com/orca_so",
+      "discord": "https://discord.gg/orca-so",
+      "github": "https://github.com/orca-so"
+    }
   }
 }

@@ -1,0 +1,136 @@
+/* Orca Documentation Custom Styles */
+
+/* Hero section enhancement */
+.prose h1 {
+  background: linear-gradient(135deg, #14b8a6 0%, #2dd4bf 50%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card styling improvements */
+[class*="card"] {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+[class*="card"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(20, 184, 166, 0.15);
+}
+
+/* Sidebar active state with brand color */
+[data-active="true"] {
+  color: #14b8a6 !important;
+}
+
+/* Link hover effects with brand color */
+a:hover {
+  color: #2dd4bf;
+}
+
+/* Code block styling */
+pre {
+  border: 1px solid rgba(20, 184, 166, 0.2);
+  border-radius: 8px;
+}
+
+pre code {
+  font-size: 0.875rem;
+}
+
+/* Table styling */
+table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  background: rgba(20, 184, 166, 0.1);
+}
+
+/* Button primary styling */
+[class*="button"][class*="primary"],
+button[class*="primary"] {
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+}
+
+[class*="button"][class*="primary"]:hover,
+button[class*="primary"]:hover {
+  background: linear-gradient(135deg, #2dd4bf 0%, #14b8a6 100%);
+}
+
+/* Scrollbar styling for dark mode */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(20, 184, 166, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(20, 184, 166, 0.5);
+}
+
+/* Callout/admonition styling */
+[class*="callout"],
+[class*="note"],
+[class*="tip"],
+[class*="warning"] {
+  border-left: 3px solid #14b8a6;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Search box styling */
+[class*="search"] input {
+  border: 1px solid rgba(20, 184, 166, 0.2);
+}
+
+[class*="search"] input:focus {
+  border-color: #14b8a6;
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+}
+
+/* Footer enhancement */
+footer {
+  border-top: 1px solid rgba(20, 184, 166, 0.1);
+}
+
+/* Horizontal rule styling */
+hr {
+  border-color: rgba(20, 184, 166, 0.2);
+  margin: 2rem 0;
+}
+
+/* Icon coloring for consistency */
+[class*="icon"] svg {
+  color: #14b8a6;
+}
+
+/* Badge styling */
+[class*="badge"] {
+  background: rgba(20, 184, 166, 0.15);
+  color: #14b8a6;
+  border: 1px solid rgba(20, 184, 166, 0.3);
+}
+
+/* Smooth transitions globally */
+* {
+  transition-property: color, background-color, border-color, box-shadow;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+/* Disable transitions for elements that shouldn't animate */
+code,
+pre,
+img,
+svg {
+  transition: none;
+}
