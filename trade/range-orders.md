@@ -1,101 +1,250 @@
 ---
-title: How to use Range Orders on Solana
-description: Use concentrated liquidity positions as limit orders.
-icon: arrow-right-arrow-left
+title: Range Orders
+description: Use concentrated liquidity positions as limit orders to buy low or sell high.
+icon: crosshairs
 ---
 
+Range orders let you set limit-order-style trades that **earn fees while waiting to execute**. Buy tokens at lower prices or sell at higher prices—automatically.
 
-Orca’s CLMM allows users to create customizable liquidity positions, such as single-sided asset positions, enabling them to trade in a way that is more familiar to users of Central Limit Order Books (CLOBs). These advanced strategies, often referred to as *range orders*, were not possible with traditional CPMM models.
+<Info>
+Range orders use Orca's concentrated liquidity pools. Unlike traditional limit orders that cost fees, you **earn** trading fees while your order is active.
+</Info>
 
-A CLOB trader typically deploys limit orders to trade assets only at a specific price. Such orders are filled (subject to available liquidity) when the market reaches the set price.
+---
 
-By providing single-sided liquidity, Orca’s CLMM can broadly mimic a CLOB limit order.
+## How Range Orders Work
 
-These range orders offer both advantages and disadvantages compared to traditional CLOB limit orders. However, when used effectively, they allow a user to automatically buy or sell an asset at a predefined price.
+By creating a single-sided liquidity position outside the current price, you can:
 
-The key advantages of a CLMM over a CLOB in this context include:
+- **Buy tokens** when price drops to your target
+- **Sell tokens** when price rises to your target
+- **Earn fees** as price moves through your range
 
-* **Fee earning**: While creating limit orders in a CLOB often incurs costs, CLMM users earn fees as their order is executed.
-* **Tax advantages**: In many tax jurisdictions, a taxable event is not triggered until assets are withdrawn from the CLMM. This allows users to delay taxable events while assessing current market conditions.
+<CardGroup cols={2}>
+  <Card title="Buy Limit Order" icon="arrow-trend-down">
+    Deposit stablecoins below current price. When price drops through your range, your stablecoins convert to the target token.
+  </Card>
+  <Card title="Sell/Take Profit Order" icon="arrow-trend-up">
+    Deposit tokens above current price. When price rises through your range, your tokens convert to stablecoins.
+  </Card>
+</CardGroup>
 
-### Limitations of range orders on a CLMM
+---
 
-The nature of CLMM mechanics means that not all order types that can be executed on a CLOB can be mimicked on a CLMM. As the current price of a pool rises, the asset increasing in value (relative to the paired asset) is incrementally sold for the asset decreasing in value. This mechanism means that only certain types of range orders are possible, specifically *Buy Limit Orders* and *Take Profit Orders*, which rely on this direction of conversion.
+## Advantages Over Traditional Limit Orders
 
-While a range order may appear no different from any other single-sided liquidity position, it is defined by the user’s intention rather than the mechanics of the pool. For a range order to be considered executed, the user must withdraw their assets. Otherwise, the range order will continue to function like any other position, with one asset being exchanged for the other as the price fluctuates within the position’s price range.
+| Feature | CLOB Limit Order | Orca Range Order |
+|---------|------------------|------------------|
+| **Fees** | Often pay fees | Earn fees |
+| **Tax timing** | Taxable on execution | Taxable on withdrawal* |
+| **Partial fills** | Yes | Yes (gradual conversion) |
+| **Price precision** | Exact price | Price range |
 
-Creating a Buy Limit Order
+<Note>
+*Tax treatment varies by jurisdiction. Consult a tax professional for your specific situation.
+</Note>
 
-Creating a Take Profit Order/Sell Limit Order
+---
 
-#### How to create a Buy Limit Order
+## Limitations to Understand
 
-Orca’s CLMM can be used by traders to execute a *Buy Limit Order*. This is made possible by CLMM mechanics—when one asset rises in value relative to its paired asset, it is sold in exchange for the other asset. By carefully deploying a single-sided liquidity position, traders can leverage the CLMM to effectively execute a *Buy Limit Order*.
-**Examples:** You believe that SOL is likely to fall to a price of 150 USDC from its current price of 160 USDC before rebounding, and you want to buy SOL at the lower price to take advantage of the anticipated recovery. This can be achieved by creating a single-sided position across a downside price range in a SOL/USDC pool. For this example, we will create a tight custom range of 150.002226–150.017226 USDC per SOL in the 0.01% fee tier SOL/USDC pool. The deposit will consist entirely of USDC.
-We now wait for the price to fall to or below the range minimum and then close our position. By that point, all the USDC will have been exchanged for SOL, and we will also have earned some trading fees.
-It is also possible to create a type of *buy limit order* that cannot be achieved on a CLOB, designed to take advantage of an anticipated protracted downtrend with an expected bottom. In this case, a wider range can be set, aiming to earn trade fees throughout the duration of the downtrend. For example, we could create a range from 150.002226 to 160.011694 USDC per SOL. As the price moves down through this range, small amounts of USDC will be traded for SOL at every price point between the maximum and minimum range until all the USDC is exhausted.
+<Warning>
+Range orders are **not identical** to traditional limit orders. Key differences:
 
-If we withdraw after the price reaches or falls below our minimum range, the position will consist entirely of SOL, and we will have earned additional fees. With this method, the price paid for SOL will be averaged across the selected range, meaning it will be higher than the chosen minimum.
+- **Must withdraw to complete**: Your order isn't "done" until you withdraw. If you don't withdraw, price can move back and reverse the conversion.
+- **Price range, not exact price**: You set a range, not a single price point.
+- **Requires monitoring**: You need to watch for execution and withdraw at the right time.
+</Warning>
 
-**Position Creation Process**
+---
 
-* Navigate to the Liquidity page (https://www.orca.so/pools)
-* Ensure the UI and your wallet are set to the Solana network.
+## Creating a Buy Limit Order
 
-   ![](/images/image_130.jpg)
-* If you haven't done so already, connect your wallet.
+Use this when you want to **buy tokens at a lower price** than current market.
 
-   ![](/images/image_131.jpg)
-* Locate the pool in which you wish to create your Buy Limit Order by finding it in the pool list or using the search field
+**Example scenario**: SOL is at $160 and you want to buy at $150.
 
+<Steps>
+  <Step title="Navigate to the pool">
+    Go to [orca.so/pools](https://www.orca.so/pools) and find the pool (e.g., SOL/USDC).
 
-   TIP: You can search using the token name, ticker, or token mint address, but check carefully that you have selected the right token.
-* Click on the pool you wish to add liquidity to. The liquidity sidebar will open.
+    <Frame>
+      <img src="/images/image_130.jpg" alt="Pool selection" />
+    </Frame>
+  </Step>
 
-   ![1](/images/image)
-* Ensure `Custom` range is selected in the liquidity side bar.
-   * After selecting Custom Range a one sided range can be created in three ways
+  <Step title="Connect your wallet">
+    Click **Connect Wallet** if not already connected.
 
-   * By dragging the sliders
-   * By free typing the prices in the lower and upper fields
-   * By using the + and - buttons in the lower and upper fields
-* Enter the amount you wish to deposit in an appropriate field, or you can click on `Max` to deposit that quantity of tokens from your wallet (red boxes), you may need to scroll down. *In this example we are attempting to buy $1 of SOL at a price 10% lower than the current pool price, you can see this highlighted in the green box.*
-* (Optional) Adjust your liquidity slippage by clicking on the liquidity button - see [Understanding Slippage](/trade/slippage) for more details. Once you are satisfied with your deposit values, click Deposit.
-* Review the details in your wallet, including payable network fees and approve.
+    <Frame>
+      <img src="/images/image_131.jpg" alt="Connect wallet" />
+    </Frame>
+  </Step>
 
-    **REVIEW CAREFULLY** it is critical you check your range and the current price of the pool match your intentions, depositing liquidity to a pool with a price not consummate with wider market values may result in loss.
+  <Step title="Open position creation">
+    Click on the pool to open the liquidity sidebar, then click **New Position**.
+  </Step>
 
-If the price dips and passes through your range, your position will be made entirely of SOL tokens. You must withdraw your liquidity at this point to ensure it does not become active again and your position revert to USDC.
+  <Step title="Select Custom range">
+    Choose **Custom** range mode to set your own price bounds.
+  </Step>
 
-#### How to create a Take Profit Order/Sell Limit Order
+  <Step title="Set your buy range BELOW current price">
+    Set both min and max prices **below** the current price where you want to buy.
 
-Orca’s CLMM can be used by traders to execute a Take Profit Order or a Sell Limit Order. This is possible due to CLMM mechanics—when an asset is rising in value, relative to the paired asset, it is sold for the other asset, this means that by carefully deploying a single sided position the CLMM can be used to execute a Take Profit Order/Sell Limit Order. The method of execution of these two order types is identical even if the intention of the order may vary.
-**Examples:** You believe that SOL is likely to rise to a price of 170 USDC from its current price of 160 USDC, and you want to sell your SOL for USDC at this higher price. This can be achieved by creating a one sided position across a price range on the up side of a SOL/USDC pool. For the purposes of this example we will create a tight custom range of 170.007724-170.024725 USDC per SOL in the SOL/USDC 0.01% fee tier pool. Our deposit will be composed entirely of SOL.
-We now wait for the price to rise to or above the range Max and close our position. All the SOL will have been sold for USDC, we will also earn some trade fees.
-It is also possible to create a type of Take Profit Order or a Sell Limit Order which cannot be achieved on a CLOB, which aims to take advantage of an anticipated protracted up trend, with an anticipated top. With this a wider range can be created, with the aim of taking advantage of trade fees during the period defined by the up trend. Here we could create a range from 160.011694-170.024725 USDC per SOL. As the price moves up through our range a little SOL will be sold for USDC at every price point between our Min and Max range until all the SOL is exhausted. If we withdraw after the price reaches or passes our Max range our position will be composed entirely of SOL and we will earn additional fees. With this method the price received for the SOL will be averaged out across the selected range, so will be lower than the selected Max.
+    **Example**: To buy SOL around $150:
+    - Min: $150.00
+    - Max: $150.02 (tight range for precise entry)
 
-#### Position Creation Process
+    <Tip>
+    Use a **tight range** for more precise price execution, or a **wider range** to earn more fees during a protracted downtrend.
+    </Tip>
+  </Step>
 
-* Navigate to the Liquidity page (https://www.orca.so/pools)
-* Ensure the UI and your wallet are set to the Solana network.
-* If you haven't done so already, connect your wallet.
+  <Step title="Deposit only the quote token">
+    Enter the amount of **USDC** (or other stablecoin) you want to use. Since your range is below current price, you'll only deposit the quote token.
 
-   * Locate the pool in which you wish to create your Buy Limit Order by finding it in the pool list or using the search field
+    <Frame>
+      <img src="/images/image" alt="Deposit interface" />
+    </Frame>
+  </Step>
 
+  <Step title="Review and create position">
+    - Verify your range is **below** current price
+    - Check the deposit amount
+    - Click **Deposit** and approve in your wallet
+  </Step>
 
-   TIP: You can search using the token name, ticker, or token mint address, but check carefully that you have selected the right token.
-* Click on the pool you wish to add liquidity to. The liquidity side bar will open.
+  <Step title="Wait for price to reach your range">
+    Monitor your position. When price falls through your range, your USDC converts to SOL.
+  </Step>
 
-   * Ensure Custom range is selected in the liquidity side bar
-   * After selecting Custom Range the a one sided range can be created in three ways
+  <Step title="Withdraw to complete the order">
+    Once price is at or below your range minimum, **withdraw immediately** to lock in your purchase. If you don't withdraw, price could rise back and convert your SOL back to USDC.
+  </Step>
+</Steps>
 
-   * By dragging the sliders
-   * By free typing the prices in the lower and upper fields
-   * By using the + and - buttons in the lower and upper fields
-* Enter the amount you wish to deposit in an appropriate field, or you can click on `Max` to deposit that quantity of tokens from your wallet (red boxes), you may need to scroll down. *In this example we are attempting to sell $1 of SOL at a price 10% higher than the current pool price, you can see this highlighted in the green box.*
-* (optional) adjust your liquidity slippage by clicking on the liquidity button - see [Understanding Slippage](/trade/slippage) for more details. Once you are satisfied with your deposit values, click Deposit.
-* Review the details in your wallet, including payable network fees and approve.
+<Warning>
+**Critical**: You must withdraw your position after the price passes through your range. Otherwise, if price reverses, your tokens will convert back.
+</Warning>
 
-    **REVIEW CAREFULLY** it is critical you check your range and the current price of the pool match your intentions, depositing liquidity at a price not consummate with wider market values may result in loss.
+---
 
-If the price rises and passes through your range, your position will be made entirely of USDC tokens. You must withdraw your liquidity at this point to ensure it does not become active again and your position revert to SOL.
+## Creating a Sell/Take Profit Order
+
+Use this when you want to **sell tokens at a higher price** than current market.
+
+**Example scenario**: SOL is at $160 and you want to sell at $170.
+
+<Steps>
+  <Step title="Navigate to the pool">
+    Go to [orca.so/pools](https://www.orca.so/pools) and find the pool (e.g., SOL/USDC).
+  </Step>
+
+  <Step title="Connect your wallet">
+    Click **Connect Wallet** if not already connected.
+  </Step>
+
+  <Step title="Open position creation">
+    Click on the pool to open the liquidity sidebar.
+  </Step>
+
+  <Step title="Select Custom range">
+    Choose **Custom** range mode.
+  </Step>
+
+  <Step title="Set your sell range ABOVE current price">
+    Set both min and max prices **above** the current price where you want to sell.
+
+    **Example**: To sell SOL around $170:
+    - Min: $170.00
+    - Max: $170.02 (tight range for precise exit)
+  </Step>
+
+  <Step title="Deposit only the base token">
+    Enter the amount of **SOL** you want to sell. Since your range is above current price, you'll only deposit the base token.
+  </Step>
+
+  <Step title="Review and create position">
+    - Verify your range is **above** current price
+    - Check the deposit amount
+    - Click **Deposit** and approve in your wallet
+  </Step>
+
+  <Step title="Wait for price to reach your range">
+    Monitor your position. When price rises through your range, your SOL converts to USDC.
+  </Step>
+
+  <Step title="Withdraw to complete the order">
+    Once price is at or above your range maximum, **withdraw immediately** to lock in your sale.
+  </Step>
+</Steps>
+
+---
+
+## Tight Range vs Wide Range
+
+<CardGroup cols={2}>
+  <Card title="Tight Range" icon="crosshairs">
+    **Pros:**
+    - More precise entry/exit price
+    - Executes quickly once price reaches range
+
+    **Cons:**
+    - Earns fewer fees
+    - May miss if price doesn't reach exact level
+  </Card>
+
+  <Card title="Wide Range" icon="arrows-left-right">
+    **Pros:**
+    - Earns more fees during price movement
+    - Catches price over broader range
+
+    **Cons:**
+    - Average price less precise
+    - Takes longer to fully convert
+  </Card>
+</CardGroup>
+
+**Wide range example**: Instead of $150-$150.02, set $150-$160. As price falls through this range, you gradually buy SOL at various prices, averaging out your entry while earning fees.
+
+---
+
+## Important Reminders
+
+<AccordionGroup>
+  <Accordion title="Always verify pool price matches market">
+    Before depositing, ensure the pool's current price matches wider market values. Depositing to a mispriced pool can result in immediate loss.
+  </Accordion>
+
+  <Accordion title="Withdraw promptly after execution">
+    If you don't withdraw after your range order executes, price can reverse and undo your trade. Set alerts or check regularly.
+  </Accordion>
+
+  <Accordion title="Consider using Alerts">
+    Set up [position alerts](/liquidity/manage/alerts) to get notified when your position moves out of range—signaling your order has executed.
+  </Accordion>
+
+  <Accordion title="Account for slippage on withdrawal">
+    When withdrawing, there's a small slippage tolerance. This is normal and won't significantly affect your results.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Position Alerts" icon="bell" href="/liquidity/manage/alerts">
+    Get notified when your range order executes
+  </Card>
+  <Card title="Understanding Slippage" icon="sliders" href="/trade/slippage">
+    Learn about slippage settings for LP
+  </Card>
+  <Card title="Beginner's Guide" icon="graduation-cap" href="/liquidity/getting-started/beginner-guide">
+    Full introduction to liquidity provision
+  </Card>
+  <Card title="Managing Positions" icon="chart-pie" href="/liquidity/manage/portfolio">
+    Monitor and manage your positions
+  </Card>
+</CardGroup>

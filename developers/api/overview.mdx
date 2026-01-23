@@ -5,6 +5,37 @@ description: "Access Orca's public REST API for pool data and analytics."
 
 # Orca's Public API
 
-<Card title="🔗 Visit the API reference docs on api.orca.so/docs" icon="github" href="https://api.orca.so/docs">
-  https://api.orca.so/docs
+The Orca Public API provides programmatic access to Whirlpool data, token information, and protocol analytics.
+
+<CardGroup cols={2}>
+  <Card title="API Reference" icon="code" href="/api-reference/overview">
+    Full API documentation with endpoints, parameters, and examples
+  </Card>
+  <Card title="External Swagger" icon="brackets-curly" href="https://api.orca.so/docs">
+    Interactive API explorer at api.orca.so/docs
+  </Card>
+</CardGroup>
+
+## Quick Start
+
+```bash
+# Get protocol stats
+curl "https://api.orca.so/v2/solana/protocol"
+
+# Search for pools
+curl "https://api.orca.so/v2/solana/pools/search?q=SOL-USDC"
+
+# Get token info
+curl "https://api.orca.so/v2/solana/tokens/search?q=ORCA"
+```
+
+## Base URL
+
+| Chain | Base URL |
+|-------|----------|
+| Solana | `https://api.orca.so/v2/solana` |
+| Eclipse | `https://api.orca.so/v2/eclipse` |
+
+<Card title="View Full Documentation" icon="arrow-right" href="/api-reference/overview">
+  See the complete API Reference for all endpoints and schemas
 </Card>

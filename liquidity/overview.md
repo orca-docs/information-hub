@@ -4,20 +4,112 @@ description: Learn how to provide liquidity on Orca and earn trading fees.
 icon: droplet
 ---
 
-Orca's concentrated liquidity (CLMM) pools offer liquidity providers (LPs) advanced features that surpass traditional Constant Product Market Makers (CPMMs). Orca v2 enables LPs to enhance capital efficiency by concentrating assets within specific price ranges.
+Earn yield by providing liquidity to Orca's concentrated liquidity pools (CLMMs). Concentrate your capital within specific price ranges for enhanced efficiency and returns.
 
-Concentrated liquidity pools can replace traditional Central Limit Order Books (CLOBs), allowing anyone to create pools with Orca's fully permissionless pool creation tools.
-However, thorough research is essential before engaging in active liquidity provision to understand the mechanics, risks, and strategies involved.
+<Info>
+Orca's concentrated liquidity pools replace traditional order books, allowing anyone to create pools and earn trading fees. Understand the mechanics and risks before providing liquidity.
+</Info>
 
-### Understanding CLMMs
+---
 
-A CLMM (Concentrated Liquidity Automated Market Maker) allows LPs to allocate their capital to specific price ranges, rather than distributing it uniformly across all prices. This targeted approach allows LPs to maximize capital efficiency and potential yields, while also providing an enhanced experience for traders.
+## What is Concentrated Liquidity?
 
-#### Benefits of a Concentrated Liquidity AMM (CLMM) vs. a Constant Product AMM (CPMM)
+A CLMM (Concentrated Liquidity Market Maker) lets you allocate capital to **specific price ranges** instead of spreading it across all prices. This targeted approach maximizes capital efficiency and potential yields.
 
-* **Enhanced Capital Efficiency**: LPs can focus their capital on the most profitable price ranges instead of spreading it across the entire price curve. This results in a more efficient use of capital.
-* **Increased Earning Potential**: By allocating liquidity to high-volume trading ranges, LPs can earn more from transaction fees. The fees accrued per unit of capital deployed can significantly exceed those in traditional full-range CPMM pools.
-* **Flexible Management**: CLMMs offer LPs the flexibility to adjust their price ranges in response to current or anticipated market conditions, optimizing returns and managing risk more effectively than in a CPMM.
-* **Advanced Techniques**: CLMMs support advanced strategies that can mimic other protocols, such as limit orders and take-profit orders, providing greater versatility for LPs.
+<CardGroup cols={2}>
+  <Card title="Traditional AMM (CPMM)" icon="chart-simple">
+    Liquidity spread across **all prices** from 0 to infinity. Less efficient, but simpler to manage.
+  </Card>
+  <Card title="Concentrated Liquidity (CLMM)" icon="bullseye">
+    Liquidity focused on **chosen price ranges**. More efficient, higher potential yields, requires monitoring.
+  </Card>
+</CardGroup>
 
-Overall, CLMMs boost LP efficiency and profitability while also enhancing the trader experience.
+---
+
+## Why Provide Liquidity on Orca?
+
+<AccordionGroup>
+  <Accordion title="Enhanced Capital Efficiency" icon="gauge-high">
+    Focus your capital on profitable price ranges instead of spreading it across the entire price curve. Get more yield per dollar deposited.
+  </Accordion>
+
+  <Accordion title="Increased Earning Potential" icon="coins">
+    By targeting high-volume trading ranges, you can earn significantly more from transaction fees than traditional full-range pools.
+  </Accordion>
+
+  <Accordion title="Flexible Management" icon="sliders">
+    Adjust your price ranges in response to market conditions. Optimize returns and manage risk more effectively than with fixed positions.
+  </Accordion>
+
+  <Accordion title="Advanced Strategies" icon="chess">
+    CLMMs support advanced techniques like limit orders and take-profit orders, providing greater versatility for sophisticated LPs.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## CLMM vs Traditional AMM
+
+| Feature | Traditional CPMM | Orca CLMM |
+|---------|-----------------|-----------|
+| **Liquidity distribution** | Spread across all prices | Concentrated in chosen range |
+| **Capital efficiency** | Lower | Higher |
+| **Potential fees earned** | Less per $ deposited | More per $ deposited |
+| **Management needed** | Minimal | More active monitoring |
+| **Impermanent loss risk** | Lower | Can be higher if poorly managed |
+
+---
+
+## Position Types
+
+<CardGroup cols={2}>
+  <Card title="Full-Range Position" icon="arrows-left-right" href="/liquidity/getting-started/full-range">
+    **Best for beginners**
+
+    Spread liquidity from 0 to infinity. Lower maintenance, always in range, but less capital efficient.
+  </Card>
+  <Card title="Custom-Range Position" icon="crosshairs" href="/liquidity/getting-started/custom-range">
+    **For experienced LPs**
+
+    Concentrate liquidity in a specific range. Higher potential returns, requires active management.
+  </Card>
+</CardGroup>
+
+---
+
+## Getting Started
+
+<Steps>
+  <Step title="Understand the risks">
+    Learn about [impermanent loss](/liquidity/concepts/impermanent-loss) and how concentrated liquidity affects your returns.
+  </Step>
+  <Step title="Choose your strategy">
+    Decide between full-range (passive) or custom-range (active) positions based on your goals.
+  </Step>
+  <Step title="Create your position">
+    Follow our guides to deposit liquidity and start earning fees.
+  </Step>
+  <Step title="Monitor and manage">
+    Track your positions and adjust as needed using the [Portfolio](/liquidity/manage/portfolio) page.
+  </Step>
+</Steps>
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Beginner's Guide" icon="graduation-cap" href="/liquidity/getting-started/beginner-guide">
+    Complete introduction to liquidity provision on Orca
+  </Card>
+  <Card title="Full-Range Position" icon="arrows-left-right" href="/liquidity/getting-started/full-range">
+    Create your first simple position
+  </Card>
+  <Card title="Custom-Range Position" icon="crosshairs" href="/liquidity/getting-started/custom-range">
+    Advanced concentrated liquidity
+  </Card>
+  <Card title="Impermanent Loss" icon="chart-line-down" href="/liquidity/concepts/impermanent-loss">
+    Understand the key risk of LP
+  </Card>
+</CardGroup>

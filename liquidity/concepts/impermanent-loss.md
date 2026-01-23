@@ -1,155 +1,232 @@
 ---
 title: Impermanent Loss
-description: Understand impermanent loss and how it affects LPs.
-icon: droplet
+description: Understand impermanent loss (divergence loss) and how it affects liquidity providers.
+icon: chart-line-down
 ---
 
-**What This Guide Covers**
+Impermanent loss (IL) is one of the most misunderstood concepts in DeFi. Despite the name, it's not always impermanent—and not always a true loss relative to your original capital.
 
-Impermanent loss (IL) is one of the most misunderstood concepts in DeFi.
-Despite the name, IL is not always impermanent—and not always a true loss relative to your original capital.
-
-This guide explores:
-
-* Why the term "impermanent loss" can be misleading
-* How IL behaves in Concentrated Liquidity Market Makers (CLMMs)
-
-* When IL becomes permanent—and when it does not
-* How strategic management of positions can affect outcomes
-
-* Why Orca believes the term *Divergence Loss*(DL) better describes this phenomenon
-
-Understanding these dynamics is essential for liquidity providers who want to make informed decisions and optimize returns over time.
-
-### Understanding Impermanent Loss in CLMMs
-
-Most liquidity providers (LPs) have heard of *impermanent loss* (IL), but many struggle to fully understand what it is—or perhaps more importantly, what it isn’t. (Spoiler: it’s not always impermanent, and not necessarily a loss.)
-
-Given the term’s ambiguity, it's hardly surprising that IL is often misunderstood.
-
-In essence, impermanent loss might be *neither* truly impermanent nor an *actual* loss. Whether IL becomes permanent—and whether it results in a real loss—depends entirely on how and when the liquidity provider interacts with their position.
-
-So, what exactly is impermanent loss? Let's walk through it carefully.
-
-### What Impermanent Loss Means
-
-**Impermanent:** Temporary; capable of being reversed.
-**Loss:** A reduction in value.
-
-In an Automated Market Maker (AMM), IL occurs when the relative prices of the assets you’ve provided liquidity for change compared to when you deposited them. If you withdraw liquidity at a different price ratio, the value of your position may be lower than if you had simply held the tokens.
-
-However, IL is:
-
-* Not always impermanent.
-* Not always a true loss in absolute terms.
-
-* Not necessarily worse than other strategies.
-
-In a Concentrated Liquidity Market Maker (CLMM) like Orca, these effects can be sharper—but they can also be managed carefully.
-
-### Why the Name Is Confusing
-
-The term "impermanent loss" itself can cause misunderstanding:
-
-* **Impermanence** suggests the loss will resolve itself. In reality, if you withdraw liquidity at the wrong time, the loss becomes permanent.
-* **Loss** implies that LPs are left worse off. Yet many LPs stay profitable overall, even after accounting for IL.
-
-Understanding these nuances is critical for making informed liquidity decisions.
-
-### Example Scenarios
-
-For simplicity, we assume:
-
-* 1 USDC = $1
-* **Initial SOL price:** $200
-* **Selected range:** $160–$250
-* **Liquidity provided:**
-
-  + 2.5 SOL (worth $500)
-  + 500 USDC
-
-1
-
-#### Scenario 1: When Impermanent Loss Is Temporary
-
-* Price falls to: 170 USDC/SOL
-* If you withdraw now:
-
-  + Receive ~4.50 SOL (worth ~$766) + 130 USDC
-  + Total value: ~$896
-
-* If you had simply held:
-
-  + 2.5 SOL (worth ~$425) + 500 USDC = $925
-
-At this moment, withdrawing would realize an IL of $28.86
-
-However, if you wait and the price returns to $200, your position would again be worth $1000—no loss realized.
-
-This outcome is explained by path independence:
-In a CLMM, if you withdraw liquidity at the same price you deposited, you'll retrieve the same value, regardless of the path prices took.
-
-> **Key takeaway:**
-> Impermanent loss can become permanent but only if you withdraw liquidity at a price point other than the one at which you deposited
-
-2
-
-#### Scenario 2: When Impermanent Loss Isn't Truly a Loss
-
-* **Price rises to:** 250 USDC/SOL
-* **If you withdraw now:**
-
-  + Receive ~1059 USDC
-  + Total value: ~$1059
-
-* **If you had simply held:**
-
-  + 2.5 SOL (worth ~$625) + 500 USDC = $1125
-
-Compared to holding, you have "lost" $65.83.
-
-However, you are still ahead of your original $1000 deposit.
-
-This illustrates that IL is often a *relative* loss—it compares your LP strategy to simply holding, rather than showing an absolute decrease in value.
-
-And importantly, this does **not yet** include any trading fees earned while your liquidity was active, which can more than compensate for the IL.
-
-### Key Takeaway
-
-* **IL is only realized if you withdraw.**
-  If you wait and prices recover, the loss can disappear. It is worth noting that price may never return to the exact deposit value.
-* **IL is a relative measure, not an absolute loss.**
-  You can still be in profit compared to your initial deposit.
-* **Fee earnings are critical.**
-  You outperform simple holding when your earned fees exceed any realized IL.
-* **Position management matters.**
-  If you expect price recovery, holding your position may be better.
-  If you expect continued divergence, repositioning could make sense.
+<Info>
+Orca prefers the term **Divergence Loss** (DL) because it more accurately describes what happens: asset prices move apart (diverge) from their original ratio.
+</Info>
 
 ---
 
-### Terminology: Why Orca Prefers "Divergence Loss"
+## What This Guide Covers
 
-While the industry-standard term is *impermanent loss*, Orca often refers to the phenomenon as *divergence loss* (DL).
+- Why "impermanent loss" can be misleading
+- How IL works in Concentrated Liquidity (CLMMs)
+- When IL becomes permanent—and when it doesn't
+- How position management affects outcomes
 
-We believe *divergence loss* is a clearer and more accurate description, because:
-* The impermanence of IL depends entirely on LP behavior—not market behavior alone.
+---
 
-* Divergence directly reflects what happens: asset prices move apart (diverge) from their original ratio.
-* Loss should always be understood relative to an alternative action, not automatically assumed to be absolute.
+## What Is Impermanent Loss?
 
-Throughout Orca documentation, you may encounter both terms used side-by-side, especially in contexts where external standards are also referenced.
+<CardGroup cols={2}>
+  <Card title="Simple Definition" icon="book">
+    The difference in value between providing liquidity vs. simply holding the tokens in your wallet.
+  </Card>
+  <Card title="Key Insight" icon="lightbulb">
+    IL is a **relative** comparison, not necessarily an absolute loss from your original deposit.
+  </Card>
+</CardGroup>
 
-Our goal is to help liquidity providers fully understand the risks, strategies, and outcomes associated with liquidity provision—without relying on misleading terminology.
+In an AMM, IL occurs when the relative prices of your deposited assets change. If you withdraw at a different price ratio than when you deposited, your position value may be lower than if you had just held the tokens.
 
-### Conclusion
+---
 
-Impermanent loss is an important concept for every liquidity provider to understand—but it’s only part of the bigger picture.
-Managing liquidity positions requires balancing:
+## Why the Name Is Confusing
 
-* Fee generation
-* Risk of price divergence
+<AccordionGroup>
+  <Accordion title="It's not always 'impermanent'" icon="clock">
+    The term suggests the loss will resolve itself. In reality, if you withdraw at the wrong time, the loss becomes **permanent**.
+  </Accordion>
 
-* Opportunity costs compared to alternative strategies like holding, staking, or lending
+  <Accordion title="It's not always a 'loss'" icon="chart-line">
+    You can still be **profitable overall** compared to your initial deposit, even with IL. The term "loss" compares to holding—not to your starting capital.
+  </Accordion>
+</AccordionGroup>
 
+<Tip>
+Think of IL as an **opportunity cost** compared to holding, not necessarily money lost from your pocket.
+</Tip>
+
+---
+
+## Example Scenarios
+
+For these examples, assume:
+- 1 USDC = $1
+- Initial SOL price: $200
+- Selected range: $160–$250
+- Liquidity provided: 2.5 SOL ($500) + 500 USDC = **$1,000 total**
+
+### Scenario 1: When IL Is Temporary
+
+<Steps>
+  <Step title="Price drops to $170">
+    If you withdraw now:
+    - Receive ~4.50 SOL ($765) + 130 USDC
+    - **Total: ~$896**
+  </Step>
+  <Step title="Compare to holding">
+    If you had simply held:
+    - 2.5 SOL ($425) + 500 USDC = **$925**
+
+    IL at this point: **$29**
+  </Step>
+  <Step title="Price returns to $200">
+    If you **wait** and price returns to $200:
+    - Position value: **$1,000**
+    - No loss realized
+
+    This is **path independence**: withdraw at the same price you deposited = same value.
+  </Step>
+</Steps>
+
+<Note>
+**Key Takeaway:** IL only becomes permanent if you withdraw at a different price than you deposited.
+</Note>
+
+---
+
+### Scenario 2: When IL Isn't Really a Loss
+
+<Steps>
+  <Step title="Price rises to $250">
+    If you withdraw now:
+    - Receive ~$1,059 USDC
+    - **Total: ~$1,059**
+  </Step>
+  <Step title="Compare to holding">
+    If you had simply held:
+    - 2.5 SOL ($625) + 500 USDC = **$1,125**
+
+    IL compared to holding: **$66**
+  </Step>
+  <Step title="But you're still ahead">
+    Your original deposit was **$1,000**.
+    You now have **$1,059**.
+
+    You're **up $59** from your starting capital!
+  </Step>
+</Steps>
+
+<Info>
+This example doesn't even include **trading fees earned** while your liquidity was active. Fees often more than compensate for IL.
+</Info>
+
+---
+
+## IL in Concentrated Liquidity (CLMMs)
+
+Concentrated liquidity **amplifies** both potential gains and IL:
+
+| Factor | Effect on IL |
+|--------|--------------|
+| **Narrower range** | Higher IL risk (more concentrated exposure) |
+| **Wider range** | Lower IL risk (more diversified) |
+| **Higher fees** | Can offset more IL |
+| **More trades** | More fees to compensate |
+
+<Warning>
+In CLMMs, price movements have a larger effect because your liquidity is concentrated in a smaller range. Understand this before choosing tight ranges.
+</Warning>
+
+---
+
+## Key Takeaways
+
+<CardGroup cols={2}>
+  <Card title="IL Is Only Realized When You Withdraw" icon="hand">
+    If prices recover before withdrawal, the "loss" can disappear. But price may never return to your exact deposit level.
+  </Card>
+  <Card title="IL Is Relative, Not Absolute" icon="scale-balanced">
+    You compare to holding, not to your initial deposit. You can have IL **and** still profit.
+  </Card>
+  <Card title="Fees Are Critical" icon="coins">
+    You outperform holding when earned fees exceed realized IL. High-volume pools help offset IL.
+  </Card>
+  <Card title="Position Management Matters" icon="sliders">
+    Expecting price recovery? Hold your position. Expecting continued divergence? Consider repositioning.
+  </Card>
+</CardGroup>
+
+---
+
+## Why Orca Prefers "Divergence Loss"
+
+<AccordionGroup>
+  <Accordion title="More accurate terminology">
+    - **Divergence** directly describes what happens: prices move apart from their original ratio
+    - **Impermanent** implies it will reverse—which isn't guaranteed
+    - **Loss** should be understood relative to an alternative, not as absolute
+  </Accordion>
+
+  <Accordion title="Helps LPs make better decisions">
+    Understanding that IL depends on **your behavior** (when you withdraw) rather than just market behavior helps you make more informed decisions.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Managing IL Risk
+
+<AccordionGroup>
+  <Accordion title="Choose appropriate ranges">
+    - **Wider ranges** = less IL risk, lower capital efficiency
+    - **Tighter ranges** = higher IL risk, higher potential fees
+    - Match your range to your risk tolerance and monitoring capacity
+  </Accordion>
+
+  <Accordion title="Select high-volume pools">
+    More trading volume = more fees to offset potential IL. Check the 24h volume and fee APR before depositing.
+  </Accordion>
+
+  <Accordion title="Monitor and rebalance strategically">
+    - Don't panic-withdraw during temporary price swings
+    - Consider waiting for price recovery if you expect it
+    - Rebalance only when the cost is justified
+  </Accordion>
+
+  <Accordion title="Understand your exit strategy">
+    Know in advance:
+    - At what point will you withdraw?
+    - What price movement would trigger a rebalance?
+    - Are you willing to hold through volatility?
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Conclusion
+
+Impermanent loss is an important concept, but it's only part of the bigger picture. Successful liquidity provision requires balancing:
+
+- **Fee generation** — Earning from trading activity
+- **Price divergence risk** — Understanding IL dynamics
+- **Opportunity costs** — Comparing to holding, staking, or lending
+
+<Tip>
 With careful strategy and active management, LPs can often turn impermanent loss from a threat into an opportunity.
+</Tip>
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Position Simulator" icon="chart-line" href="/liquidity/advanced/simulator">
+    Visualize IL for different scenarios
+  </Card>
+  <Card title="LP Strategies" icon="lightbulb" href="/liquidity/advanced/strategies">
+    Learn techniques to manage IL
+  </Card>
+  <Card title="Create a Position" icon="plus" href="/liquidity/getting-started/beginner-guide">
+    Start providing liquidity
+  </Card>
+  <Card title="Understanding Ticks & Fees" icon="gauge" href="/liquidity/concepts/ticks-and-fees">
+    Learn how fees work in CLMMs
+  </Card>
+</CardGroup>

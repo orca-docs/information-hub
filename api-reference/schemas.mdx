@@ -1,0 +1,287 @@
+---
+title: "Schemas"
+description: "Complete data model reference for the Orca Public API."
+icon: "database"
+---
+
+# API Schemas
+
+Complete reference for all data models returned by the Orca Public API.
+
+---
+
+## PublicWhirlpool
+
+The primary data structure for Whirlpool liquidity pools.
+
+```typescript
+interface PublicWhirlpool {
+  // Identity
+  address: string;                    // Pool account address
+  whirlpoolsConfig: string;           // Whirlpools config account
+
+  // Pool Configuration
+  tickSpacing: number;                // Tick spacing (determines fee tier)
+  feeRate: number;                    // Fee rate (hundredths of basis point)
+  protocolFeeRate: number;            // Protocol fee (basis points)
+  feeTierIndex: number;               // Fee tier index
+  poolType: "splashpool" | "whirlpool";
+
+  // Liquidity State
+  liquidity: string;                  // Current liquidity (Q64.64)
+  sqrtPrice: string;                  // Square root price (Q64.64)
+  tickCurrentIndex: number;           // Current tick index
+
+  // Token Information
+  tokenMintA: string;                 // Token A mint address
+  tokenMintB: string;                 // Token B mint address
+  tokenVaultA: string;                // Token A vault address
+  tokenVaultB: string;                // Token B vault address
+  tokenA: PublicToken;                // Token A details
+  tokenB: PublicToken;                // Token B details
+  tokenBalanceA: string;              // Token A balance in pool
+  tokenBalanceB: string;              // Token B balance in pool
+
+  // Pricing & Value
+  price: string;                      // Current price (Token B per Token A)
+  tvlUsdc: string;                    // Total Value Locked in USDC
+
+  // Fee Growth
+  feeGrowthGlobalA: string;           // Global fee growth for Token A
+  feeGrowthGlobalB: string;           // Global fee growth for Token B
+  protocolFeeOwedA: string;           // Protocol fees owed in Token A
+  protocolFeeOwedB: string;           // Protocol fees owed in Token B
+
+  // Adaptive Fees
+  adaptiveFeeEnabled: boolean;        // Whether adaptive fees are enabled
+  adaptiveFee?: AdaptiveFee;          // Adaptive fee configuration
+
+  // Status
+  hasWarning: boolean;                // Pool has warning flag
+
+  // Statistics (by time period)
+  stats: {
+    [period: string]: PublicWhirlpoolStats;  // "5m", "24h", "7d", etc.
+  };
+
+  // Rewards
+  rewards: WhirlpoolRewardInfoExt[];  // Active reward emissions
+
+  // Locked Liquidity
+  lockedLiquidityPercent: LockInfo[]; // Locked liquidity providers
+
+  // Metadata
+  updatedAt: string;                  // ISO 8601 timestamp
+  updatedSlot: number;                // Solana slot number
+}
+```
+
+---
+
+## PublicWhirlpoolStats
+
+Time-period statistics for a Whirlpool.
+
+```typescript
+interface PublicWhirlpoolStats {
+  volume: string;      // Trading volume in USDC
+  fees: string;        // Fees collected in USDC
+  rewards: string;     // Rewards distributed in USDC
+  yieldOverTvl: string; // Yield as ratio of TVL (APR indicator)
+}
+```
+
+### Available Time Periods
+
+| Period | Description |
+|--------|-------------|
+| `5m` | Last 5 minutes |
+| `15m` | Last 15 minutes |
+| `30m` | Last 30 minutes |
+| `1h` | Last hour |
+| `2h` | Last 2 hours |
+| `4h` | Last 4 hours |
+| `8h` | Last 8 hours |
+| `24h` | Last 24 hours |
+| `7d` | Last 7 days |
+| `30d` | Last 30 days |
+
+---
+
+## PublicToken
+
+Token metadata and information.
+
+```typescript
+interface PublicToken {
+  address: string;         // Token mint address
+  symbol: string | null;   // Token symbol (e.g., "SOL")
+  name: string | null;     // Full token name
+  decimals: number;        // Decimal places
+  imageUrl: string | null; // Logo URL
+  programId: string;       // SPL Token program ID
+  tags: string;            // Comma-separated extension tags
+}
+```
+
+---
+
+## AdaptiveFee
+
+Configuration for pools with adaptive fees.
+
+```typescript
+interface AdaptiveFee {
+  currentRate: number;              // Current fee rate
+  maxRate: number;                  // Maximum fee rate
+  constants: AdaptiveFeeConstants;  // Static configuration
+  variables: AdaptiveFeeVariables;  // Dynamic state
+}
+
+interface AdaptiveFeeConstants {
+  filterPeriod: number;
+  decayPeriod: number;
+  reductionFactor: number;
+  variableFeeControl: number;
+  maxVolatilityAccumulator: number;
+  minBinId: number;
+  maxBinId: number;
+}
+
+interface AdaptiveFeeVariables {
+  volatilityAccumulator: number;
+  volatilityReference: number;
+  indexReference: number;
+  lastUpdateTimestamp: number;
+}
+```
+
+---
+
+## WhirlpoolRewardInfoExt
+
+Reward emission configuration for incentivized pools.
+
+```typescript
+interface WhirlpoolRewardInfoExt {
+  mint: string;                   // Reward token mint address
+  vault: string;                  // Reward vault address
+  authority: string;              // Reward authority
+  emissionsPerSecond: string;     // Emissions rate (human readable)
+  emissionsPerSecondX64: string;  // Emissions rate (Q64.64 format)
+  growthGlobalX64: string;        // Global growth accumulator
+  active: boolean;                // Whether rewards are active
+}
+```
+
+---
+
+## LockInfo
+
+Information about locked liquidity in a pool.
+
+```typescript
+interface LockInfo {
+  name: string;                    // Lock provider name
+  lockedPercentage: string | null; // Percentage of liquidity locked
+}
+```
+
+---
+
+## ProtocolInfo
+
+Protocol-wide statistics.
+
+```typescript
+interface ProtocolInfo {
+  tvl: string;            // Total Value Locked in USDC
+  volume24hUsdc: string;  // 24-hour volume in USDC
+  fees24hUsdc: string;    // 24-hour fees in USDC
+  revenue24hUsdc: string; // 24-hour revenue in USDC
+}
+```
+
+---
+
+## ProtocolInfoOrcaToken
+
+ORCA token information.
+
+```typescript
+interface ProtocolInfoOrcaToken {
+  symbol: string;            // "ORCA"
+  name: string;              // "Orca"
+  description: string;       // Token description
+  imageUrl: string;          // Logo URL
+  price: string;             // Current USD price
+  circulatingSupply: string; // Circulating supply
+  totalSupply: string;       // Total supply
+  stats: {
+    "24h": {
+      volume: string;        // 24-hour trading volume
+    };
+  };
+}
+```
+
+---
+
+## API Response Wrapper
+
+All API responses use this wrapper format.
+
+```typescript
+interface ApiResponse<T> {
+  data: T;
+  meta: {
+    next: string | null;     // Cursor for next page
+    previous: string | null; // Cursor for previous page
+  };
+}
+```
+
+---
+
+## Enums
+
+### SortField
+
+Available sort fields for pool queries.
+
+```typescript
+type SortField =
+  | "volume" | "volume5m" | "volume15m" | "volume30m"
+  | "volume1h" | "volume2h" | "volume4h" | "volume8h"
+  | "volume24h" | "volume7d" | "volume30d"
+  | "tvl"
+  | "fees" | "fees5m" | "fees15m" | "fees30m"
+  | "fees1h" | "fees2h" | "fees4h" | "fees8h"
+  | "fees24h" | "fees7d" | "fees30d"
+  | "rewards" | "rewards5m" | "rewards15m" | "rewards30m"
+  | "rewards1h" | "rewards2h" | "rewards4h" | "rewards8h"
+  | "rewards24h" | "rewards7d" | "rewards30d"
+  | "yieldovertvl" | "yieldovertvl5m" | "yieldovertvl15m"
+  | "yieldovertvl30m" | "yieldovertvl1h" | "yieldovertvl2h"
+  | "yieldovertvl4h" | "yieldovertvl8h" | "yieldovertvl24h"
+  | "yieldovertvl7d" | "yieldovertvl30d"
+  | "lockedliquiditypercent";
+```
+
+### SortDirection
+
+```typescript
+type SortDirection = "asc" | "desc";
+```
+
+### TokenSortField
+
+```typescript
+type TokenSortField = "address" | "mint_id" | "volume_24h";
+```
+
+### PoolType
+
+```typescript
+type PoolType = "splashpool" | "whirlpool";
+```

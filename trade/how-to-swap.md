@@ -1,63 +1,187 @@
 ---
-title: How to trade using Orca on Solana
+title: How to Swap Tokens
 description: Step-by-step guide to swapping tokens on Orca.
 icon: arrow-right-arrow-left
 ---
 
-Learn how to swap tokens on Orca in a few simple steps.
+Trade any token on Solana in seconds with Orca's intuitive swap interface.
 
-* **Connect wallet to Orca**
+<Info>
+Orca compares quotes from its own pools and Jupiter aggregator, so you always get the best price without leaving the app.
+</Info>
 
-   * On Orca's home page, click `Connect wallet`.
+---
 
-      On desktop devices the `Connect wallet` button can be found:
+## Before You Start
 
-      * Centrally, under the trading modal
-      * Bottom left of the screen
+<CardGroup cols={3}>
+  <Card title="Solana Wallet" icon="wallet">
+    Phantom, Backpack, or any supported wallet
+  </Card>
+  <Card title="SOL for Fees" icon="coin">
+    Keep at least 0.05 SOL for network fees
+  </Card>
+  <Card title="Tokens to Trade" icon="coins">
+    The token you want to swap
+  </Card>
+</CardGroup>
 
-      On smaller screened devices the `Connect wallet` button can be found:
+<Tip>
+New to Solana? See our [wallet setup guide](/get-started/wallets) to get started.
+</Tip>
 
-      * Centrally, under the trading modal
-      * By select the fish/NFT at the top right of your screen
-   * Select your wallet from the list, or free type its name in the box.
-   * Click `Connect`.
-   * Enter your password in your wallet to unlock your wallet and connect.
-* **Trade on Orca**
-   Your wallet is connected and you can trade.
+---
 
-   * In the trade modal select the token you wish to *pay* with (sell) and the token you wish to *receive* (buy), by clicking on the token in the modal.
+## How to Swap
 
-      ![](/images/image_61.jpg)
-   * Select the token, or search using the token name, ticker, or mint address.
-   * Enter the number of tokens you wish to pay with or receive in the corresponding field, alternatively you can select `Half` or `Max` to use that portion of your payment token balance.
+<Steps>
+  <Step title="Go to Orca and connect your wallet">
+    Visit [orca.so](https://www.orca.so) and click **Connect Wallet** in the top right corner (or center of the trading modal on mobile).
 
-      ![](/images/image_62.jpg)
+    Select your wallet from the list and approve the connection.
+  </Step>
 
-   * The trade modal will display a quote for your trade, you can also use the drop down arrow, to view granular details for your trade.
+  <Step title="Select your tokens">
+    In the swap interface:
+    - Click the top token selector to choose the token you want to **sell** (pay with)
+    - Click the bottom token selector to choose the token you want to **buy** (receive)
 
-      ![](/images/image_63.jpg)
+    <Frame caption="Select tokens using the dropdown or search by name, ticker, or mint address">
+      <img src="/images/image_61.jpg" alt="Token selection interface" />
+    </Frame>
+  </Step>
 
-   * (Optional) If you want to adjust slippage manually you can do by clicking on the cog symbol at the top right (see [Understanding Slippage](/trade/slippage))
-   * At the bottom of the modal, is displayed the price for your trade if you executed it on Jupiter, compare the two and select the appropriate `Trade` button when you are ready.
-   * In your wallet, check the details of the trade, and if happy click `Approve`.
-   * The UI will display the progress of your trade before showing you a confirmation.
+  <Step title="Enter the amount">
+    Type the amount you want to swap in either field:
+    - Enter in the **top field** to specify how much you're selling
+    - Enter in the **bottom field** to specify how much you want to receive
 
-#### Create a Solana wallet
+    Use **Half** or **Max** buttons for quick amounts.
 
-To use Orca, you need a supported Solana compatible wallet, you can find a list of compatible wallets [here](/get-started/wallets). Orca is a decentralized protocol that facilitates trades on Solana, as Orca is non-custodial when you trade tokens the protocol will interact directly with your wallet.
+    <Frame caption="Enter your swap amount and see the live quote">
+      <img src="/images/image_62.jpg" alt="Swap amount entry" />
+    </Frame>
+  </Step>
 
-#### Get some SOL
+  <Step title="Review the quote">
+    Check the swap details:
+    - **Rate** — Current exchange rate
+    - **Price impact** — How your trade affects the price
+    - **Minimum received** — Guaranteed minimum after slippage
 
-Orca is built on the Solana blockchain, so you need SOL in your wallet to pay network fees. Transactions may fail if you do not maintain a minimum balance of 0.05 SOL.
-   To obtain some SOL either:
+    Click the dropdown arrow to see more details.
 
-   * Purchase SOL on a centralized exchange of your choice, or...
-   * Purchase SOL through a fiat on-ramp service, these are integrated into some wallets.
-* **(optional) Move SOL to your wallet** If you went for the centralized exchange option you need to move the SOL to your wallet. The exact methods vary wallet to wallet but typically involve the following.
+    <Frame caption="Review full trade details before confirming">
+      <img src="/images/image_63.jpg" alt="Swap quote details" />
+    </Frame>
+  </Step>
 
-   * Click `Deposit` or `Receive`.
-   * Select/find SOL.
-   * Copy/scan the deposit address.
-   * Use this address to withdraw your SOL from the centralized exchange.
+  <Step title="Compare prices (optional)">
+    Orca shows you quotes from both:
+    - **Orca Direct** — Trading through Orca's pools
+    - **Jupiter** — Aggregated from multiple DEXs
 
-   **Important:** confirm that the deposit address is correct and the selected withdrawal method is **Solana SPL.** It is sensible to test with a small amount first.
+    The better price is highlighted. Choose your preferred option.
+  </Step>
+
+  <Step title="Adjust slippage (optional)">
+    Click the **gear icon** (⚙️) to adjust slippage tolerance if needed.
+
+    | Pair Type | Recommended Slippage |
+    |-----------|---------------------|
+    | Stablecoins | 0.1% |
+    | Major pairs (SOL/USDC) | 0.5% |
+    | Volatile tokens | 1-3% |
+
+    See [Understanding Slippage](/trade/slippage) for more details.
+  </Step>
+
+  <Step title="Execute the swap">
+    Click **Trade** (or **Swap**) and approve the transaction in your wallet.
+
+    The UI will show progress and confirm when complete.
+  </Step>
+</Steps>
+
+---
+
+## After Your Swap
+
+<AccordionGroup>
+  <Accordion title="Where are my tokens?">
+    Swapped tokens appear in your wallet immediately after the transaction confirms. Check your wallet's token list—you may need to add the token if it's new to your wallet.
+  </Accordion>
+
+  <Accordion title="Why did I receive less than quoted?">
+    The final amount can differ slightly due to:
+    - **Slippage** — Price moved between quote and execution
+    - **Price impact** — Your trade size affected the price
+
+    You'll never receive less than the "Minimum received" shown.
+  </Accordion>
+
+  <Accordion title="My transaction failed—what now?">
+    Common causes and fixes:
+    - **Slippage too low** — Increase slippage tolerance
+    - **Insufficient SOL** — Add more SOL for fees
+    - **Price moved** — Try again with updated quote
+
+    See [FAQs](/support/faqs) for more troubleshooting.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Tips for Better Trades
+
+<CardGroup cols={2}>
+  <Card title="Check Price Impact" icon="chart-line">
+    High price impact means you're moving the market. Consider splitting large trades or using a pool with more liquidity.
+  </Card>
+  <Card title="Verify Token Addresses" icon="shield-check">
+    Always verify token mint addresses, especially for new or unfamiliar tokens. Scam tokens often mimic popular names.
+  </Card>
+  <Card title="Start Small" icon="flask">
+    Testing with a small amount first is always a good practice, especially with new tokens or large trades.
+  </Card>
+  <Card title="Compare Quotes" icon="scale-balanced">
+    Use Orca's built-in comparison to ensure you're getting the best deal between Orca and Jupiter.
+  </Card>
+</CardGroup>
+
+<Warning>
+**Always verify your transaction details in your wallet before approving.** Check the tokens, amounts, and destination address carefully.
+</Warning>
+
+---
+
+## Get SOL for Fees
+
+If you need SOL for transaction fees:
+
+1. **From a centralized exchange** — Buy SOL and withdraw to your wallet address
+2. **Through a fiat on-ramp** — Some wallets have built-in purchase options
+3. **Bridge from another chain** — Use a bridge if you have assets elsewhere
+
+<Note>
+When withdrawing from an exchange, ensure you select the **Solana (SPL)** network. Test with a small amount first.
+</Note>
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Understanding Slippage" icon="sliders" href="/trade/slippage">
+    Learn how slippage works and how to protect your trades
+  </Card>
+  <Card title="Range Orders" icon="crosshairs" href="/trade/range-orders">
+    Set limit-order-style trades that earn fees while waiting
+  </Card>
+  <Card title="Provide Liquidity" icon="droplet" href="/liquidity/getting-started/beginner-guide">
+    Earn trading fees by providing liquidity
+  </Card>
+  <Card title="FAQs" icon="circle-question" href="/support/faqs">
+    Common questions and troubleshooting
+  </Card>
+</CardGroup>

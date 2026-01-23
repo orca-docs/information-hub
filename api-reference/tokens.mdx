@@ -1,0 +1,252 @@
+---
+title: "Tokens"
+description: "Search and retrieve token metadata, pricing, and volume information."
+icon: "coins"
+---
+
+# Token Endpoints
+
+Endpoints for querying token information, metadata, and pricing.
+
+---
+
+## List Tokens
+
+<ParamField path="GET" method="/tokens">
+  Retrieve a paginated list of tokens with optional sorting.
+</ParamField>
+
+### Query Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `next` | string | Pagination cursor for next page |
+| `previous` | string | Pagination cursor for previous page |
+| `size` | integer | Results per page (max 3000) |
+| `sort_by` | string | Sort field: `address`, `mint_id`, `volume_24h` |
+| `sort_direction` | string | `asc` or `desc` |
+| `tokens` | string | Comma-separated token addresses to filter |
+
+### Example Request
+
+<CodeGroup>
+
+```bash cURL
+curl "https://api.orca.so/v2/solana/tokens?size=50&sort_by=volume_24h&sort_direction=desc"
+```
+
+```typescript TypeScript
+const params = new URLSearchParams({
+  size: "50",
+  sort_by: "volume_24h",
+  sort_direction: "desc"
+});
+
+const response = await fetch(`https://api.orca.so/v2/solana/tokens?${params}`);
+const { data, meta } = await response.json();
+```
+
+```python Python
+import requests
+
+response = requests.get(
+    "https://api.orca.so/v2/solana/tokens",
+    params={
+        "size": 50,
+        "sort_by": "volume_24h",
+        "sort_direction": "desc"
+    }
+)
+tokens = response.json()["data"]
+```
+
+</CodeGroup>
+
+### Example Response
+
+```json
+{
+  "data": [
+    {
+      "address": "So11111111111111111111111111111111111111112",
+      "symbol": "SOL",
+      "name": "Wrapped SOL",
+      "decimals": 9,
+      "imageUrl": "https://raw.githubusercontent.com/...",
+      "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+      "tags": ""
+    },
+    {
+      "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "symbol": "USDC",
+      "name": "USD Coin",
+      "decimals": 6,
+      "imageUrl": "https://raw.githubusercontent.com/...",
+      "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+      "tags": ""
+    }
+  ],
+  "meta": {
+    "next": "eyJsYXN0X2lkIjo...",
+    "previous": null
+  }
+}
+```
+
+---
+
+## Search Tokens
+
+<ParamField path="GET" method="/tokens/search">
+  Search for tokens by name, symbol, or address. Supports partial, case-insensitive matching.
+</ParamField>
+
+### Query Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `q` | string | **Required.** Search query (name, symbol, or address) |
+
+### Example Request
+
+<CodeGroup>
+
+```bash cURL
+curl "https://api.orca.so/v2/solana/tokens/search?q=USDC"
+```
+
+```typescript TypeScript
+const response = await fetch(
+  "https://api.orca.so/v2/solana/tokens/search?q=USDC"
+);
+const { data } = await response.json();
+```
+
+```python Python
+import requests
+
+response = requests.get(
+    "https://api.orca.so/v2/solana/tokens/search",
+    params={"q": "USDC"}
+)
+tokens = response.json()["data"]
+```
+
+</CodeGroup>
+
+### Example Response
+
+```json
+{
+  "data": [
+    {
+      "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "symbol": "USDC",
+      "name": "USD Coin",
+      "decimals": 6,
+      "imageUrl": "https://raw.githubusercontent.com/...",
+      "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+      "tags": ""
+    }
+  ],
+  "meta": {
+    "next": null,
+    "previous": null
+  }
+}
+```
+
+---
+
+## Get Token by Address
+
+<ParamField path="GET" method="/tokens/{mint_address}">
+  Retrieve detailed information for a specific token by its mint address.
+</ParamField>
+
+### Path Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `mint_address` | string | **Required.** The token's mint address |
+
+### Example Request
+
+<CodeGroup>
+
+```bash cURL
+curl "https://api.orca.so/v2/solana/tokens/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+```
+
+```typescript TypeScript
+const mintAddress = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v";
+const response = await fetch(
+  `https://api.orca.so/v2/solana/tokens/${mintAddress}`
+);
+const { data } = await response.json();
+
+console.log(`Token: ${data.symbol} (${data.name})`);
+console.log(`Decimals: ${data.decimals}`);
+```
+
+```python Python
+import requests
+
+mint_address = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+response = requests.get(f"https://api.orca.so/v2/solana/tokens/{mint_address}")
+token = response.json()["data"]
+
+print(f"Token: {token['symbol']} ({token['name']})")
+print(f"Decimals: {token['decimals']}")
+```
+
+</CodeGroup>
+
+### Example Response
+
+```json
+{
+  "data": {
+    "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+    "symbol": "USDC",
+    "name": "USD Coin",
+    "decimals": 6,
+    "imageUrl": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v/logo.png",
+    "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+    "tags": ""
+  },
+  "meta": {
+    "next": null,
+    "previous": null
+  }
+}
+```
+
+### Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `address` | string | Token mint address |
+| `symbol` | string \| null | Token symbol (e.g., "SOL", "USDC") |
+| `name` | string \| null | Full token name |
+| `decimals` | integer | Number of decimal places |
+| `imageUrl` | string \| null | URL to token logo image |
+| `programId` | string | SPL Token program ID |
+| `tags` | string | Comma-separated extension tags |
+
+<Note>
+Some tokens may have `null` values for `symbol`, `name`, or `imageUrl` if metadata is not available.
+</Note>
+
+---
+
+## Common Token Addresses
+
+Here are some commonly used token addresses on Solana:
+
+| Token | Address |
+|-------|---------|
+| SOL (Wrapped) | `So11111111111111111111111111111111111111112` |
+| USDC | `EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v` |
+| USDT | `Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB` |
+| ORCA | `orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE` |

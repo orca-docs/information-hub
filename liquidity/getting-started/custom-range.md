@@ -1,102 +1,192 @@
 ---
-title: How to create a Custom-Range Position on Solana
-description: Create concentrated liquidity positions with custom price ranges.
-icon: droplet
-sidebarTitle: How to create a Custom-Range Position...
+title: How to Create a Custom-Range Position
+description: Create concentrated liquidity positions with custom price ranges for higher yields.
+icon: crosshairs
 ---
 
-While providing liquidity to a concentrated liquidity pool offers multiple benefits, it is an advanced feature best suited for experienced liquidity providers. A custom range position allows LPs to focus their liquidity within specific price ranges, thereby increasing capital efficiency and potential yields.
+Custom-range positions let you **concentrate liquidity** within specific price ranges. This increases capital efficiency and potential yields—but requires more active management.
 
-However, managing a custom-range position requires more active oversight and carries a higher risk of divergence loss, which occurs when the value of the assets diverges from each other within the liquidity pool.
+<Warning>
+Custom-range positions are an **advanced feature**. They require understanding of impermanent loss and active position management. Read [Impermanent Loss](/liquidity/concepts/impermanent-loss) before proceeding.
+</Warning>
 
-This added complexity makes it crucial for LPs to thoroughly understand the risks and actively manage their positions to optimize outcomes.
-
-You can click on any image in this guide to view it in fullscreen.
-
-#### Navigate to the [Pools](https://www.orca.so/pools) page
-
-Always check the URL carefully in your browser or wallet before connecting.
-
-#### Connect your wallet
-
-Make sure both the UI and your wallet are set to the Solana network.
-
-#### Find your pool
-
-Find the pool you wish to add liquidity to, you can either locate it in the pool list or use the search field.
-**TIP:** You can search using the token name, ticker, or token mint address, but make sure to check carefully that you have selected the right token.
-
-
-#### Open Liquidity Terminal
-
-Once you have found your pool, Click on it and the pool's *Liquidity Terminal* will open.
-
-
-#### Ensure `Custom` range is selected in the *Create Position* sidebar.
-
-![](/images/image_157.jpg)
-
-#### Adjust your range
-
-Once `Custom` is selected, you can set your desired range using any of the following methods:
-
-* By dragging the sliders in the *Create Position* sidebar.
-* By dragging the range boundaries on the price chart.
-* By selecting a preset ±% range.
-* By free-typing a ±% range.
-* By free-typing the prices in the lower and upper fields.
-* By using the + and - buttons in the lower and upper fields.
-
-![](/images/image_158.jpg)
-
-#### Enter deposit amounts
-
-Enter the amount you wish to deposit in one of the highlighted fields (you may need to scroll down). The other values will automatically adjust to match the required deposit ratio for your chosen range.
-Alternatively, you can click `Max` in the corresponding deposit field to deposit the maximum quantity of tokens.
-
-![](/images/image_159.jpg)
-
-If you want to use *Autoswap*, which matches the position's deposit ratio by trading one token for the other within pair, please:
-→ See the Autoswap guide for more details.
-
-#### (Optional) Adjust your liquidity slippage
-
-If required you can adjust your liquidity slippage by clicking on the `Liq. slippage` button.
-→ See [**Understanding Slippage**](/trade/slippage) for more details.
-
-#### Complete your deposit
-
-Once you are satisfied with your deposit values, click `Deposit`.
-
-![](/images/image_160.jpg)
-
-#### Review your transaction
-
-Review the details in your wallet—including any network fees—and approve the transaction.
-
-**REVIEW CAREFULLY.** It is critical that you check your range and ensure the current price of the pool matches your intentions. Depositing liquidity at a price not consistent with wider market values may result in irreversible loss.
-
-#### Deposit Complete! 🎉
-You can click on `View Details` to view the deposit transaction on Solscan. Your wallet will now contain a *pool position NFT*. In your wallet, it will be displayed as a simple image with the warning "**DO NOT BURN**"
-
-
-**DO NOT** sell or burn this NFT. You can send it to another wallet to transfer your position, but (whale forbid) please **DO NOT** burn or sell it, or you'll lose your liquidity!
-Orca **CANNOT** help you recover any funds lost as a result of burning a pool position NFT.
-
-#### Next Steps
-
-You're now providing custom-range liquidity on Orca! Check your position anytime on the [Portfolio page](https://www.orca.so/portfolio) and see our [Managing Your Portfolio](/liquidity/manage/portfolio) guide for help with managing your new position.
+<CardGroup cols={2}>
+  <Card title="Pros" icon="circle-check">
+    - Higher capital efficiency
+    - Greater fee earnings potential
+    - More control over your position
+  </Card>
+  <Card title="Cons" icon="circle-xmark">
+    - Can go out of range (stop earning)
+    - Higher impermanent loss risk
+    - Requires active monitoring
+  </Card>
+</CardGroup>
 
 ---
 
-### We'd Love to Hear from You!
+## How to Create a Custom-Range Position
 
-**Need support or want to share feedback?**
+<Steps>
+  <Step title="Navigate to the Pools page">
+    Go to [orca.so/pools](https://www.orca.so/pools)
 
-* Open a support ticket directly from the Orca UI by clicking `Support`
-* Reach out via [Discord](https://discord.gg/deRXbXWXk8) or Telegram
+    <Warning>
+    Always verify the URL in your browser before connecting your wallet.
+    </Warning>
+  </Step>
 
-**Have suggestions, requests or feedback?**
+  <Step title="Connect your wallet">
+    Click **Connect Wallet** and ensure both the UI and your wallet are set to the Solana network.
+  </Step>
 
-* Share them by clicking `Feedback` in the Orca UI
-* Use the [`#✍│feedback`](https://discord.gg/TdRtv4GCKF) channel on Discord
+  <Step title="Find your pool">
+    Locate your pool using the list or search by token name, ticker, or mint address.
+
+    <Tip>
+    Verify you've selected the correct token by checking the mint address.
+    </Tip>
+  </Step>
+
+  <Step title="Open the Liquidity Terminal">
+    Click on your chosen pool to open the Liquidity Terminal.
+  </Step>
+
+  <Step title="Select Custom range">
+    In the Create Position sidebar, select **Custom**.
+
+    <Frame caption="Select Custom to set your own price range">
+      <img src="/images/image_157.jpg" alt="Custom range selection" />
+    </Frame>
+  </Step>
+
+  <Step title="Set your price range">
+    Define your range using any of these methods:
+    - **Drag the sliders** in the sidebar
+    - **Drag range boundaries** on the price chart
+    - **Select a preset** (±5%, ±10%, etc.)
+    - **Type a custom percentage** range
+    - **Enter specific prices** in the lower/upper fields
+    - **Use +/- buttons** for fine adjustments
+
+    <Frame caption="Multiple ways to set your custom range">
+      <img src="/images/image_158.jpg" alt="Range adjustment options" />
+    </Frame>
+
+    <Tip>
+    **Narrower ranges** = higher capital efficiency but more likely to go out of range.
+    **Wider ranges** = lower efficiency but more stable earnings.
+    </Tip>
+  </Step>
+
+  <Step title="Enter deposit amounts">
+    Enter your deposit amount in one of the token fields.
+
+    <Frame caption="Enter your deposit amount">
+      <img src="/images/image_159.jpg" alt="Deposit amount entry" />
+    </Frame>
+
+    The other value auto-adjusts based on your chosen range and current price.
+
+    <Note>
+    If current price is outside your range, you'll only deposit one token (single-sided position).
+    </Note>
+
+    Options:
+    - Type a specific amount
+    - Click **Max** to use your full balance
+    - Use **Autoswap** to balance your tokens
+  </Step>
+
+  <Step title="(Optional) Adjust liquidity slippage">
+    Click **Liq. slippage** to adjust tolerance if needed.
+
+    See [Understanding Slippage](/trade/slippage) for details.
+  </Step>
+
+  <Step title="Complete your deposit">
+    Review and click **Deposit**.
+
+    <Frame caption="Click Deposit to create your position">
+      <img src="/images/image_160.jpg" alt="Deposit confirmation" />
+    </Frame>
+  </Step>
+
+  <Step title="Approve the transaction">
+    Review the details in your wallet and approve.
+
+    <Warning>
+    **Review carefully.** Verify your range and ensure the pool price matches wider market values. Incorrect settings may result in loss.
+    </Warning>
+  </Step>
+</Steps>
+
+---
+
+## After Creating Your Position
+
+<Info>
+Your wallet now contains a **position NFT** representing your liquidity. It displays "**DO NOT BURN**".
+</Info>
+
+<Warning>
+**Protect your position NFT:**
+- **DO NOT** sell or burn this NFT—you'll lose your liquidity
+- Orca **cannot** recover funds lost from burning position NFTs
+</Warning>
+
+---
+
+## Managing Your Custom-Range Position
+
+Custom-range positions require monitoring:
+
+<AccordionGroup>
+  <Accordion title="Monitor in-range status">
+    Your position only earns fees when the current price is **within your range**. Check your [Portfolio](https://www.orca.so/portfolio) regularly or set up [alerts](/liquidity/manage/alerts).
+  </Accordion>
+
+  <Accordion title="What to do when out of range">
+    If price moves outside your range:
+    - **Wait** for price to return (if you expect it to)
+    - **Close and reopen** with a new range around current price
+    - **Accept it** if using as a [range order](/trade/range-orders)
+  </Accordion>
+
+  <Accordion title="Rebalancing strategies">
+    Some LPs regularly close and reopen positions to stay centered on current price. This can maximize fee earnings but incurs transaction costs.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Choosing Your Range
+
+| Strategy | Range Width | Best For |
+|----------|-------------|----------|
+| **Tight** (±1-5%) | Very narrow | Stablecoin pairs, short-term trades |
+| **Medium** (±10-25%) | Moderate | Active LPs, volatile pairs |
+| **Wide** (±50%+) | Broad | Less monitoring, longer holds |
+
+<Tip>
+Use the [Position Simulator](/liquidity/advanced/simulator) to visualize how different ranges might perform.
+</Tip>
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Manage Portfolio" icon="chart-pie" href="/liquidity/manage/portfolio">
+    Monitor and manage your positions
+  </Card>
+  <Card title="Position Simulator" icon="chart-line" href="/liquidity/advanced/simulator">
+    Visualize potential performance
+  </Card>
+  <Card title="Position Alerts" icon="bell" href="/liquidity/manage/alerts">
+    Get notified when out of range
+  </Card>
+  <Card title="LP Strategies" icon="lightbulb" href="/liquidity/advanced/strategies">
+    Learn advanced LP techniques
+  </Card>
+</CardGroup>

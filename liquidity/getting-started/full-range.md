@@ -1,93 +1,139 @@
 ---
-title: How to Create a Full-Range Position on Solana
-description: Create your first full-range liquidity position.
-icon: droplet
-sidebarTitle: How to Create a Full-Range Position o...
+title: How to Create a Full-Range Position
+description: Create your first full-range liquidity position on Orca.
+icon: arrows-left-right
 ---
 
-### Creating a Full-Range Position
+A full-range position spreads your liquidity across **all possible prices** (0 to infinity). This is the simplest way to provide liquidity on Orca.
 
-The simplest way to provide liquidity on Orca is to create a full-range position. A full-range position is one that spreads your liquidity across the entire price range, from 0 to infinity (∞). This type of position closely approximates liquidity deposited in a traditional CPMM. It sacrifices capital efficiency and the potential for enhanced yields, but gains ease of management and reduced exposure to divergence loss.
+<CardGroup cols={2}>
+  <Card title="Pros" icon="circle-check">
+    - Simple to create and manage
+    - Always earning fees (never out of range)
+    - Lower impermanent loss risk
+  </Card>
+  <Card title="Cons" icon="circle-xmark">
+    - Less capital efficient
+    - Lower potential yields
+    - Similar to traditional AMM
+  </Card>
+</CardGroup>
 
-You can click on any image in this guide to view it in fullscreen.
-
-#### Navigate to the [Pools](https://www.orca.so/pools) page
-
-Always check the URL carefully in your browser or wallet before connecting.
-
-#### Connect your Wallet
-
-Make sure both the UI and your wallet are set to the Solana network.
-
-#### Find your pool
-
-Find the pool you wish to add liquidity to, you can either locate it in the pool list or use the search field.
-**TIP:** You can search using the token name, ticker, or token mint address, but make sure to check carefully that you have selected the right token.
-
-![](/images/image_64.jpg)
-
-#### Open Liquidity Terminal
-
-Once you have found your pool, Click on it and the pool's *Liquidity Terminal* will open.
-
-![](/images/image_65.jpg)
-
-#### Ensure `Full` is selected in the *Create Position* sidebar
-
-![](/images/image_66.jpg)
-
-#### Enter deposit amounts
-
-Enter the amount to deposit in one of the highlighted fields.
-
-The other values will automatically adjust to match the deposit ratio for a full-range position.
-
-Alternatively, you can click `Max` in the corresponding deposit field to deposit the maximum quantity of tokens.
-
-If you want to use *Autoswap*, which matches the position's deposit ratio by trading one token for the other within the pair, please:
-→ See the Autoswap guide for more details.
-
-![](/images/image_67.jpg)
-
-#### (Optional) Adjust your liquidity slippage
-
-If required you can adjust your liquidity slippage by clicking on the `Liq. slippage` button.
-→ See [**Understanding Slippage**](/trade/slippage) for more details.
-
-#### Complete your deposit
-
-Once you are satisfied with your deposit values, click `Deposit`.
-
-![](/images/image_68.jpg)
-
-#### Review your transaction
-
-Review the details in your wallet—including any network fees—and approve the transaction.
-
-**REVIEW CAREFULLY.** It is critical that you check your range and ensure the current price of the pool matches your intentions. Depositing liquidity at a price not consistent with wider market values may result in irreversible loss.
-
-#### Deposit Complete!🎉
-
-You can click on `View Details` to view the deposit transaction on Solscan. Your wallet will now contain a *pool position NFT*. In your wallet, it will be displayed as a simple image with the warning "**DO NOT BURN**".
-
-**DO NOT** sell or burn this NFT. You can send it to another wallet to transfer your position, but (whale forbid) please **DO NOT** burn or sell it, or you'll lose your liquidity!
-
-Orca **CANNOT** help you recover any funds lost as a result of burning a pool position NFT.
-
-#### Next Steps
-
-You're now providing full-range liquidity on Orca! Check your position anytime on the [Portfolio page](https://www.orca.so/portfolio) and see our [Managing Your Portfolio](/liquidity/manage/portfolio) guide for help with managing your new position.
+<Tip>
+Full-range positions are ideal for **beginners** or those who prefer a hands-off approach. For higher yields with more active management, consider [custom-range positions](/liquidity/getting-started/custom-range).
+</Tip>
 
 ---
 
-### We'd Love to Hear from You!
+## How to Create a Full-Range Position
 
-**Need support or want to share feedback?**
+<Steps>
+  <Step title="Navigate to the Pools page">
+    Go to [orca.so/pools](https://www.orca.so/pools)
 
-* Open a support ticket directly from the Orca UI by clicking `Support`
-* Reach out via [Discord](https://discord.gg/deRXbXWXk8) or Telegram
+    <Warning>
+    Always verify the URL in your browser before connecting your wallet.
+    </Warning>
+  </Step>
 
-**Have suggestions, requests or feedback?**
+  <Step title="Connect your wallet">
+    Click **Connect Wallet** and ensure both the UI and your wallet are set to the Solana network.
+  </Step>
 
-* Share them by clicking `Feedback` in the Orca UI
-* Use the [`#✍│feedback`](https://discord.gg/TdRtv4GCKF) channel on Discord
+  <Step title="Find your pool">
+    Locate the pool you want to add liquidity to:
+    - Browse the pool list, or
+    - Use the search field to find by token name, ticker, or mint address
+
+    <Frame caption="Search for pools by token name, ticker, or address">
+      <img src="/images/image_64.jpg" alt="Pool search interface" />
+    </Frame>
+
+    <Tip>
+    Verify you've selected the correct token—check the mint address if unsure.
+    </Tip>
+  </Step>
+
+  <Step title="Open the Liquidity Terminal">
+    Click on your chosen pool to open the Liquidity Terminal.
+
+    <Frame caption="The Liquidity Terminal shows pool details and position creation">
+      <img src="/images/image_65.jpg" alt="Liquidity Terminal" />
+    </Frame>
+  </Step>
+
+  <Step title="Select Full range">
+    In the Create Position sidebar, ensure **Full** is selected.
+
+    <Frame caption="Select Full for a full-range position">
+      <img src="/images/image_66.jpg" alt="Full range selection" />
+    </Frame>
+  </Step>
+
+  <Step title="Enter deposit amounts">
+    Enter the amount to deposit in one of the token fields. The other value auto-adjusts to match the required ratio.
+
+    <Frame caption="Enter your deposit amount">
+      <img src="/images/image_67.jpg" alt="Deposit amount entry" />
+    </Frame>
+
+    Options:
+    - Type a specific amount
+    - Click **Max** to deposit your full wallet balance
+    - Use **Autoswap** to automatically balance your token ratio
+
+    See [Understanding Slippage](/trade/slippage) if you need to adjust slippage settings.
+  </Step>
+
+  <Step title="Complete your deposit">
+    Review your deposit and click **Deposit**.
+
+    <Frame caption="Click Deposit to create your position">
+      <img src="/images/image_68.jpg" alt="Deposit button" />
+    </Frame>
+  </Step>
+
+  <Step title="Approve the transaction">
+    Review the details in your wallet—including network fees—and approve.
+
+    <Warning>
+    **Review carefully.** Verify the pool price matches wider market values. Depositing at an incorrect price may result in immediate loss.
+    </Warning>
+  </Step>
+</Steps>
+
+---
+
+## After Creating Your Position
+
+<Info>
+Your wallet now contains a **position NFT** representing your liquidity. It displays "**DO NOT BURN**".
+</Info>
+
+<Warning>
+**Protect your position NFT:**
+- **DO NOT** sell or burn this NFT—you'll lose your liquidity
+- You can transfer it to move your position to another wallet
+- Orca **cannot** recover funds lost from burning position NFTs
+</Warning>
+
+Click **View Details** to see your transaction on Solscan.
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Manage Your Portfolio" icon="chart-pie" href="/liquidity/manage/portfolio">
+    View and manage your positions
+  </Card>
+  <Card title="Harvest Yield" icon="seedling" href="/liquidity/manage/harvest">
+    Collect your earned fees
+  </Card>
+  <Card title="Custom-Range Position" icon="crosshairs" href="/liquidity/getting-started/custom-range">
+    Try concentrated liquidity for higher yields
+  </Card>
+  <Card title="Position Alerts" icon="bell" href="/liquidity/manage/alerts">
+    Get notified about your positions
+  </Card>
+</CardGroup>

@@ -63,19 +63,6 @@
               "get-started/overview",
               "get-started/wallets"
             ]
-          },
-          {
-            "group": "Eclipse Network",
-            "pages": [
-              "get-started/eclipse/eclipse-introduction",
-              "get-started/eclipse/eclipse-overview",
-              "get-started/eclipse/eclipse-getting-started",
-              "get-started/eclipse/eclipse-connecting",
-              "get-started/eclipse/eclipse-bridging-solana",
-              "get-started/eclipse/eclipse-bridging-eth",
-              "get-started/eclipse/eclipse-getting-eth-for-gas",
-              "get-started/eclipse/eclipse-faq"
-            ]
           }
         ],
         "global": {
@@ -145,22 +132,6 @@
             "pages": [
               "liquidity/terminal/overview"
             ]
-          },
-          {
-            "group": "Eclipse Network",
-            "pages": [
-              "liquidity/eclipse/eclipse-overview",
-              "liquidity/eclipse/eclipse-beginner-guide",
-              "liquidity/eclipse/eclipse-full-range-position",
-              "liquidity/eclipse/eclipse-custom-range-position",
-              "liquidity/eclipse/eclipse-adding-liquidity",
-              "liquidity/eclipse/eclipse-withdrawing-liquidity",
-              "liquidity/eclipse/eclipse-harvesting-yield",
-              "liquidity/eclipse/eclipse-closing-position",
-              "liquidity/eclipse/eclipse-managing-portfolio",
-              "liquidity/eclipse/eclipse-portfolio-sidebar",
-              "liquidity/eclipse/eclipse-advanced-guide"
-            ]
           }
         ],
         "global": {
@@ -188,14 +159,6 @@
               "trade/how-to-swap",
               "trade/slippage",
               "trade/range-orders"
-            ]
-          },
-          {
-            "group": "Eclipse Network",
-            "pages": [
-              "trade/eclipse/eclipse-overview",
-              "trade/eclipse/eclipse-how-to-swap",
-              "trade/eclipse/eclipse-range-orders"
             ]
           }
         ],
@@ -244,18 +207,6 @@
               "create/listings/token-list",
               "create/listings/coingecko",
               "create/listings/jupiter"
-            ]
-          },
-          {
-            "group": "Eclipse Network",
-            "pages": [
-              "create/eclipse/eclipse-overview",
-              "create/eclipse/eclipse-splash-pools",
-              "create/eclipse/eclipse-clmm-pools",
-              "create/eclipse/eclipse-token-creation-tool",
-              "create/eclipse/eclipse-adding-rewards",
-              "create/eclipse/eclipse-orca-token-list",
-              "create/eclipse/eclipse-coingecko-listing"
             ]
           }
         ],
@@ -324,12 +275,6 @@
             ]
           },
           {
-            "group": "API",
-            "pages": [
-              "developers/api/overview"
-            ]
-          },
-          {
             "group": "Examples",
             "pages": [
               "developers/examples/cpi",
@@ -373,9 +318,44 @@
               "icon": "github"
             },
             {
-              "anchor": "API Docs",
-              "href": "https://api.orca.so/docs",
-              "icon": "code"
+              "anchor": "Support",
+              "href": "https://discord.gg/orca-so",
+              "icon": "discord"
+            }
+          ]
+        }
+      },
+      {
+        "tab": "API Reference",
+        "icon": "code",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "api-reference/overview"
+            ]
+          },
+          {
+            "group": "Endpoints",
+            "pages": [
+              "api-reference/whirlpools",
+              "api-reference/protocol",
+              "api-reference/tokens"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "api-reference/schemas"
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "GitHub",
+              "href": "https://github.com/orca-so/whirlpools",
+              "icon": "github"
             },
             {
               "anchor": "Support",

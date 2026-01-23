@@ -1,0 +1,329 @@
+---
+title: "Whirlpools"
+description: "Query Whirlpool liquidity pools, search by token, and retrieve pool details."
+icon: "water"
+---
+
+# Whirlpool Endpoints
+
+Endpoints for querying Orca's concentrated liquidity pools (Whirlpools).
+
+---
+
+## List Pools
+
+<ParamField path="GET" method="/pools">
+  Retrieve a paginated list of Whirlpools with optional filtering and sorting.
+</ParamField>
+
+### Query Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `sortBy` | string | Sort field. Options: `volume`, `tvl`, `fees`, `rewards`, `yieldovertvl`, `lockedliquiditypercent` (append time period, e.g., `volume24h`) |
+| `sortDirection` | string | `asc` or `desc` |
+| `next` | string | Pagination cursor for next page |
+| `previous` | string | Pagination cursor for previous page |
+| `size` | integer | Results per page |
+| `hasRewards` | boolean | Filter pools with active rewards |
+| `hasWarning` | boolean | Filter pools with warnings |
+| `hasAdaptiveFee` | boolean | Filter pools with adaptive fees enabled |
+| `isWavebreak` | boolean | Filter Wavebreak pools |
+| `minTvl` | number | Minimum TVL in USDC |
+| `minVolume` | number | Minimum volume in USDC |
+| `minLockedLiquidityPercent` | number | Minimum locked liquidity percentage |
+| `token` | string | Filter by token address (pools containing this token) |
+| `tokensBothOf` | string | Comma-separated token addresses (pools must contain both) |
+| `addresses` | string | Comma-separated pool addresses |
+| `stats` | string | Comma-separated time periods for stats (e.g., `24h,7d`) |
+| `includeBlocked` | boolean | Include blocked pools |
+
+### Example Request
+
+<CodeGroup>
+
+```bash cURL
+curl "https://api.orca.so/v2/solana/pools?minTvl=100000&sortBy=tvl&sortDirection=desc&size=10&stats=24h,7d"
+```
+
+```typescript TypeScript
+const params = new URLSearchParams({
+  minTvl: "100000",
+  sortBy: "tvl",
+  sortDirection: "desc",
+  size: "10",
+  stats: "24h,7d"
+});
+
+const response = await fetch(`https://api.orca.so/v2/solana/pools?${params}`);
+const { data, meta } = await response.json();
+```
+
+```python Python
+import requests
+
+response = requests.get(
+    "https://api.orca.so/v2/solana/pools",
+    params={
+        "minTvl": 100000,
+        "sortBy": "tvl",
+        "sortDirection": "desc",
+        "size": 10,
+        "stats": "24h,7d"
+    }
+)
+pools = response.json()["data"]
+```
+
+</CodeGroup>
+
+### Example Response
+
+```json
+{
+  "data": [
+    {
+      "address": "7qbRF6YsyGuLUVs6Y1q64bdVrfe4ZcUUz1JRdoVNUJnm",
+      "whirlpoolsConfig": "2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ",
+      "tickSpacing": 64,
+      "feeRate": 2000,
+      "protocolFeeRate": 300,
+      "liquidity": "12345678901234567890",
+      "sqrtPrice": "1234567890123456789",
+      "tickCurrentIndex": 1234,
+      "tokenMintA": "So11111111111111111111111111111111111111112",
+      "tokenMintB": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "price": "142.50",
+      "tvlUsdc": "5000000.00",
+      "tokenBalanceA": "35000.123456789",
+      "tokenBalanceB": "5000000.00",
+      "poolType": "whirlpool",
+      "adaptiveFeeEnabled": true,
+      "hasWarning": false,
+      "tokenA": {
+        "address": "So11111111111111111111111111111111111111112",
+        "symbol": "SOL",
+        "name": "Wrapped SOL",
+        "decimals": 9,
+        "imageUrl": "https://..."
+      },
+      "tokenB": {
+        "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "symbol": "USDC",
+        "name": "USD Coin",
+        "decimals": 6,
+        "imageUrl": "https://..."
+      },
+      "stats": {
+        "24h": {
+          "volume": "1250000.00",
+          "fees": "2500.00",
+          "rewards": "500.00",
+          "yieldOverTvl": "0.0006"
+        },
+        "7d": {
+          "volume": "8750000.00",
+          "fees": "17500.00",
+          "rewards": "3500.00",
+          "yieldOverTvl": "0.0042"
+        }
+      },
+      "rewards": [],
+      "lockedLiquidityPercent": []
+    }
+  ],
+  "meta": {
+    "next": "eyJsYXN0X2lkIjo...",
+    "previous": null
+  }
+}
+```
+
+---
+
+## Search Pools
+
+<ParamField path="GET" method="/pools/search">
+  Search for pools by token symbol or address. Supports partial, case-insensitive matching.
+</ParamField>
+
+### Query Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `q` | string | **Required.** Search query (token symbol or address) |
+| `next` | string | Pagination cursor |
+| `size` | integer | Results per page |
+| `sortBy` | string | Sort field |
+| `sortDirection` | string | `asc` or `desc` |
+| `minTvl` | number | Minimum TVL in USDC |
+| `minVolume` | number | Minimum volume in USDC |
+| `stats` | string | Time periods for stats |
+| `userTokens` | string | Comma-separated user token addresses |
+| `hasRewards` | boolean | Filter pools with rewards |
+| `verifiedOnly` | boolean | Only return verified pools |
+| `hasLockedLiquidity` | boolean | Filter pools with locked liquidity |
+
+### Example Request
+
+<CodeGroup>
+
+```bash cURL
+curl "https://api.orca.so/v2/solana/pools/search?q=SOL-USDC&minTvl=50000"
+```
+
+```typescript TypeScript
+const response = await fetch(
+  "https://api.orca.so/v2/solana/pools/search?q=SOL-USDC&minTvl=50000"
+);
+const { data } = await response.json();
+```
+
+```python Python
+import requests
+
+response = requests.get(
+    "https://api.orca.so/v2/solana/pools/search",
+    params={"q": "SOL-USDC", "minTvl": 50000}
+)
+pools = response.json()["data"]
+```
+
+</CodeGroup>
+
+---
+
+## Get Pool by Address
+
+<ParamField path="GET" method="/pools/{address}">
+  Retrieve detailed information for a specific Whirlpool by its address.
+</ParamField>
+
+### Path Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `address` | string | **Required.** The Whirlpool account address |
+
+### Example Request
+
+<CodeGroup>
+
+```bash cURL
+curl "https://api.orca.so/v2/solana/pools/7qbRF6YsyGuLUVs6Y1q64bdVrfe4ZcUUz1JRdoVNUJnm"
+```
+
+```typescript TypeScript
+const poolAddress = "7qbRF6YsyGuLUVs6Y1q64bdVrfe4ZcUUz1JRdoVNUJnm";
+const response = await fetch(
+  `https://api.orca.so/v2/solana/pools/${poolAddress}`
+);
+const { data } = await response.json();
+```
+
+```python Python
+import requests
+
+pool_address = "7qbRF6YsyGuLUVs6Y1q64bdVrfe4ZcUUz1JRdoVNUJnm"
+response = requests.get(f"https://api.orca.so/v2/solana/pools/{pool_address}")
+pool = response.json()["data"]
+```
+
+</CodeGroup>
+
+### Example Response
+
+```json
+{
+  "data": {
+    "address": "7qbRF6YsyGuLUVs6Y1q64bdVrfe4ZcUUz1JRdoVNUJnm",
+    "whirlpoolsConfig": "2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ",
+    "tickSpacing": 64,
+    "feeRate": 2000,
+    "protocolFeeRate": 300,
+    "liquidity": "12345678901234567890",
+    "sqrtPrice": "1234567890123456789",
+    "tickCurrentIndex": 1234,
+    "tokenMintA": "So11111111111111111111111111111111111111112",
+    "tokenMintB": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+    "tokenVaultA": "...",
+    "tokenVaultB": "...",
+    "feeGrowthGlobalA": "...",
+    "feeGrowthGlobalB": "...",
+    "protocolFeeOwedA": "0",
+    "protocolFeeOwedB": "0",
+    "price": "142.50",
+    "tvlUsdc": "5000000.00",
+    "tokenBalanceA": "35000.123456789",
+    "tokenBalanceB": "5000000.00",
+    "poolType": "whirlpool",
+    "adaptiveFeeEnabled": true,
+    "adaptiveFee": {
+      "currentRate": 2000,
+      "maxRate": 10000,
+      "constants": { ... },
+      "variables": { ... }
+    },
+    "feeTierIndex": 2,
+    "hasWarning": false,
+    "tokenA": { ... },
+    "tokenB": { ... },
+    "stats": { ... },
+    "rewards": [],
+    "lockedLiquidityPercent": [],
+    "updatedAt": "2024-01-15T12:30:00Z",
+    "updatedSlot": 245678901
+  },
+  "meta": {
+    "next": null,
+    "previous": null
+  }
+}
+```
+
+---
+
+## Get Locked Liquidity
+
+<ParamField path="GET" method="/lock/{address}">
+  Retrieve locked liquidity information for a Whirlpool.
+</ParamField>
+
+### Path Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `address` | string | **Required.** The Whirlpool account address |
+
+### Example Request
+
+<CodeGroup>
+
+```bash cURL
+curl "https://api.orca.so/v2/solana/lock/7qbRF6YsyGuLUVs6Y1q64bdVrfe4ZcUUz1JRdoVNUJnm"
+```
+
+```typescript TypeScript
+const poolAddress = "7qbRF6YsyGuLUVs6Y1q64bdVrfe4ZcUUz1JRdoVNUJnm";
+const response = await fetch(
+  `https://api.orca.so/v2/solana/lock/${poolAddress}`
+);
+const lockInfo = await response.json();
+```
+
+</CodeGroup>
+
+### Example Response
+
+```json
+[
+  {
+    "name": "Raydium Lock",
+    "lockedPercentage": "45.5"
+  },
+  {
+    "name": "Team Lock",
+    "lockedPercentage": "10.0"
+  }
+]
+```

@@ -1,67 +1,177 @@
 ---
 title: Understanding Slippage
-description: Understand slippage, price impact, and how to protect your trades.
-icon: arrow-right-arrow-left
+description: Learn about slippage, price impact, and how to protect your trades.
+icon: sliders
 ---
 
-### Slippage, price impact, and poor value trades
+Slippage is the difference between the price you expect and the price you actually get. Understanding it helps you trade smarter and avoid costly mistakes.
 
-It is important when using Orca (or any dApp) to understand: what slippage is and what it is not; the associated risks and implications of its use; and when to consider adjusting your settings.
+---
 
-It is also important to understand the differences between slippage, price impact, and poor value trades.
+## Slippage vs Price Impact
 
-#### What is slippage?
+These terms are often confused but mean different things:
 
-When trading slippage is the difference between the quoted price when you authorized a transaction and the final price your trade executes at. Movement of token values, in the liquidity pools against which you are trading, that occur between you authorizing a trade and the trade reaching on-chain finality can result in variation in the number of tokens received (or spent).
-When depositing to, or withdrawing from a pool, the ratio of tokens deposited/received fluctuates with the pool price, slippage in this context, therefore has an impact on the ratio of tokens deposited or received.
+<CardGroup cols={2}>
+  <Card title="Slippage" icon="chart-line">
+    Price movement that happens **between** when you submit a trade and when it executes—caused by other traders and market activity.
+  </Card>
+  <Card title="Price Impact" icon="arrow-trend-down">
+    Price movement caused **by your trade itself**—larger trades in smaller pools have higher price impact.
+  </Card>
+</CardGroup>
 
-#### Slippage tolerance settings
+| Factor | Slippage | Price Impact |
+|--------|----------|--------------|
+| **Cause** | Other market activity | Your trade size |
+| **Control** | Set tolerance limit | Choose better pools/split trades |
+| **Visibility** | Unknown until execution | Shown in quote |
 
-Users are able to set how much slippage they are willing to accept and still see their transaction executed. Setting your slippage tolerance defines the maximum percentile change you are willing to accept between the originally quoted outcome and the final amounts when the transaction settles.
-In times of high volatility and/or congestion increasing your slippage tolerance may improve the chance of your trade executing successfully. However, setting slippage too high can result in your transaction being front run or subjected to a sandwich attack.
+<Info>
+Orca displays price impact in the swap interface before you trade. Always check this before large swaps.
+</Info>
 
-### Risks of setting a high slippage tolerance
+---
 
-Setting slippage tolerance settings too high comes with some risks
+## Slippage Tolerance Settings
 
-* Front running and sandwich attacks
-* Poor value trades
+Slippage tolerance is the **maximum price difference** you're willing to accept. If the price moves more than your tolerance, the transaction fails instead of executing at a bad price.
 
-**What is Front Running?**
+### Recommended Settings
 
-Blockchain front running occurs when another user, with access to information on unconfirmed transactions, uses that knowledge to place a transaction ahead of yours on the blockchain. This results in your transaction executing at a disadvantageous price relative to the expected outcome, allowing the attacker to extract value from you.
+| Scenario | Tolerance | Notes |
+|----------|-----------|-------|
+| Stablecoin pairs | 0.1% | Very stable prices |
+| Major pairs (SOL/USDC) | 0.5% | Normal market conditions |
+| Volatile tokens | 1-3% | Higher volatility expected |
+| High volatility periods | 2-5% | Use with caution |
 
-A sandwich attack is a specific form of front running where the original transaction is inserted between two or more transactions, further enhancing the value extraction for the attacker.
+### How to Adjust Slippage
 
-Front running extracts value by causing the original transaction to experience more slippage than it would have without the insertion of the attacker's transactions. Since a transaction cannot experience more slippage than the set maximum slippage tolerance, setting a lower slippage tolerance reduces vulnerability to front running.
+<Steps>
+  <Step title="Open settings">
+    Click the **gear icon** (⚙️) in the swap interface
+  </Step>
+  <Step title="Set your tolerance">
+    Enter your desired slippage percentage or select a preset
+  </Step>
+  <Step title="Save and trade">
+    Your setting applies to your current and future trades
+  </Step>
+</Steps>
 
-#### Slippage tolerance settings causing Poor Value Trades
+<Tip>
+Orca has separate slippage settings for **trades** and **liquidity operations**. Liquidity operations can safely use higher slippage since they're not vulnerable to front-running.
+</Tip>
 
-Besides exposing yourself to the risk of front running, if slippage is set too high there is the risk that your transaction will execute at a poor value for you. This can happen simply because of sudden price movement happens to occur between you authorizing your transaction and settlement. This can be avoided by ensuring that slippage tolerance settings are not set too high.
+---
 
-#### Slippage vs Price Impact
+## Risks of High Slippage
 
-These terms are often confused or used interchangeably, but they truly refer to different concepts. While slippage is the movement of transaction values that occurs between the time a transaction is quoted and when it is settled—caused by factors other than your transaction itself—price impact is the change in price specifically caused by your transaction. High price impact can occur when your trade is large compared to the available liquidity.
-Orca’s UI displays price impact information when quoting a trade. It is important to carefully consider whether you are willing to accept a trade with a high price impact, as it can result in a poor value trade.
+Setting slippage too high exposes you to:
 
-#### Trade Slippage vs Liquidity Pool Slippage
+<AccordionGroup>
+  <Accordion title="Front-running attacks">
+    **What it is:** A bot sees your pending transaction and places trades before and after yours, profiting from the price movement.
 
-Orca recognizes that slippage when trading and when transacting against a pool, as an LP, are quite different, as such Orca allows users to set separate slippage tolerance settings for liquidity pool transactions and trades.
+    **Sandwich attack:** Your trade gets "sandwiched" between two attacker transactions:
+    1. Attacker buys → price goes up
+    2. Your trade executes at higher price
+    3. Attacker sells → profits from your trade
 
-As liquidity pool transactions (adding/removing liquidity or closing a position) are more prone to transaction failure due to slippage, and are not exposed to the risk of front-running, a higher success rate can be safely achieved by increasing pool slippage tolerance.
+    **Protection:** Lower slippage tolerance limits how much value can be extracted.
+  </Accordion>
 
-#### When to set a higher slippage tolerance
+  <Accordion title="Poor value trades">
+    Even without attacks, high slippage means you might accept a significantly worse price if the market moves against you between quote and execution.
 
-Setting a higher slippage tolerance may be necessary at times to ensure your transaction settles, below are some examples, this is not an exhaustive list and caution must be taken when setting a higher slippage tolerance:
+    **Example:** You quote a trade at $100. With 5% slippage, you could receive as little as $95 if the market moves.
+  </Accordion>
+</AccordionGroup>
 
-* High Volatility: When transacting in a highly volatile market, prices can change rapidly. Increasing slippage tolerance ensures that your transaction goes through despite these fluctuations. If you do not need to transact quickly, make modest increases, until the transaction succeeds, or simply wait for volatility to ease.
-* Low Liquidity: In markets with low liquidity, price swings are more common due to the limited number of buyers and sellers. Higher slippage tolerance may help ensure your trade is executed.
-* Urgent Transactions: If you need a transaction to be executed quickly and can't afford for it to fail, setting a higher slippage tolerance can prevent delays caused by minor price changes.
+<Warning>
+Never set slippage higher than necessary. Start low and only increase if transactions fail.
+</Warning>
 
-Remember, while setting a higher slippage tolerance can facilitate the execution of your trade, it also exposes you to an increased risk of a poor value trade. Use this option judiciously based on your specific trading needs and market conditions and only increase slippage tolerance after careful consideration and research. Orca cannot accept responsibility for poor value or loss caused by inappropriate slippage tolerance settings.
+---
 
-#### Other causes of poor value trades
+## When to Increase Slippage
 
-While Orca’s trade router will search for the best price and trade across multiple pools to deliver it, each pool on Orca remains its own distinct and separate market, independent of every other pool on Orca and beyond in the wider market. The only action that keeps prices in a pool aligned with wider market values is trading activity. Prices are not controlled by Orca, nor are they adjusted to match a 'correct price'. The price you see for a token on a price aggregator site, such as CoinGecko, is an average of the token prices across all available markets tracked by that aggregator; it is not a true or correct price.
+Sometimes higher slippage is necessary:
 
-As such, when you receive a trade quote, it is critical to ensure that you are satisfied with the trade and that it meets your expectations regarding value. Failing to verify that the quoted price meets your expectations may result in a poor value trade. This risk is amplified by thin liquidity, new, dormant, or infrequently used pools, or periods of high volatility—particularly with new tokens. Orca cannot accept responsibility for any poor value trades a user experiences.
+| Situation | Why | Recommendation |
+|-----------|-----|----------------|
+| **High volatility** | Prices moving rapidly | Increase gradually until trade succeeds |
+| **Low liquidity pools** | Price swings more easily | Consider if the trade is worth the risk |
+| **Network congestion** | Transactions take longer to confirm | Small increases may help |
+| **Urgent trades** | Can't afford failed transactions | Accept the trade-off knowingly |
+
+<Note>
+If you don't need to trade immediately, waiting for volatility to settle is often better than increasing slippage.
+</Note>
+
+---
+
+## Avoiding Poor Value Trades
+
+Even with proper slippage settings, you can get bad prices if you're not careful:
+
+### Always Check Before Trading
+
+<Steps>
+  <Step title="Verify the quoted price">
+    Does the rate match what you expect? Compare with price aggregators like CoinGecko.
+  </Step>
+  <Step title="Check price impact">
+    High price impact (>1%) means you're significantly moving the market. Consider splitting the trade.
+  </Step>
+  <Step title="Look at pool liquidity">
+    Low liquidity pools have worse prices and higher volatility.
+  </Step>
+  <Step title="Verify the token">
+    Confirm you're trading the correct token by checking the mint address.
+  </Step>
+</Steps>
+
+### Red Flags to Watch For
+
+- **Price significantly different from other markets** — The pool may be stale or manipulated
+- **Very high price impact** — Your trade is too large for the available liquidity
+- **New or unfamiliar tokens** — Higher risk of scams or extreme volatility
+- **Pools with very low TVL** — Prices can swing wildly
+
+<Warning>
+Pool prices are determined by trading activity, not external oracles. A pool's price can differ significantly from other markets, especially in low-liquidity or inactive pools. Always verify the quoted price meets your expectations.
+</Warning>
+
+---
+
+## Summary
+
+<CardGroup cols={2}>
+  <Card title="Set Appropriate Slippage" icon="sliders">
+    Start with 0.5% for most trades, adjust only if needed
+  </Card>
+  <Card title="Check Price Impact" icon="magnifying-glass-chart">
+    Always review before large trades
+  </Card>
+  <Card title="Verify Prices" icon="circle-check">
+    Compare with external price sources
+  </Card>
+  <Card title="Be Cautious" icon="shield">
+    When in doubt, start with a small test trade
+  </Card>
+</CardGroup>
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="How to Swap" icon="arrow-right-arrow-left" href="/trade/how-to-swap">
+    Step-by-step swap guide
+  </Card>
+  <Card title="Range Orders" icon="crosshairs" href="/trade/range-orders">
+    Advanced order types
+  </Card>
+</CardGroup>

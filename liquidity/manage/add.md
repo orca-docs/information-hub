@@ -1,71 +1,109 @@
 ---
-title: How to add liquidity to a position
+title: How to Add Liquidity
 description: Add more liquidity to an existing position.
-icon: droplet
+icon: plus
 ---
 
-Due to [divergence loss](/liquidity/concepts/impermanent-loss), you are not guaranteed a positive return when providing liquidity.
+Increase your position size by depositing additional tokens into an existing liquidity position.
 
-#### Open the Position Details sidebar
-
-→ See the [Position Details Sidebar Guide](/liquidity/manage/sidebar) for a full walkthrough.
-
-#### Enter deposit amounts
-
-With the `Deposit` tab selected, enter the amount you wish to deposit in one of the highlighted fields.
-
-![](/images/image_73.jpg)
-
-The other values will adjust automatically to match the deposit ratio required for your existing range.
-
-Alternatively, you can click `Max` in a deposit field to contribute the maximum quantity of tokens from your wallet.
-
-![](/images/image_74.jpg)
-
-If you want to use *Autoswap*, which matches the position's deposit ratio by trading one token for the other within the pair, please:
-→ See the Autoswap guide for more details.
-
-#### (Optional) Adjust your liquidity slippage
-
-If required you can adjust your liquidity slippage by clicking on the `Liq. slippage` button.
-→ See [**Understanding Slippage**](/trade/slippage) for more information.
-
-#### Complete your deposit
-
-Once you are satisfied with your deposit amounts, click `Deposit`.
-
-![](/images/image_75.jpg)
-
-#### Review your transaction
-
-Review the details in your wallet—including any network fees—and approve the transaction.
-
-**REVIEW CAREFULLY.** It is critical that you check your range and ensure the current price of the pool matches your intentions. Depositing liquidity at a price not consistent with wider market values may result in irreversible loss.
-
-#### Deposit Complete!🎉
-
-You will not receive a new pool position NFT. Your existing NFT will continue to represent the updated position.
-The NFT remains in your wallet and is displayed as a simple image with the warning "**DO NOT BURN**."
-
-
-**DO NOT** sell or burn this NFT. You can send it to another wallet to transfer your position, but (whale forbid) please **DO NOT** burn or sell it, or you'll lose your liquidity!
-Orca **CANNOT** help you recover any funds lost as a result of burning a pool position NFT. Please **DO NOT** burn or sell it, or you'll lose your liquidity!
-Orca **CANNOT** help you recover any funds lost as a result of burning a pool position NFT.
-
-#### Next Steps
-
-You've now added liquidity to your position on Orca! Check your position anytime on the [Portfolio page](https://www.orca.so/portfolio) and see our [Managing Your Portfolio](/liquidity/manage/portfolio) guide for help with further management of your position.
+<Warning>
+Due to [impermanent loss](/liquidity/concepts/impermanent-loss), you are not guaranteed a positive return when providing liquidity. Understand the risks before depositing.
+</Warning>
 
 ---
 
-### We'd Love to Hear from You!
+## How to Add Liquidity
 
-**Need support or want to share feedback?**
+<Steps>
+  <Step title="Open the Position Details sidebar">
+    Navigate to your [Portfolio](https://www.orca.so/portfolio) and click on the position you want to add liquidity to.
 
-* Open a support ticket directly from the Orca UI by clicking `Support`
-* Reach out via [Discord](https://discord.gg/deRXbXWXk8) or Telegram
+    See the [Position Details Sidebar Guide](/liquidity/manage/sidebar) for a full walkthrough.
+  </Step>
 
-**Have suggestions, requests or feedback?**
+  <Step title="Select the Deposit tab">
+    In the sidebar, ensure the **Deposit** tab is selected.
+  </Step>
 
-* Share them by clicking `Feedback` in the Orca UI
-* Use the [`#✍│feedback`](https://discord.gg/TdRtv4GCKF) channel on Discord
+  <Step title="Enter deposit amounts">
+    Enter the amount you wish to deposit in one of the token fields.
+
+    <Frame caption="Enter your deposit amount in either token field">
+      <img src="/images/image_73.jpg" alt="Deposit amount entry" />
+    </Frame>
+
+    The other value will auto-adjust to match the deposit ratio required for your existing range.
+
+    <Tip>
+    Click **Max** to deposit the maximum quantity of a token from your wallet.
+    </Tip>
+
+    <Frame caption="Use Max to deposit all available tokens">
+      <img src="/images/image_74.jpg" alt="Max deposit option" />
+    </Frame>
+  </Step>
+
+  <Step title="(Optional) Use Autoswap">
+    If you don't have the right token ratio, **Autoswap** can help by trading one token for the other to match the required ratio.
+
+    Enable Autoswap in the deposit interface if available.
+  </Step>
+
+  <Step title="(Optional) Adjust liquidity slippage">
+    Click the **Liq. slippage** button to adjust your slippage tolerance if needed.
+
+    See [Understanding Slippage](/trade/slippage) for more information.
+  </Step>
+
+  <Step title="Complete your deposit">
+    Review the deposit details and click **Deposit**.
+
+    <Frame caption="Click Deposit to add liquidity to your position">
+      <img src="/images/image_75.jpg" alt="Deposit confirmation" />
+    </Frame>
+  </Step>
+
+  <Step title="Approve the transaction">
+    Review the details in your wallet—including any network fees—and approve.
+
+    <Warning>
+    **Review carefully.** Verify your range and ensure the current pool price matches your intentions. Depositing at a price inconsistent with wider market values may result in loss.
+    </Warning>
+  </Step>
+</Steps>
+
+---
+
+## After Depositing
+
+<Info>
+You will **not** receive a new pool position NFT. Your existing NFT continues to represent the updated position with increased liquidity.
+</Info>
+
+The NFT remains in your wallet displaying "**DO NOT BURN**."
+
+<Warning>
+**Protect your position NFT:**
+- **DO NOT** sell or burn this NFT—you'll lose your liquidity
+- You can transfer it to another wallet to move your position
+- Orca **cannot** recover funds lost from burning position NFTs
+</Warning>
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Manage Portfolio" icon="chart-pie" href="/liquidity/manage/portfolio">
+    View and manage all your positions
+  </Card>
+  <Card title="Harvest Yield" icon="seedling" href="/liquidity/manage/harvest">
+    Collect your earned fees and rewards
+  </Card>
+  <Card title="Withdraw Liquidity" icon="arrow-up-from-bracket" href="/liquidity/manage/withdraw">
+    Remove liquidity from your position
+  </Card>
+  <Card title="Position Alerts" icon="bell" href="/liquidity/manage/alerts">
+    Get notified when positions go out of range
+  </Card>
+</CardGroup>

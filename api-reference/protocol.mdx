@@ -1,0 +1,263 @@
+---
+title: "Protocol"
+description: "Access protocol-wide statistics, TVL, and ORCA token information."
+icon: "chart-line"
+---
+
+# Protocol Endpoints
+
+Endpoints for retrieving protocol-wide statistics and ORCA token information.
+
+---
+
+## Get Protocol Stats
+
+<ParamField path="GET" method="/protocol">
+  Retrieve overall protocol statistics including TVL, volume, fees, and revenue.
+</ParamField>
+
+### Example Request
+
+<CodeGroup>
+
+```bash cURL
+curl "https://api.orca.so/v2/solana/protocol"
+```
+
+```typescript TypeScript
+const response = await fetch("https://api.orca.so/v2/solana/protocol");
+const { data } = await response.json();
+
+console.log(`Protocol TVL: $${data.tvl}`);
+console.log(`24h Volume: $${data.volume24hUsdc}`);
+```
+
+```python Python
+import requests
+
+response = requests.get("https://api.orca.so/v2/solana/protocol")
+data = response.json()["data"]
+
+print(f"Protocol TVL: ${data['tvl']}")
+print(f"24h Volume: ${data['volume24hUsdc']}")
+```
+
+</CodeGroup>
+
+### Response
+
+```json
+{
+  "data": {
+    "tvl": "450000000.00",
+    "volume24hUsdc": "125000000.00",
+    "fees24hUsdc": "250000.00",
+    "revenue24hUsdc": "75000.00"
+  },
+  "meta": {
+    "next": null,
+    "previous": null
+  }
+}
+```
+
+### Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `tvl` | string | Total Value Locked in USDC |
+| `volume24hUsdc` | string | 24-hour trading volume in USDC |
+| `fees24hUsdc` | string | 24-hour fees collected in USDC |
+| `revenue24hUsdc` | string | 24-hour protocol revenue in USDC |
+
+---
+
+## Get ORCA Token Info
+
+<ParamField path="GET" method="/protocol/token">
+  Retrieve detailed ORCA token information including price, supply, and volume.
+</ParamField>
+
+### Example Request
+
+<CodeGroup>
+
+```bash cURL
+curl "https://api.orca.so/v2/solana/protocol/token"
+```
+
+```typescript TypeScript
+const response = await fetch("https://api.orca.so/v2/solana/protocol/token");
+const { data } = await response.json();
+
+console.log(`ORCA Price: $${data.price}`);
+console.log(`Circulating Supply: ${data.circulatingSupply}`);
+```
+
+```python Python
+import requests
+
+response = requests.get("https://api.orca.so/v2/solana/protocol/token")
+data = response.json()["data"]
+
+print(f"ORCA Price: ${data['price']}")
+print(f"Circulating Supply: {data['circulatingSupply']}")
+```
+
+</CodeGroup>
+
+### Response
+
+```json
+{
+  "data": {
+    "symbol": "ORCA",
+    "name": "Orca",
+    "description": "Orca is the most user-friendly concentrated liquidity AMM on Solana.",
+    "imageUrl": "https://arweave.net/...",
+    "price": "4.25",
+    "circulatingSupply": "50000000.00",
+    "totalSupply": "100000000.00",
+    "stats": {
+      "24h": {
+        "volume": "2500000.00"
+      }
+    }
+  },
+  "meta": {
+    "next": null,
+    "previous": null
+  }
+}
+```
+
+### Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `symbol` | string | Token symbol (ORCA) |
+| `name` | string | Token name |
+| `description` | string | Token description |
+| `imageUrl` | string | URL to token logo |
+| `price` | string | Current price in USD |
+| `circulatingSupply` | string | Circulating token supply |
+| `totalSupply` | string | Total token supply |
+| `stats` | object | Trading statistics by time period |
+
+---
+
+## Get Circulating Supply
+
+<ParamField path="GET" method="/protocol/token/circulating_supply">
+  Retrieve the circulating supply of ORCA tokens (excluding treasury and grants).
+</ParamField>
+
+### Example Request
+
+<CodeGroup>
+
+```bash cURL
+curl "https://api.orca.so/v2/solana/protocol/token/circulating_supply"
+```
+
+```typescript TypeScript
+const response = await fetch(
+  "https://api.orca.so/v2/solana/protocol/token/circulating_supply"
+);
+const { data } = await response.json();
+
+console.log(`Circulating Supply: ${data.circulating_supply}`);
+```
+
+```python Python
+import requests
+
+response = requests.get(
+    "https://api.orca.so/v2/solana/protocol/token/circulating_supply"
+)
+data = response.json()["data"]
+print(f"Circulating Supply: {data['circulating_supply']}")
+```
+
+</CodeGroup>
+
+### Response
+
+```json
+{
+  "data": {
+    "circulating_supply": "50000000.000000"
+  },
+  "meta": {
+    "next": null,
+    "previous": null
+  }
+}
+```
+
+### Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `circulating_supply` | string | Circulating supply (excludes treasury and grant allocations) |
+
+---
+
+## Get Total Supply
+
+<ParamField path="GET" method="/protocol/token/total_supply">
+  Retrieve the total minted supply of ORCA tokens.
+</ParamField>
+
+### Example Request
+
+<CodeGroup>
+
+```bash cURL
+curl "https://api.orca.so/v2/solana/protocol/token/total_supply"
+```
+
+```typescript TypeScript
+const response = await fetch(
+  "https://api.orca.so/v2/solana/protocol/token/total_supply"
+);
+const { data } = await response.json();
+
+console.log(`Total Supply: ${data.total_supply}`);
+```
+
+```python Python
+import requests
+
+response = requests.get(
+    "https://api.orca.so/v2/solana/protocol/token/total_supply"
+)
+data = response.json()["data"]
+print(f"Total Supply: {data['total_supply']}")
+```
+
+</CodeGroup>
+
+### Response
+
+```json
+{
+  "data": {
+    "total_supply": "100000000.000000"
+  },
+  "meta": {
+    "next": null,
+    "previous": null
+  }
+}
+```
+
+### Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `total_supply` | string | Total minted tokens (6 decimal places, rounded up) |
+
+<Note>
+The total supply represents all minted ORCA tokens. The circulating supply excludes tokens held in treasury and grant allocations.
+</Note>

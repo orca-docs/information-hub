@@ -4,11 +4,15 @@ description: Create a concentrated liquidity pool with full customization option
 icon: chart-mixed
 ---
 
-CLMM (Concentrated Liquidity Market Maker) pools give you complete control over your pool's configuration. This guide walks you through creating a CLMM pool on Orca.
+CLMM (Concentrated Liquidity Market Maker) pools give you complete control over your pool's configuration.
 
-## Should You Create a CLMM Pool?
+<Info>
+**New to pool creation?** Consider starting with a [Splash Pool](/create/pools/splash) for a simpler experience. CLMM pools are best for established tokens or when you need custom configurations.
+</Info>
 
-Before proceeding, consider which pool type fits your needs:
+---
+
+## CLMM vs Splash Pool
 
 | Feature | Splash Pool | CLMM Pool |
 |---------|------------|-----------|
@@ -18,213 +22,212 @@ Before proceeding, consider which pool type fits your needs:
 | **Management** | Minimal | More involved |
 | **Best for** | New tokens, simple launches | Established tokens, advanced users |
 
-**Recommendation:** If you're launching a new token and want simplicity, start with a [Splash Pool](/create/pools/splash). CLMM pools are better suited for established tokens or when you need custom range positions.
+---
 
 ## Prerequisites
 
 Before creating a pool:
 
-1. **Have both tokens** - Your wallet needs both tokens in the pair
-2. **Have SOL for fees** - Keep 0.1+ SOL for transaction fees
-3. **Know your initial price** - Decide the starting price for your token
-4. **Choose a fee tier** - Select based on expected volatility
+<CardGroup cols={2}>
+  <Card title="Both Tokens" icon="coins">
+    Your wallet needs both tokens in the pair
+  </Card>
+  <Card title="SOL for Fees" icon="gas-pump">
+    Keep 0.1+ SOL for transaction fees
+  </Card>
+  <Card title="Initial Price" icon="tag">
+    Decide the starting price for your token
+  </Card>
+  <Card title="Fee Tier" icon="percent">
+    Choose based on expected volatility
+  </Card>
+</CardGroup>
 
 ### Understanding Fee Tiers
 
 | Fee Tier | Best For | Examples |
 |----------|----------|----------|
 | **0.01%** | Stablecoin pairs | USDC/USDT |
-| **0.05%** | Stable, high-volume pairs | Major stablecoins |
+| **0.05%** | Stable, high-volume | Major stablecoins |
 | **0.30%** | Standard pairs | SOL/USDC |
-| **1.00%** | Volatile/exotic pairs | Memecoins, new tokens |
+| **1.00%** | Volatile/exotic | Memecoins, new tokens |
 
+<Tip>
 Higher fees compensate LPs for volatility risk but may reduce trading volume.
+</Tip>
+
+---
 
 ## Creating a CLMM Pool
 
-### Step 1: Navigate to Pool Creation
+<Steps>
+  <Step title="Navigate to Pool Creation">
+    Go to [orca.so/create-pool](https://www.orca.so/create-pool), connect your wallet, and select **Create Concentrated Pool**.
+  </Step>
 
-1. Go to [orca.so/create-pool](https://www.orca.so/create-pool)
-2. Connect your wallet
-3. Select **Create Concentrated Pool**
+  <Step title="Select Your Tokens">
+    1. Click **Select Token** to choose your token
+    2. Search by name, symbol, or paste the mint address
+    3. By default, pairs with SOL (click SOL to change)
+  </Step>
 
-### Step 2: Select Your Tokens
+  <Step title="Set the Initial Price">
+    This is the starting trading price for your pool.
 
-1. Click **Select Token** to choose your token
-2. Search by name, symbol, or paste the mint address
-3. By default, your token pairs with SOL
-4. (Optional) Click the SOL label to pair with a different token
+    **Option A: Use Estimated Market Price**
+    - Orca shows an estimated price from Jupiter
+    - Click to use this price and verify it matches expectations
 
-### Step 3: Set the Initial Price
+    **Option B: Enter Custom Price**
+    - Type your desired price manually
+    - Useful for new tokens without market data
 
-This is the starting trading price for your pool.
+    <Warning>
+    The initial price determines where trading begins. Wrong price = immediate arbitrage against your pool.
+    </Warning>
+  </Step>
 
-**Option A: Use Estimated Market Price**
-- Orca shows an estimated price from Jupiter
-- Click to use this price
-- Verify it matches your expectations
+  <Step title="Choose Position Type">
+    <Tabs>
+      <Tab title="Full-Range">
+        Creates liquidity across all possible prices (0 to infinity).
 
-**Option B: Enter Custom Price**
-- Type your desired price in the Initial Price field
-- Useful for new tokens without market data
+        **Pros:** Simpler, always in range
+        **Cons:** Lower capital efficiency
+      </Tab>
+      <Tab title="Custom Range">
+        Focus liquidity in a specific price range:
+        1. Select **Custom Range**
+        2. Set **Min Price** (lower bound)
+        3. Set **Max Price** (upper bound)
 
-**Important:** The initial price determines where trading begins. Setting the wrong price can result in immediate arbitrage against your pool.
+        **Pros:** Higher capital efficiency when in range
+        **Cons:** Requires monitoring
+      </Tab>
+    </Tabs>
+  </Step>
 
-### Step 4: Choose Your Position Type
+  <Step title="Enter Deposit Amount">
+    Enter the amount for one token—the other auto-calculates based on your price range and current price.
 
-#### Full-Range Position
+    <Note>
+    For custom ranges not including current price, you may deposit only one token.
+    </Note>
+  </Step>
 
-Creates liquidity across all possible prices:
+  <Step title="Select Fee Tier">
+    Click **Change** to select a different fee tier. Consider your token's volatility when choosing.
+  </Step>
 
-1. Click **Full Range**
-2. Your range covers $0 to infinity
-3. Similar to traditional AMM behavior
+  <Step title="Review and Create">
+    1. Click **Preview Pool**
+    2. Review all parameters carefully
+    3. Check the acknowledgment box
+    4. Click **Create Pool**
+  </Step>
 
-**Pros:** Simpler, always in range
-**Cons:** Lower capital efficiency
+  <Step title="Approve Transactions">
+    You'll need to approve **two transactions**:
+    1. First initializes the pool
+    2. Second deposits liquidity
 
-#### Custom Range Position
+    Wait for confirmation.
+  </Step>
+</Steps>
 
-Focus liquidity in a specific price range:
-
-1. Select **Custom Range**
-2. Set your **Min Price** (lower bound)
-3. Set your **Max Price** (upper bound)
-4. Use +/- buttons for fine adjustments
-
-**Pros:** Higher capital efficiency when in range
-**Cons:** Requires monitoring and management
-
-### Step 5: Enter Deposit Amount
-
-1. Enter the amount for one token
-2. The other amount auto-calculates based on:
-   - Your price range
-   - Current price
-   - Pool ratio
-
-**Note:** For custom ranges not including the current price, you may deposit only one token.
-
-### Step 6: Select Fee Tier
-
-1. Click **Change** if you want a different fee tier
-2. Select from available tiers
-3. Consider your token's volatility
-
-### Step 7: Review and Create
-
-1. Click **Preview Pool**
-2. Review all parameters carefully:
-   - Token pair
-   - Initial price
-   - Price range (if custom)
-   - Deposit amounts
-   - Fee tier
-3. Read the confirmation message
-4. Check the acknowledgment box
-5. Click **Create Pool**
-
-### Step 8: Approve Transactions
-
-1. You'll need to approve **two transactions**
-2. First transaction initializes the pool
-3. Second transaction deposits liquidity
-4. Wait for confirmation
-
-### Step 9: Pool Activation
-
-After creation:
-- The pool appears in the UI
-- **Trade** and **Provide Liquidity** buttons are initially grayed out
-- Once fully indexed, buttons become active
-- Other users can then trade and provide liquidity
+---
 
 ## After Creating Your Pool
 
-### Verify Your Pool
+<AccordionGroup>
+  <Accordion title="Verify your pool">
+    1. Search for your token on [orca.so](https://www.orca.so)
+    2. Confirm the pool appears
+    3. Test with a small swap
+  </Accordion>
 
-1. Search for your token on [orca.so](https://www.orca.so)
-2. Confirm the pool appears
-3. Test with a small swap
+  <Accordion title="Token List">
+    If your token shows a warning triangle:
+    - It's not yet on the Orca Token List
+    - Trading still works, but display is limited
+    - [Request token list addition](/create/listings/token-list)
+  </Accordion>
 
-### Token List
+  <Accordion title="Add Rewards (Optional)">
+    Incentivize more LPs with token rewards:
+    [How to Add Rewards →](/create/rewards/overview)
+  </Accordion>
 
-If your token shows a warning triangle:
-- It's not yet on the Orca Token List
-- Trading still works, but display is limited
-- [Request token list addition](/create/listings/token-list)
+  <Accordion title="Monitor your pool">
+    - [Orca Portfolio](https://www.orca.so/portfolio) — Track your positions
+    - [Account Microscope](https://everlastingsong.github.io/account-microscope/) — View pool state
+  </Accordion>
+</AccordionGroup>
 
-### Add Rewards (Optional)
-
-Incentivize more LPs with token rewards:
-- [How to Add Rewards](/create/rewards/overview)
-
-### Monitor Your Pool
-
-Use these tools:
-- [Orca Portfolio](https://www.orca.so/portfolio) - Track your positions
-- [Account Microscope](https://everlastingsong.github.io/account-microscope/) - View pool state and tick arrays
-
-## Advanced: Tick Arrays
-
-CLMM pools use tick arrays to track liquidity at different price points. For unlisted tokens:
-
-- Some tick arrays may need initialization
-- Creating positions at different prices initializes arrays
-- Splash Pools handle this automatically
-
-If you encounter issues, reach out on [Discord](https://discord.gg/orca-so).
+---
 
 ## Troubleshooting
 
-### "Insufficient Balance"
+<AccordionGroup>
+  <Accordion title="Insufficient Balance">
+    - Ensure you have enough of both tokens
+    - Keep extra SOL for transaction fees
+  </Accordion>
 
-- Ensure you have enough of both tokens
-- Keep extra SOL for transaction fees
+  <Accordion title="Transaction Failed">
+    - Try increasing slippage tolerance
+    - Ensure sufficient SOL for fees
+    - Retry—network congestion can cause failures
+  </Accordion>
 
-### "Transaction Failed"
+  <Accordion title="Pool not showing in UI">
+    - Wait a few minutes for indexing
+    - Refresh the page
+    - Clear browser cache if needed
+  </Accordion>
 
-- Try increasing slippage tolerance
-- Ensure sufficient SOL for fees
-- Try again—network congestion can cause failures
+  <Accordion title="Price immediately changes after creation">
+    This usually means:
+    - Initial price differed from market price
+    - Arbitrageurs corrected the price
+    - Double-check your price setting next time
+  </Accordion>
+</AccordionGroup>
 
-### Pool Not Showing in UI
-
-- Wait a few minutes for indexing
-- Refresh the page
-- Clear browser cache if needed
-
-### Price Immediately Changes After Creation
-
-This usually means:
-- Initial price was different from market price
-- Arbitrageurs corrected the price
-- Double-check your price setting next time
+---
 
 ## Best Practices
 
-### Setting Initial Price
+<CardGroup cols={2}>
+  <Card title="Setting Initial Price" icon="tag">
+    Match existing market price if your token trades elsewhere. Verify before confirming—price cannot be edited after creation.
+  </Card>
+  <Card title="Choosing Fee Tier" icon="percent">
+    Higher volatility → higher fee tier. When in doubt, 0.30% is a reasonable default.
+  </Card>
+  <Card title="Managing Your Pool" icon="chart-pie">
+    Monitor liquidity levels, watch for price movements out of range, and consider adding rewards.
+  </Card>
+  <Card title="Tick Arrays" icon="grid">
+    CLMM pools use tick arrays. Some may need initialization for unlisted tokens. Reach out on Discord if you encounter issues.
+  </Card>
+</CardGroup>
 
-1. **Check market price** - If your token trades elsewhere, match that price
-2. **New tokens** - Set based on your tokenomics and launch plan
-3. **Verify before confirming** - Price cannot be edited after creation
+---
 
-### Choosing Fee Tier
+## Next Steps
 
-- Higher volatility → Higher fee tier
-- Higher competition → Lower fee tier might attract more volume
-- When in doubt, 0.30% is a reasonable default
-
-### Managing Your Pool
-
-- Monitor liquidity levels
-- Watch for price movements out of range
-- Consider adding rewards to attract more LPs
-
-## Related Resources
-
-- [Splash Pools](/create/pools/splash) - Simpler pool creation
-- [Token Extensions](/create/pools/extensions) - SPL Token Extension support
-- [Adding Rewards](/create/rewards/overview) - Incentivize liquidity
-- [Token List](/create/listings/token-list) - Improve discoverability
-- [Beginner LP Guide](/liquidity/getting-started/beginner-guide) - Understand liquidity provision
+<CardGroup cols={2}>
+  <Card title="Splash Pools" icon="droplet" href="/create/pools/splash">
+    Simpler pool creation option
+  </Card>
+  <Card title="Token Extensions" icon="puzzle-piece" href="/create/pools/extensions">
+    SPL Token Extension support
+  </Card>
+  <Card title="Add Rewards" icon="gift" href="/create/rewards/overview">
+    Incentivize liquidity providers
+  </Card>
+  <Card title="Token List" icon="list-check" href="/create/listings/token-list">
+    Improve token discoverability
+  </Card>
+</CardGroup>
