@@ -1,0 +1,94 @@
+---
+title: "Create Pools for Less with Orca’s Dynamic Tick Arrays"
+description: "Orca is proud to introduce Dynamic Tick Arrays, a significant upgrade to our Whirlpools program that dramatically lowers the cost of creating liquidity pools and improves capital efficiency on Solana."
+date: "2025-07-05"
+author: "Orca"
+image: "/blog/assets/1*KH8njW35wQ8YZtjQtkoEjw.png"
+tags: ["solana-network", "blockchain"]
+source: "https://orca-so.medium.com/create-pools-for-less-with-orcas-dynamic-tick-arrays-13e8c5dbcc8c?source=rss-6e72721c6fa1------2"
+---
+
+Orca is proud to introduce Dynamic Tick Arrays, a significant upgrade to our Whirlpools program that dramatically lowers the cost of creating liquidity pools and improves capital efficiency on Solana.
+
+![](/blog/assets/1*KH8njW35wQ8YZtjQtkoEjw.png)
+
+Orca is proud to introduce Dynamic Tick Arrays, a significant upgrade to our Whirlpools program that dramatically lowers the cost of creating liquidity pools and improves capital efficiency on Solana.
+
+### Why This Matters
+
+Back in November 2024, we took a major step in reducing liquidity provision costs by [integrating TokenExtensions for fully refundable rent on position NFTs](https://orca-so.medium.com/lower-costs-fully-refundable-fees-for-lp-positions-dc09f8f0ebe1). Today, we’re pushing efficiency even further. This latest upgrade fundamentally redesigns how liquidity storage is handled, making it more affordable and scalable for everyone, from individual LPs to new token teams.
+
+This initiative is driven by our commitment to building a platform that can support Solana’s long-term growth. As our engineering team notes, the cost of on-chain rent is a critical factor for scalability:
+
+> *“If the price of SOL were to reach $500 or even $1000, the rent burden would become extreme — and that’s been a key motivation behind our ongoing efforts to improve our infrastructure. That’s why Orca is taking the rent problem seriously; it is essential for building a system that can truly scale alongside Solana.”*
+
+In this post, we’ll explore the challenge of on-chain liquidity storage, explain how Dynamic Tick Arrays provide a powerful solution, and detail what this means for users and developers.
+
+### The Challenge: Upfront Costs and On-Chain Rent
+
+To understand the solution, let’s first look at the problem it solves.
+
+In a concentrated liquidity pool, the full price range of an asset (from zero to infinity) is divided into discrete price points called **ticks**. Each tick acts like a checkpoint, tracking how much liquidity should be added or removed as the pool’s price moves past it. This is what allows liquidity providers (LPs) to concentrate their capital in specific price ranges.
+
+Storing every single tick in its own on-chain account would be extremely inefficient and costly. To solve this, Orca groups consecutive ticks (88 in our case) into a single account called a **Tick Array**.
+
+![](/blog/assets/1*3JW3TjRbS1H0EYTpsiC3yw.png)
+
+This grouping is efficient, but it presents a practical challenge: to open a position, the entire Tick Array containing the desired ticks must be initialized and paid for upfront. Even if an LP only needs to use one tick within that array, they have historically been required to pay the full rent for all 88. This cost could feel inefficient and unfair, especially for the first person to provide liquidity in a new price range.
+
+### The Solution: Orca’s Dynamic Tick Arrays
+
+![](/blog/assets/1*-yt_G4EyhIJS39fYkRLBPg.png)
+
+Orca’s latest upgrade introduces a more intelligent and cost-effective approach. Instead of requiring a large, fixed-size account from the start, the Whirlpools program now:
+
+1. **Initializes Tick Arrays as small as possible**, covering only the necessary storage.
+2. **Dynamically resizes the Tick Array** as new positions are opened or closed.
+3. **Makes the rent paid by LPs to expand an array fully refundable** when their position is closed.
+
+This “grow-as-you-go” model means the initial cost of creating a pool is drastically reduced.
+
+**Previously:** Initializing a single Tick Array cost approximately 0.07 SOL (~$10 USD). For a new token pool, where 2–3 tick arrays are recommended, the upfront cost was $20–$30.
+
+**Now:** The initial cost to initialize a Tick Array is just **~0.002 SOL (~$0.30 USD)** — a **~97% decrease**. As more liquidity is added, the array expands, but the cost is distributed among LPs and is significantly cheaper than before.
+
+With this change, creating a new liquidity pool with five initialized tick arrays can cost less than $5 USD. In normal market conditions, this represents a **savings of over 10x compared to other CLMMs**.
+
+### Key Details for Traders and Liquidity Providers
+
+One important point to understand about how this upgrade affects you:
+
+1. **Swapping is unaffected; this is an LP improvement.**Trading behavior remains unchanged. Thanks to Orca’s [SparseSwap](https://orca-so.medium.com/introducing-sparseswap-a-new-era-in-trading-on-orca-c0eefa067980) feature, swaps can seamlessly traverse any price range based on available liquidity, regardless of whether a Tick Array has been initialized. This upgrade specifically benefits liquidity providers by lowering their costs and removing friction.
+2. **Understand the Rent: A small, one-time cost plus refundable deposits.** This update changes how rent is handled, so it’s important to know the two scenarios:
+
+* **i) For a brand-new price range:** If a Tick Array is completely uninitialized, the first user to provide liquidity pays a small, one-time, **non-refundable** rent to create it with a minimum size. This cost is exceptionally low — even smaller than the rent for a standard associated token account (ATA) and a fraction of the previous 0.07 SOL cost.
+* **ii) For existing price ranges:** If a position requires an existing Tick Array to be expanded, the protocol collects a small, **refundable** rent deposit from the LP. This deposit is returned in full when the position is closed.
+
+### Key Details for Developers and Builders
+
+This upgrade is already live and supported in the latest version of our Rust SDK. We highly recommend using the SDK to integrate this feature, as it automates serialization/deserialization and ensures future compatibility.
+
+The key technical changes are:
+
+* Tick Arrays are initialized with minimal size.
+* The program dynamically resizes Tick Array accounts when positions are opened or closed.
+* Rent paid by users to resize an array is refundable.
+
+For teams who index Whirlpool tick arrays, our Developer Experience team provided an [integration guide for the update](https://www.notion.so/orcaso/Dynamic-Tick-Arrays-19f228f9f08880dba9ecce2be85799c5).
+
+For a deeper technical understanding, please visit our [Developer Documentation](https://www.google.com/search?q=link-to-your-dev-docs) and subscribe to Orca Dev Updates channel on Telegram!
+
+### Conclusion
+
+At Orca, we are committed to building the most efficient and user-friendly DeFi platform on Solana. With Dynamic Tick Arrays, creating a liquidity pool is now dramatically cheaper, allowing capital to be deployed more effectively.
+
+This upgrade allows asset issuers to launch pools with minimal upfront cost and empowers liquidity providers to engage in more frequent, cost-effective strategies. By tackling the on-chain rent problem head-on, Orca is ensuring our infrastructure is ready for the future, allowing every SOL invested in liquidity to work harder for you.
+
+### What is Orca?
+
+Orca is an advanced DeFi protocol on Solana built around a Concentrated Liquidity Automated Market Maker (CLMM). Its simple, intuitive UX caters to beginners, advanced users, and professionals, making it the go-to choice for anyone looking to engage in DeFi on Solana.
+
+[Website](https://www.orca.so/) | [Docs](https://docs.orca.so/) | [Developer Docs](https://dev.orca.so/) | [Twitter](https://x.com/orca_so) | [Discord](https://discord.orca.so/)
+
+***Disclaimer****: The content of this communication is not financial advice and should not be relied on by any persons as financial advice. This communication has not been provided in consideration of any recipient’s financial needs. We have not conducted any financial assessment based on the personal circumstances of any recipients. Before using the protocol, carefully review all relevant documentation and consider risks, including the total loss of funds*
+

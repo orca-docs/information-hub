@@ -435,6 +435,52 @@
             }
           ]
         }
+      },
+      {
+        "tab": "Blog",
+        "icon": "newspaper",
+        "groups": [
+          {
+            "group": " ",
+            "pages": [
+              "blog/index"
+            ]
+          },
+          {
+            "group": "Latest Posts",
+            "pages": [
+              "blog/create-pools-for-less-with-orcas-dynamic-tick-arrays",
+              "blog/orca-introduces-adaptive-fees-turning-volatility-into-opportunity",
+              "blog/april-2025-updates",
+              "blog/march-2025-product-updates",
+              "blog/liquidity-locking-with-orca"
+            ]
+          },
+          {
+            "group": "Archive",
+            "pages": [
+              "blog/orcas-4th-anniversary-it-s-time-to-level-up-on-solana",
+              "blog/orca-treasury-report-7",
+              "blog/building-the-future-of-ai-x-crypto-on-orca",
+              "blog/create-with-confidence-orcas-fast-simple-token-creation-tool",
+              "blog/orca-on-eclipse-onboarding-guide"
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Medium",
+              "href": "https://orca-so.medium.com/",
+              "icon": "medium"
+            },
+            {
+              "anchor": "Twitter",
+              "href": "https://twitter.com/orca_so",
+              "icon": "x-twitter"
+            }
+          ]
+        }
       }
     ]
   },
