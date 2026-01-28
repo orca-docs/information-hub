@@ -41,7 +41,7 @@ On Orca tick spacing and fee
 * **Yields:** Yields derived from trading fees are distributed to LPs based on their share of the liquidity in the tick the trade was executed against.
 * **Rewards Distribution:** Rewards for liquidity providers are distributed based on their share of the liquidity in the current tick. The more liquidity you provide to an active tick, the greater your share of the rewards.
 
-For more information about tick spacing and associated fee tiers for Solana and Eclipse, visit our [documentation on trading fees](https://docs.orca.so/useful-information/trading-fees).
+For more information about tick spacing and associated fee tiers for Solana and Eclipse, visit our [documentation on trading fees](/reference/fees).
 
 ### Conclusion
 

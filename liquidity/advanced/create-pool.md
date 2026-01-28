@@ -28,4 +28,4 @@ Create a new liquidity pool on Orca to enable trading for your token pair.
 * That's it! Your pool is live!
 
     Note: you can find links in the modal to your pool, but new pools may take up to 10 minutes to appear in the explorer.
-* (Optional) select `Add token to the Orca Token List` if you wish to add a token to Orca's token list - this will open a form on which you can submit a request. Please see [How to add a token to the Orca Token List](/create/listings/token-list) and/or [How to add rewards to a pool](https://app.gitbook.com/o/-MUINxovuAV6FEUooNDz/s/-MPvyETgLWLe-8rEIO01/~/changes/TF0SYvYQ6VUMgMf7hlf6/orca-for-liquidity-providers/community-listing/how-to-guides/how-to-add-rewards-to-a-whirlpool).
+* (Optional) select `Add token to the Orca Token List` if you wish to add a token to Orca's token list - this will open a form on which you can submit a request. Please see [How to add a token to the Orca Token List](/create/listings/token-list) and/or [How to add rewards to a pool](/create/rewards/overview).

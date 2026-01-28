@@ -51,4 +51,4 @@ Exchange Rate growth would halt. Your claim remains pro-rata on vault ORCA.
 
 #### Can xORCA holders vote on governance proposals?
 
-Both ORCA and xORCA holders will be able to participate in governance. Details [here](https://docs.orca.so/orca-staking/xorca-staking-and-governance).
+Both ORCA and xORCA holders will be able to participate in governance. Details [here](/governance/xorca).

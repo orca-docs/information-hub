@@ -22,6 +22,7 @@
   "background": {
     "decoration": "gradient"
   },
+  "css": "/custom.css",
   "api": {
     "playground": {
       "display": "interactive"
@@ -506,10 +507,8 @@
   "styling": {
     "codeblocks": "system",
     "primaryTab": "Trade",
-    "accentColor": {
-      "light": "#14b8a6",
-      "dark": "#2dd4bf"
-    }
+    "eyebrows": "section",
+    "rounded": "default"
   },
   "anchors": [
     {

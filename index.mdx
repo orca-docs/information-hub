@@ -6,22 +6,22 @@ mode: custom
 {/* Hero Section */}
 <div className="relative w-full overflow-hidden">
   {/* Gradient blur background effects */}
-  <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-yellow-500/30 rounded-full blur-[150px]" />
-  <div className="absolute -top-20 right-0 w-[400px] h-[400px] bg-amber-400/20 rounded-full blur-[130px]" />
+  <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-yellow-500/30 rounded-full blur-[150px] animate-float" />
+  <div className="absolute -top-20 right-0 w-[400px] h-[400px] bg-amber-400/20 rounded-full blur-[130px] animate-float-delayed" />
 
   <div className="relative z-10 flex flex-col items-center justify-center pt-16 pb-24 px-6">
     <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
-      <p className="text-yellow-500 dark:text-yellow-400 text-base font-medium mb-6">Orca Documentation</p>
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 text-gray-900 dark:text-white">
+      <p className="text-yellow-500 dark:text-yellow-400 text-base font-medium mb-6 animate-fade-in">Orca Documentation</p>
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 text-gray-900 dark:text-white animate-fade-in-delay-1">
         Put Your Crypto to Work
       </h1>
-      <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mb-10 leading-relaxed px-4">
+      <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mb-10 leading-relaxed px-4 animate-fade-in-delay-2">
         Earn yield by providing liquidity on Solana's most trusted DEX. Manage your positions, optimize your returns, and grow your portfolio with concentrated liquidity.
       </p>
       <div className="flex flex-wrap items-center justify-center gap-3">
         <a
           href="https://www.orca.so"
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-500 text-gray-900 text-sm font-medium rounded-lg hover:bg-yellow-400 transition-all duration-200"
+          className="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-500 text-gray-900 text-sm font-medium rounded-lg hover:bg-yellow-400 transition-all duration-200 hover-glow"
         >
           Launch App
         </a>
@@ -48,7 +48,7 @@ mode: custom
 
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
       {/* Earn Yield Container */}
-      <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-5 sm:p-6">
+      <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-5 sm:p-6 hover-lift">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-yellow-500/20 flex items-center justify-center">
             <Icon icon="coins" size={18} className="text-yellow-500 dark:text-yellow-400" />
@@ -59,15 +59,15 @@ mode: custom
           Provide liquidity and earn trading fees on Solana's most trusted DEX. Concentrate your capital for maximum efficiency or use full-range positions for a passive approach.
         </p>
         <div className="space-y-2">
-          <a href="/liquidity/getting-started/beginner-guide" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all">
+          <a href="/liquidity/getting-started/beginner-guide" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all hover-lift-sm">
             <Icon icon="graduation-cap" size={16} className="text-yellow-500 dark:text-yellow-400" />
             <span className="text-gray-900 dark:text-white text-sm font-medium">Beginner Guide</span>
           </a>
-          <a href="/liquidity/manage/portfolio" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all">
+          <a href="/liquidity/manage/portfolio" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all hover-lift-sm">
             <Icon icon="chart-pie" size={16} className="text-amber-500 dark:text-amber-400" />
             <span className="text-gray-900 dark:text-white text-sm font-medium">Manage Portfolio</span>
           </a>
-          <a href="/liquidity/terminal/overview" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all">
+          <a href="/liquidity/terminal/overview" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all hover-lift-sm">
             <Icon icon="chart-line" size={16} className="text-emerald-500 dark:text-emerald-400" />
             <span className="text-gray-900 dark:text-white text-sm font-medium">Liquidity Terminal</span>
           </a>
@@ -75,7 +75,7 @@ mode: custom
       </div>
 
       {/* For Asset Issuers Container */}
-      <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-5 sm:p-6">
+      <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-5 sm:p-6 hover-lift">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
             <Icon icon="building" size={18} className="text-purple-500 dark:text-purple-400" />
@@ -86,19 +86,19 @@ mode: custom
           Launch and manage liquid onchain markets for your token. Create pools, incentivize liquidity providers, and build sustainable trading depth.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-          <a href="/create/overview" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all">
+          <a href="/create/overview" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all hover-lift-sm">
             <Icon icon="book-open" size={16} className="text-purple-500 dark:text-purple-400" />
             <span className="text-gray-900 dark:text-white text-sm font-medium">Launch Guide</span>
           </a>
-          <a href="/create/pools/clmm" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all">
+          <a href="/create/pools/clmm" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all hover-lift-sm">
             <Icon icon="circle-plus" size={16} className="text-violet-500 dark:text-violet-400" />
             <span className="text-gray-900 dark:text-white text-sm font-medium">Pool Creation</span>
           </a>
-          <a href="/create/rewards/overview" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all">
+          <a href="/create/rewards/overview" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all hover-lift-sm">
             <Icon icon="gift" size={16} className="text-amber-500 dark:text-amber-400" />
             <span className="text-gray-900 dark:text-white text-sm font-medium">LP Rewards</span>
           </a>
-          <a href="/create/listings/token-list" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all">
+          <a href="/create/listings/token-list" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all hover-lift-sm">
             <Icon icon="list-check" size={16} className="text-pink-500 dark:text-pink-400" />
             <span className="text-gray-900 dark:text-white text-sm font-medium">Token List</span>
           </a>
@@ -115,7 +115,7 @@ mode: custom
     </div>
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-      <a href="/liquidity/getting-started/beginner-guide" className="group rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-5 sm:p-6 hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all">
+      <a href="/liquidity/getting-started/beginner-guide" className="group rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-5 sm:p-6 hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all hover-lift">
         <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-yellow-500/20 flex items-center justify-center mb-4">
           <Icon icon="coins" size={18} className="text-yellow-500 dark:text-yellow-400" />
         </div>
@@ -125,7 +125,7 @@ mode: custom
         </p>
       </a>
 
-      <a href="/trade/how-to-swap" className="group rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-5 sm:p-6 hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all">
+      <a href="/trade/how-to-swap" className="group rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-5 sm:p-6 hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all hover-lift">
         <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-4">
           <Icon icon="arrow-right-arrow-left" size={18} className="text-amber-500 dark:text-amber-400" />
         </div>
@@ -146,7 +146,7 @@ mode: custom
 
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
       {/* SDK & Integration Container */}
-      <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-5 sm:p-6">
+      <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-5 sm:p-6 hover-lift">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-orange-500/20 flex items-center justify-center">
             <Icon icon="code" size={18} className="text-orange-500 dark:text-orange-400" />
@@ -157,15 +157,15 @@ mode: custom
           Integrate Orca's Whirlpools into your application. Our TypeScript SDK provides everything you need for swaps, liquidity, and pool management.
         </p>
         <div className="space-y-2">
-          <a href="/developers/overview" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all">
+          <a href="/developers/overview" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all hover-lift-sm">
             <Icon icon="book" size={16} className="text-orange-500 dark:text-orange-400" />
             <span className="text-gray-900 dark:text-white text-sm font-medium">SDK Documentation</span>
           </a>
-          <a href="/developers/resources/integrations" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all">
+          <a href="/developers/resources/integrations" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all hover-lift-sm">
             <Icon icon="plug" size={16} className="text-red-500 dark:text-red-400" />
             <span className="text-gray-900 dark:text-white text-sm font-medium">Integrations</span>
           </a>
-          <a href="/reference/glossary" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all">
+          <a href="/reference/glossary" className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all hover-lift-sm">
             <Icon icon="book-bookmark" size={16} className="text-yellow-500 dark:text-yellow-400" />
             <span className="text-gray-900 dark:text-white text-sm font-medium">Glossary</span>
           </a>
@@ -173,7 +173,7 @@ mode: custom
       </div>
 
       {/* Quick Example */}
-      <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-5 sm:p-6">
+      <div className="rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-5 sm:p-6 hover-lift">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center">
             <Icon icon="terminal" size={18} className="text-emerald-500 dark:text-emerald-400" />
@@ -203,7 +203,7 @@ mode: custom
     </div>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-      <a href="/governance/overview" className="group rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-5 sm:p-6 hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all">
+      <a href="/governance/overview" className="group rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-5 sm:p-6 hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all hover-lift">
         <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-green-500/20 flex items-center justify-center mb-4">
           <Icon icon="landmark" size={18} className="text-green-500 dark:text-green-400" />
         </div>
@@ -211,7 +211,7 @@ mode: custom
         <p className="text-gray-600 dark:text-gray-400 text-sm">Vote on proposals and shape Orca's future</p>
       </a>
 
-      <a href="/support/faqs" className="group rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-5 sm:p-6 hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all">
+      <a href="/support/faqs" className="group rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-5 sm:p-6 hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all hover-lift">
         <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-blue-500/20 flex items-center justify-center mb-4">
           <Icon icon="circle-question" size={18} className="text-blue-500 dark:text-blue-400" />
         </div>
@@ -219,7 +219,7 @@ mode: custom
         <p className="text-gray-600 dark:text-gray-400 text-sm">Answers to common questions</p>
       </a>
 
-      <a href="/support/contact" className="group rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-5 sm:p-6 hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all sm:col-span-2 lg:col-span-1">
+      <a href="/support/contact" className="group rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-5 sm:p-6 hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all sm:col-span-2 lg:col-span-1 hover-lift">
         <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center mb-4">
           <Icon icon="headset" size={18} className="text-indigo-500 dark:text-indigo-400" />
         </div>

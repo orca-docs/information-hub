@@ -1,0 +1,202 @@
+/* Orca Documentation - Custom Styles */
+/* Matching the Orca Design System Color Palette */
+
+:root {
+  /* === HERO/PRIMARY COLORS (Yellow/Gold) === */
+  --orca-hero-default: #eab308;
+  --orca-hero-hover: #facc15;
+  --orca-hero-active: #d4a306;
+  --orca-hero-pressed: #ca8a04;
+  --orca-hero-inverse: #1c1917;
+  
+  /* === NEUTRAL/SURFACE COLORS === */
+  --orca-surface-bg: #0c0d0f;
+  --orca-surface-1: #12151a;
+  --orca-surface-2: #1a1d24;
+  --orca-surface-3: #22262e;
+  --orca-surface-4: #2a2f38;
+  
+  /* === BORDER COLORS === */
+  --orca-border-strong: #3f4451;
+  --orca-border-light: #2a2f38;
+  --orca-border-lighter: #22262e;
+  
+  /* === ERROR COLORS (Red) === */
+  --orca-error-default: #ef4444;
+  --orca-error-hover: #f87171;
+  
+  /* === SUCCESS COLORS (Green) === */
+  --orca-success-default: #22c55e;
+  --orca-success-hover: #4ade80;
+  
+  /* === WARNING COLORS (Amber) === */
+  --orca-warning-default: #f59e0b;
+  --orca-warning-hover: #fbbf24;
+  
+  /* === TEXT COLORS === */
+  --orca-text-primary: #f5f5f4;
+  --orca-text-secondary: #a8a29e;
+  --orca-text-muted: #78716c;
+}
+
+/* === CALLOUT STYLES === */
+
+/* Note Callout - Uses Hero Yellow */
+[data-callout-type="note"] {
+  --callout-bg: rgba(234, 179, 8, 0.08);
+  --callout-border: #eab308;
+  --callout-icon-color: #eab308;
+}
+
+/* Tip Callout - Uses Success Green */
+[data-callout-type="tip"] {
+  --callout-bg: rgba(34, 197, 94, 0.08);
+  --callout-border: #22c55e;
+  --callout-icon-color: #22c55e;
+}
+
+/* Warning Callout - Uses Warning Amber */
+[data-callout-type="warning"] {
+  --callout-bg: rgba(245, 158, 11, 0.08);
+  --callout-border: #f59e0b;
+  --callout-icon-color: #f59e0b;
+}
+
+/* Danger/Caution Callout - Uses Error Red */
+[data-callout-type="danger"],
+[data-callout-type="caution"] {
+  --callout-bg: rgba(239, 68, 68, 0.08);
+  --callout-border: #ef4444;
+  --callout-icon-color: #ef4444;
+}
+
+/* Info Callout - Uses Hero Yellow */
+[data-callout-type="info"] {
+  --callout-bg: rgba(234, 179, 8, 0.06);
+  --callout-border: #facc15;
+  --callout-icon-color: #facc15;
+}
+
+/* Check/Success Callout */
+[data-callout-type="check"] {
+  --callout-bg: rgba(34, 197, 94, 0.08);
+  --callout-border: #22c55e;
+  --callout-icon-color: #22c55e;
+}
+
+/* === INLINE CODE STYLING === */
+:not(pre) > code {
+  color: #eab308 !important;
+}
+
+/* === SELECTION === */
+::selection {
+  background-color: rgba(234, 179, 8, 0.3);
+}
+
+/* === MINIMAL ANIMATIONS === */
+
+/* Subtle floating animation for gradient orbs */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 10s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Fade in animations - only for users who prefer motion */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeInUp 0.4s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-1 {
+    animation: fadeInUp 0.4s ease-out 0.05s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-2 {
+    animation: fadeInUp 0.4s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+}
+
+/* For users who prefer reduced motion, no animation */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-fade-in-delay-1,
+  .animate-fade-in-delay-2 {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .animate-float,
+  .animate-float-delayed {
+    animation: none;
+  }
+}
+
+/* Subtle hover lift for cards */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+:is(.dark .hover-lift:hover) {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Gentle glow for primary CTA */
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(234, 179, 8, 0.35);
+}
+
+/* Enhance Mintlify Card components */
+[class*="Card_card"] {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+[class*="Card_card"]:hover {
+  transform: translateY(-2px);
+}
+
+:is(.dark [class*="Card_card"]:hover) {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Small link hover effect */
+.hover-lift-sm {
+  transition: transform 0.15s ease;
+}
+
+.hover-lift-sm:hover {
+  transform: translateY(-1px);
+}

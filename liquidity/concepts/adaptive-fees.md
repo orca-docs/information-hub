@@ -37,7 +37,7 @@ Imagine a high-volatility day—traders are active, prices are swinging, and the
 So how do Adaptive Fee Pools know when to adjust? It all comes down to price movement. Behind the scenes, the Adaptive Fee mechanism monitors how far the price moves during a trade—specifically, how many tick groups it crosses. If the price travels far from the reference point (the price at the start of the swap), the adaptive fee increases.
 
 > *You don’t need to worry about the math—Orca handles it all.
-> But if you’re curious, check out the* [*Developer Docs*](https://dev.orca.so/Architecture%20Overview/Whirlpool%20Fees/) *for a breakdown of how Adaptive Fees are calculated under the hood.*
+> But if you're curious, check out the* [*Developer Docs*](/developers/architecture/whirlpool-fees) *for a breakdown of how Adaptive Fees are calculated under the hood.*
 
 Here’s the key idea:
 
