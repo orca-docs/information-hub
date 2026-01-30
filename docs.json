@@ -60,32 +60,6 @@
         }
       },
       {
-        "tab": "Get Started",
-        "groups": [
-          {
-            "group": "Getting Started",
-            "pages": [
-              "get-started/overview",
-              "get-started/wallets"
-            ]
-          }
-        ],
-        "global": {
-          "anchors": [
-            {
-              "anchor": "Launch App",
-              "href": "https://www.orca.so",
-              "icon": "rocket"
-            },
-            {
-              "anchor": "Support",
-              "href": "/support/contact",
-              "icon": "life-ring"
-            }
-          ]
-        }
-      },
-      {
         "tab": "Liquidity",
         "groups": [
           {
@@ -404,6 +378,13 @@
       {
         "tab": "Support",
         "groups": [
+          {
+            "group": "General",
+            "pages": [
+              "support/about",
+              "support/wallets"
+            ]
+          },
           {
             "group": "Help & Support",
             "pages": [

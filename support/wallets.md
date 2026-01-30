@@ -36,20 +36,17 @@ You can also connect compatible wallets using **WalletConnect**. Orca integrates
 
 ---
 
-## Recommended Wallets
+## Popular Wallets
 
-<CardGroup cols={2}>
+<CardGroup cols={3}>
   <Card title="Phantom" icon="ghost" href="https://phantom.app/">
-    Most popular Solana wallet. Easy setup, great mobile experience, hardware wallet support.
+    Widely used Solana wallet with mobile support and hardware wallet compatibility.
   </Card>
   <Card title="Backpack" icon="backpack" href="https://www.backpack.app/">
     Feature-rich wallet with xNFT support and clean interface.
   </Card>
   <Card title="Solflare" icon="sun" href="https://solflare.com/">
-    Solana-native wallet with excellent staking features and Ledger support.
-  </Card>
-  <Card title="Trust Wallet" icon="shield" href="https://trustwallet.com/">
-    Multichain wallet by Binance. Good for users with assets on multiple chains.
+    Solana-native wallet with staking features and Ledger support.
   </Card>
 </CardGroup>
 

@@ -27,7 +27,7 @@ Orca compares quotes from its own pools and Jupiter aggregator, so you always ge
 </CardGroup>
 
 <Tip>
-New to Solana? See our [wallet setup guide](/get-started/wallets) to get started.
+New to Solana? See our [wallet setup guide](/support/wallets) to get started.
 </Tip>
 
 ---

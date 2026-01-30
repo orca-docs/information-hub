@@ -44,7 +44,7 @@ Find answers to common questions about trading, providing liquidity, and using O
   </Accordion>
 
   <Accordion title="Which wallets can I use?">
-    See our [supported wallets](/get-started/wallets). Orca integrates wallets that support Solana program execution.
+    See our [supported wallets](/support/wallets). Orca integrates wallets that support Solana program execution.
 
     <Warning>
     Orca does not endorse or guarantee the security of compatible wallets. Do your own research before using any wallet.
@@ -52,7 +52,7 @@ Find answers to common questions about trading, providing liquidity, and using O
   </Accordion>
 
   <Accordion title="Can I use Orca on mobile?">
-    Yes! Use Orca with mobile-compatible wallets listed in our [wallets guide](/get-started/wallets).
+    Yes! Use Orca with mobile-compatible wallets listed in our [wallets guide](/support/wallets).
   </Accordion>
 
   <Accordion title="What fees do I pay when trading?">

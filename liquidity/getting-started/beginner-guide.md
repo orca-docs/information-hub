@@ -54,7 +54,7 @@ Don't worry—we'll help you choose the right approach for your situation.
 
 ### Prerequisites
 
-1. **A Solana wallet** - We recommend [Phantom](https://phantom.app) or [Backpack](https://backpack.app)
+1. **A Solana wallet** - Such as [Phantom](https://phantom.app) or [Backpack](https://backpack.app)
 2. **SOL for transaction fees** - Keep at least 0.1 SOL for fees
 3. **Tokens to deposit** - You'll need both tokens in the pair (e.g., SOL and USDC)
 

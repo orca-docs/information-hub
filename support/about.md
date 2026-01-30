@@ -117,7 +117,7 @@ Orca is structured as a **DAO** with powers delegated to an elected DAO Council.
 ## Next Steps
 
 <CardGroup cols={2}>
-  <Card title="Set Up Your Wallet" icon="wallet" href="/get-started/wallets">
+  <Card title="Set Up Your Wallet" icon="wallet" href="/support/wallets">
     Connect a Solana wallet to use Orca
   </Card>
   <Card title="Start Trading" icon="arrow-right-arrow-left" href="/trade/how-to-swap">
