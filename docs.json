@@ -3,8 +3,8 @@
   "theme": "mint",
   "name": "Orca Documentation",
   "head": [
-    "<script src=\"https://api-desk.metacrm.inc/widget/sdk.js\" defer></script>",
-    "<script defer>window.addEventListener('load', function() { if (typeof MetaCRM !== 'undefined') { MetaCRM.init({ appId: 'REPLACE_WITH_METACRM_APP_ID' }); if (new URLSearchParams(window.location.search).get('support') === 'open') { setTimeout(function() { MetaCRM.open(); }, 1000); } } });</script>"
+    "<!-- MetaCRM Support Widget - Replace REPLACE_WITH_METACRM_API_KEY with the actual API key from MetaCRM dashboard (Settings > General > Integration > MetaCRM Widget) -->",
+    "<script defer>window.addEventListener('load', function() { if (typeof MetaCRMWidget !== 'undefined') { MetaCRMWidget.init({ apiKey: 'REPLACE_WITH_METACRM_API_KEY' }); if (new URLSearchParams(window.location.search).get('support') === 'open') { setTimeout(function() { if (MetaCRMWidget.defaultOpen) { MetaCRMWidget.init({ apiKey: 'REPLACE_WITH_METACRM_API_KEY', defaultOpen: true }); } }, 500); } } });</script>"
   ],
   "colors": {
     "primary": "#eab308",
