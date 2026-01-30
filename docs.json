@@ -408,6 +408,7 @@
             "group": "Help & Support",
             "pages": [
               "support/faqs",
+              "support/feedback",
               "support/blocked-regions",
               "support/recover-nfts",
               "support/contact"
@@ -502,6 +503,11 @@
         "icon": "rocket"
       },
       {
+        "label": "Feedback",
+        "href": "https://tally.so/r/ODGQ9K",
+        "icon": "message-lines"
+      },
+      {
         "label": "Support",
         "href": "/support/contact",
         "icon": "life-ring"
@@ -557,6 +563,10 @@
           {
             "label": "Brand Assets",
             "href": "/reference/brand"
+          },
+          {
+            "label": "Docs Feedback",
+            "href": "https://tally.so/r/ODGQ9K"
           }
         ]
       }

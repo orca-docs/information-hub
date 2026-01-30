@@ -68,7 +68,7 @@ The chart is the heart of the Position Simulator. It shows how your projected ou
 | **X-axis** | Simulated pool price |
 | **Y-axis** | Net PnL (in your selected denomination) |
 | **White slider** | Your selected pool price for simulation |
-| **Grey dashed line** | Current market price (reference point) |
+| **Gray dashed line** | Current market price (reference point) |
 | **Green area** | Positive PnL zone |
 | **Red area** | Negative PnL zone |
 
@@ -76,7 +76,7 @@ The chart is the heart of the Position Simulator. It shows how your projected ou
 
 <CardGroup cols={2}>
   <Card title="Current Price" icon="location-dot">
-    The live market price. This serves as a reference point and is shown as a grey dashed line on the chart.
+    The live market price. This serves as a reference point and is shown as a gray dashed line on the chart.
   </Card>
 
   <Card title="Selected Price" icon="hand-pointer">
