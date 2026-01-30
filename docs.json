@@ -2,6 +2,10 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Orca Documentation",
+  "head": [
+    "<script src=\"https://api-desk.metacrm.inc/widget/sdk.js\" defer></script>",
+    "<script defer>window.addEventListener('load', function() { if (typeof MetaCRM !== 'undefined') { MetaCRM.init({ appId: 'REPLACE_WITH_METACRM_APP_ID' }); if (new URLSearchParams(window.location.search).get('support') === 'open') { setTimeout(function() { MetaCRM.open(); }, 1000); } } });</script>"
+  ],
   "colors": {
     "primary": "#eab308",
     "light": "#facc15",
@@ -49,8 +53,8 @@
             },
             {
               "anchor": "Support",
-              "href": "https://discord.gg/orca-so",
-              "icon": "discord"
+              "href": "/support/contact",
+              "icon": "life-ring"
             }
           ]
         }
@@ -75,8 +79,8 @@
             },
             {
               "anchor": "Support",
-              "href": "https://discord.gg/orca-so",
-              "icon": "discord"
+              "href": "/support/contact",
+              "icon": "life-ring"
             }
           ]
         }
@@ -144,8 +148,8 @@
             },
             {
               "anchor": "Support",
-              "href": "https://discord.gg/orca-so",
-              "icon": "discord"
+              "href": "/support/contact",
+              "icon": "life-ring"
             }
           ]
         }
@@ -172,8 +176,8 @@
             },
             {
               "anchor": "Support",
-              "href": "https://discord.gg/orca-so",
-              "icon": "discord"
+              "href": "/support/contact",
+              "icon": "life-ring"
             }
           ]
         }
@@ -220,8 +224,8 @@
             },
             {
               "anchor": "Support",
-              "href": "https://discord.gg/orca-so",
-              "icon": "discord"
+              "href": "/support/contact",
+              "icon": "life-ring"
             }
           ]
         }
@@ -320,8 +324,8 @@
             },
             {
               "anchor": "Support",
-              "href": "https://discord.gg/orca-so",
-              "icon": "discord"
+              "href": "/support/contact",
+              "icon": "life-ring"
             }
           ]
         }
@@ -360,8 +364,8 @@
             },
             {
               "anchor": "Support",
-              "href": "https://discord.gg/orca-so",
-              "icon": "discord"
+              "href": "/support/contact",
+              "icon": "life-ring"
             }
           ]
         }
@@ -391,8 +395,8 @@
             },
             {
               "anchor": "Support",
-              "href": "https://discord.gg/orca-so",
-              "icon": "discord"
+              "href": "/support/contact",
+              "icon": "life-ring"
             }
           ]
         }
@@ -430,9 +434,9 @@
         "global": {
           "anchors": [
             {
-              "anchor": "Discord",
+              "anchor": "Community",
               "href": "https://discord.gg/orca-so",
-              "icon": "discord"
+              "icon": "users"
             }
           ]
         }
@@ -499,8 +503,8 @@
       },
       {
         "label": "Support",
-        "href": "https://discord.gg/orca-so",
-        "icon": "discord"
+        "href": "/support/contact",
+        "icon": "life-ring"
       }
     ]
   },
@@ -517,8 +521,8 @@
       "url": "https://github.com/orca-so"
     },
     {
-      "name": "Discord",
-      "icon": "discord",
+      "name": "Community",
+      "icon": "users",
       "url": "https://discord.gg/orca-so"
     }
   ],

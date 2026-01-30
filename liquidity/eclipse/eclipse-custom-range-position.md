@@ -62,6 +62,4 @@ This added complexity makes it crucial for LPs to thoroughly understand the risk
 **DO NOT** sell or burn this NFT. You can send it to another wallet to transfer your position, but (whale forbid) please **DO NOT** burn or sell it, or you'll lose your liquidity!
 Orca **CANNOT** help you recover any funds lost as a result of burning a pool position NFT.
 
-If you need any support or have any feedback or suggestions, feel free to open a support ticket from the Orca UI by either clicking `Support` in the wallet menu, or on [Orca's Discord](https://discord.gg/orca-so), or [Orca's Telegram](https://t.me/orca_so).
-
-If you have any suggestions for how to guides, tutorials, or educational material you would like to see, please let Orca know on the Discord server in [#✍│feedback](https://discord.com/channels/798712664590254081/813323917649379389).
+If you need any support or have any feedback or suggestions, feel free to open a support ticket from the Orca UI by clicking `Support` in the wallet menu. You can also reach the community on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so).

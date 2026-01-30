@@ -7,7 +7,7 @@ icon: coins
 Launch and manage liquid onchain markets for your token. Orca empowers token creators to permissionlessly create tokens and pools without approval.
 
 <Info>
-Need help? Open a ticket via the **Support** function in the Orca UI, [Discord](https://discord.gg/orca-so), or [Telegram](https://t.me/orca_so).
+Need help? Open a ticket via the **Support** function in the Orca UI. You can also reach the community on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so).
 </Info>
 
 ---

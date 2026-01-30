@@ -42,8 +42,8 @@ For a deeper dive into TokenExtensions, please check out [Solana Foundation’s 
 
 ### Q & A
 
-For more technical deep dive into Token Extensions, feel free to check out our [developer documentation on TokenExtension](https://dev.orca.so/Architecture%20Overview/TokenExtensions%20Support), and our [smart contract implementation](https://github.com/orca-so/whirlpools/pull/134). Please feel free to ask questions in our [Public Discord channel](https://discord.com/channels/798712664590254081/838660851178274866).
+For more technical deep dive into Token Extensions, feel free to check out our [developer documentation on TokenExtension](https://dev.orca.so/Architecture%20Overview/TokenExtensions%20Support), and our [smart contract implementation](https://github.com/orca-so/whirlpools/pull/134). Please feel free to ask questions via the `Support` function in the wallet menu, or on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so).
 
-If you have a need to gain TokenBadge permission, you can [contact us](https://discord.gg/wm8mMEb3hc).
+If you have a need to gain TokenBadge permission, please reach out via the `Support` function in the wallet menu, or on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so).
 
 Thanks! 🐳

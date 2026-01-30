@@ -7,7 +7,7 @@ icon: book
 Orca's innovative of adoption of tokenExtension NFTs for holding pool position information has delivered a virtually cost free LP experience for our users. You can read more about this in our [Medium blog post](https://medium.com/@orca-so/lower-costs-fully-refundable-fees-for-lp-positions-dc09f8f0ebe1).
 Orca does not charge fees to create a pool, nor to create a position in an existing pool. However, network and rent fees are payable and if the *Match deposit ratio* function is used trading fees and network fees will also be payable on that transaction. Fees paid to mint the pool poition NFT and open associated accounts are refunded when the position is paid.
 On occasion a network fee may still be charged to open store a TickArray, necessary for your selected range, these are not refundable
-Users of the SDK can also openPosition without Metadata - for detail liaise with a Developer Advocate in [#❓│dev-questions](https://discord.com/channels/798712664590254081/838660851178274866).
+Users of the SDK can also openPosition without Metadata - for details, reach out via the `Support` function in the wallet menu, or on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so).
 
 ### Solana Network Fees
 

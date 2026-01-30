@@ -23,7 +23,7 @@ Orca is constantly improving the SDK to add new features and provide the best de
 
 If you want to build on top of Whirlpools, please join the [Orca Whirlpool Builders Program](https://orcaso.notion.site/Orca-Whirlpools-Builders-Program-46c69ef251b94bb5ab360a5b6fc3f7a7).
 
-If you have feedback please reach out in the [#integrations](https://discord.gg/A7BQHQyQS4) Discord channel.
+If you have feedback please reach out on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so).
 
 If you'd like to request a feature or integrate with us, please submit a request [here](https://g4s065hqno8.typeform.com/to/nIuYAsbx).
 

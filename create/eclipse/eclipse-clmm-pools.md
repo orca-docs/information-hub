@@ -8,12 +8,12 @@ sidebarTitle: How to create an initial pool for an ...
 This guide walks through creating a concentrated liquidity (CLMM) pool on Eclipse for token creators and advanced users.
 
 A simpler model, *Orca's Splash Pools*, are also available for users wanting a quicker, simpler and cheaper pool requiring little management see the [How to create a Splash Pool guide](/create/eclipse/eclipse-splash-pools).
-The *Concentrated Pool Creation Tool* is intended for expert and professional users only. If you are neither of these please very carefully research this subject before using the tool, please create a ticket by accessing the [🤖│support-ticket](https://discord.gg/orca-so) channel on Discord, if you need assistance or have any questions.
+The *Concentrated Pool Creation Tool* is intended for expert and professional users only. If you are neither of these please very carefully research this subject before using the tool, please open a ticket using the `Support` function in the wallet menu if you need assistance or have any questions. You can also reach the community on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so).
 
 NOTE: If you have not added your token to the Orca Token List (see [how to add a token to the Orca Token List](/create/eclipse/eclipse-orca-token-list)), tickArray accounts may need separately initialising for your token to facilitate trade. This can be achieved by creating additional positions. [Orca Splash Pools](/create/eclipse/eclipse-splash-pools) do not require tickArray management, and may be a better option for some users.
 
 You can view the state of your pool, including its tickArrays on Account Microscope (https://everlastingsong.github.io/account-microscope/).
-If additional support is required, please reach out to Orca through an open communication channel or via [#❓│dev-questions](https://discord.com/channels/798712664590254081/838660851178274866) on Discord.
+If additional support is required, please reach out to Orca through the `Support` function in the wallet menu, or via [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so).
 
 ### How to Create a pool on Orca, permissionlessly
 
@@ -101,6 +101,6 @@ UI Tool tips are provided in the pool creation modal, these contain useful infor
     * Congratulations! You have completed the pool creation. Carefully read the displayed message, note the grayed out buttons, these will change once your pool is fully active.
     * Once the pool is fully active in the Orca UI, the Trade and Provide Liquidity buttons will become active, all users will be able to see, trade against, and deposit to the pool now.
     
-If your token is not on Orca's Token List it will carry a warning triangle. To remove this sign, please contact Orca via channels of communication your already have open, or create a ticket using the `Support` function in the wallet menu or by accessing the [🤖│support-ticket](https://discord.gg/orca-so) channel on Discord.
+If your token is not on Orca's Token List it will carry a warning triangle. To remove this sign, please contact Orca via channels of communication you already have open, or open a ticket using the `Support` function in the wallet menu.
 
 If you want to add rewards to your pool, please see [How to add rewards to a pool](/create/eclipse/eclipse-adding-rewards).

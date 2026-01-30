@@ -16,7 +16,7 @@ If you wish to add a reward token for distribution to liquidity providers, pleas
 
 ### Your pool already exists and your token is on the Orca Token List.
 
-* Contact Orca: speak to Orca via channels of communication your already have open, or create a ticket by accessing the [🤖│support-ticket](https://discord.gg/orca-so) channel on Discord.
+* Contact Orca: speak to Orca via channels of communication your already have open, or open a ticket using the `Support` function in the wallet menu. You can also reach the community on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so).
 * Await confirmation that the rewards can be accommodated by Orca.
 * Submit reward tokens to Orca following the process Orca will give you.
 * Await confirmation that the rewards are live.
@@ -24,7 +24,7 @@ If you wish to add a reward token for distribution to liquidity providers, pleas
 ### Your pool does not exist but your token shows in the UI.
 
 * Create your pool, if you are an advanced user refer to [How to create an initial pool for an asset](/create/eclipse/eclipse-clmm-pools) otherwise follow the [Creating a Pool Tutorial](/liquidity/getting-started/beginner-guide).
-* Contact Orca: speak to Orca via channels of communication your already have open, or create a ticket by accessing the [🤖│support-ticket](https://discord.gg/orca-so) channel on Discord.
+* Contact Orca: speak to Orca via channels of communication your already have open, or open a ticket using the `Support` function in the wallet menu. You can also reach the community on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so).
 * Await confirmation that the rewards can be accommodated by Orca.
 * Submit reward tokens to Orca following the process Orca will give you.
 * Await confirmation that the rewards are live.
@@ -32,8 +32,8 @@ If you wish to add a reward token for distribution to liquidity providers, pleas
 ### Your pool does not exist and your token is not on the Orca Token List.
 
 * If you are an advanced user create your pool (see [How to create an initial pool for an asset](/create/eclipse/eclipse-clmm-pools)).
-   If you are not an expert or professional user: please create a ticket by accessing the [🤖│support-ticket](https://discord.gg/orca-so) channel on Discord.
-* Contact Orca: speak to Orca via channels of communication your already have open, or create a ticket by accessing the [🤖│support-ticket](https://discord.gg/orca-so) channel on Discord.
+   If you are not an expert or professional user: please open a ticket using the `Support` function in the wallet menu. You can also reach the community on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so).
+* Contact Orca: speak to Orca via channels of communication your already have open, or open a ticket using the `Support` function in the wallet menu. You can also reach the community on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so).
 * Await confirmation that the rewards can be accommodated by Orca.
 * Submit reward tokens to Orca following the process Orca will give you.
 * Await confirmation that the rewards are live.

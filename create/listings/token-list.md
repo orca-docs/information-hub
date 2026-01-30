@@ -76,8 +76,8 @@ Gather the following:
 
 Submit your listing request through one of these channels:
 
-1. **Support Ticket** - Use the Support function in the Orca app wallet menu
-2. **Discord** - Open a ticket in the [Orca Discord](https://discord.gg/orca-so) support channel
+1. **Support Ticket** - Use the Support function in the Orca app wallet menu (recommended)
+2. **Community** - Reach out on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so)
 3. **Direct Contact** - If you have existing communication channels with the Orca team
 
 **Step 3: Provide Required Details**

@@ -6,7 +6,7 @@ icon: coins
 
 Find step-by-step guides for token creation, pool setup, and managing listings on Eclipse.
 
-If you have any suggestions for how to guides, tutorials, or educational material you would like to see, please let Orca know on the Discord server in [#✍│feedback](https://discord.com/channels/798712664590254081/813323917649379389).
+If you have any suggestions for how-to guides, tutorials, or educational material you would like to see, please let Orca know via the `Support` function in the wallet menu, or on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so).
 
 #### How to create a Splash Pool on Eclipse
 

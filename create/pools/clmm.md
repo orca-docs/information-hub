@@ -209,7 +209,7 @@ Higher fees compensate LPs for volatility risk but may reduce trading volume.
     Monitor liquidity levels, watch for price movements out of range, and consider adding rewards.
   </Card>
   <Card title="Tick Arrays" icon="grid">
-    CLMM pools use tick arrays. Some may need initialization for unlisted tokens. Reach out on Discord if you encounter issues.
+    CLMM pools use tick arrays. Some may need initialization for unlisted tokens. Reach out via the Support widget if you encounter issues.
   </Card>
 </CardGroup>
 

@@ -22,7 +22,7 @@ Once you hold some ETH on Ethereum Mainnet you can bridge it to Eclipse to use a
 ### Onboarding to Eclipse as a Solana user.
 
 If you are coming to Eclipse from Solana and do not hold any ETH on Ethereum Mainnet, or simply want to cut out some steps, you can use [Eclipse's Canonical Gas Station](https://app.eclipse.xyz/gas-station), to convert some SOL to ETH. You can find a guide here.
-If you need any support or have any feedback or suggestions, feel free to open a support ticket from the Orca UI by either clicking `Support` in the wallet menu, or on [Orca's Discord](https://discord.gg/orca-so), or [Orca's Telegram](https://t.me/orca_so).
+If you need any support or have any feedback or suggestions, feel free to open a support ticket from the Orca UI by clicking `Support` in the wallet menu. You can also reach the community on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so).
 
 ### Next Steps
 

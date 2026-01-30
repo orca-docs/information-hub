@@ -68,8 +68,8 @@ Note: Include your contact details in the listing request so Orca can follow up 
 
 Reach out through one of these channels:
 
-1. **In-App Support** - Use the Support button in the wallet menu
-2. **Discord** - Open a ticket in [#support-ticket](https://discord.gg/orca-so)
+1. **In-App Support** - Use the Support button in the wallet menu (recommended)
+2. **Community** - Reach out on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so)
 3. **Existing channels** - If you have direct contact with Orca team
 
 **Include in your message:**

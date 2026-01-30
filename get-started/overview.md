@@ -99,16 +99,16 @@ Orca is structured as a **DAO** with powers delegated to an elected DAO Council.
 
 <CardGroup cols={2}>
   <Card title="Discord" icon="discord" href="https://discord.gg/orca-so">
-    Chat with the community, get support, and join discussions
+    Join the community on Discord
+  </Card>
+  <Card title="Telegram" icon="telegram" href="https://t.me/orca_so">
+    Join the community on Telegram
   </Card>
   <Card title="Twitter" icon="twitter" href="https://x.com/orca_so">
     Follow for announcements and updates
   </Card>
   <Card title="Blog" icon="newspaper" href="https://orca-so.medium.com/">
     Read the latest news and deep dives
-  </Card>
-  <Card title="Telegram" icon="telegram" href="https://t.me/orca_so">
-    Get support and stay connected
   </Card>
 </CardGroup>
 

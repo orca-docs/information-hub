@@ -11,10 +11,10 @@ Need help? Orca offers multiple support channels to assist you. This guide expla
 | Channel | Best For | Response Time |
 |---------|----------|---------------|
 | **In-App Support** | Account-specific issues, verified requests | Fastest |
-| **Discord** | General questions, community help | Fast |
-| **Telegram** | Quick questions | Fast |
+| **Discord** | General questions, community help | Varies |
+| **Telegram** | Quick questions, community help | Varies |
 
-**Recommendation:** For account-specific issues, use in-app support. It verifies your wallet ownership and routes your request to the right specialist.
+**Recommendation:** For the fastest and most secure support, use the in-app support widget. It verifies your wallet ownership and routes your request to the right specialist.
 
 ## In-App Support (Recommended)
 
@@ -65,34 +65,28 @@ To verify wallet ownership:
 - You'll receive responses in the same chat thread
 - Response times vary based on issue complexity
 
-## Discord Support
+## Community Channels
 
-For general questions or community assistance:
+For general questions and community assistance, Orca is active on both Discord and Telegram.
+
+### Discord
 
 1. Join the [Orca Discord](https://discord.gg/orca-so)
-2. Navigate to the support channels
-3. Open a ticket in **#support-ticket**
+2. Browse community channels for answers
+3. For complex or account-specific issues, use in-app support instead
 
-### Discord Tips
-
-- Search existing channels first—your question may be answered
-- Be specific about your issue
-- Include transaction IDs when relevant
-- Don't share private keys or seed phrases
-
-## Telegram Support
-
-For quick questions:
+### Telegram
 
 1. Join [Orca Telegram](https://t.me/orca_so)
 2. Ask your question in the group
 3. Community members or mods can help
 
-### Telegram Tips
+### Community Channel Tips
 
-- Keep questions concise
-- For complex issues, use in-app support instead
-- Beware of scammers—Orca team won't DM you first
+- Search existing channels first—your question may already be answered
+- Keep questions concise and specific
+- For account-specific or sensitive issues, always use in-app support
+- Beware of scammers—Orca team will never DM you first
 
 ## What to Include in Your Request
 
@@ -172,7 +166,7 @@ Before contacting support, try these solutions:
 Orca support will NEVER:
 
 - Ask for your seed phrase or private keys
-- DM you first on Discord or Telegram
+- DM you first on Discord, Telegram, or any platform
 - Ask you to send tokens to "verify" your wallet
 - Direct you to unofficial websites
 
@@ -205,11 +199,12 @@ If your issue isn't resolved:
 1. Provide additional information requested
 2. Allow time for investigation
 3. Follow up politely in the same ticket
-4. For critical issues, mention in Discord (without sensitive details)
+4. For critical issues, follow up via in-app support
 
 ## Related Resources
 
 - [FAQs](/support/faqs) - Common questions answered
 - [Blocked Regions](/support/blocked-regions) - Geographic restrictions
 - [Recover NFTs](/support/recover-nfts) - Position NFT issues
-- [Discord](https://discord.gg/orca-so) - Community support
+- [Discord](https://discord.gg/orca-so) - Community
+- [Telegram](https://t.me/orca_so) - Community

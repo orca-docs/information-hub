@@ -4,4 +4,4 @@ description: How-to guides for trading on Orca on Eclipse.
 icon: arrow-right-arrow-left
 ---
 
-If you have any suggestions for how to guides, tutorials, or educational material you would like to see, please let Orca know on the Discord server in [#✍│feedback](https://discord.com/channels/798712664590254081/813323917649379389).
+If you have any suggestions for how-to guides, tutorials, or educational material you would like to see, please let Orca know via the `Support` function in the wallet menu, or on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so).

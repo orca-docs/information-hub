@@ -88,7 +88,7 @@ Find answers to common questions about trading, providing liquidity, and using O
   </Accordion>
 
   <Accordion title="Can I trade programmatically?">
-    Yes! Use the [TypeScript SDK](https://github.com/orca-so/whirlpools). See [Developer Docs](/developers/overview) and ask questions in Discord's #dev-questions channel.
+    Yes! Use the [TypeScript SDK](https://github.com/orca-so/whirlpools). See [Developer Docs](/developers/overview) for guidance.
   </Accordion>
 </AccordionGroup>
 
@@ -169,7 +169,7 @@ Find answers to common questions about trading, providing liquidity, and using O
   </Accordion>
 
   <Accordion title="How can I change the token price in my pool?">
-    You can't directly change a pool price—only market trading activity changes it. Contact Orca via [Discord](https://discord.gg/orca-so) for help calculating trade sizes to move prices.
+    You can't directly change a pool price—only market trading activity changes it. Contact Orca via the in-app Support widget for help calculating trade sizes to move prices.
   </Accordion>
 
   <Accordion title="Can I delete a pool I created?">
@@ -177,7 +177,7 @@ Find answers to common questions about trading, providing liquidity, and using O
   </Accordion>
 
   <Accordion title="How do I remove the warning triangle on my token?">
-    Contact Orca via the Support function in the UI or [Discord](https://discord.gg/orca-so) to discuss removal.
+    Contact Orca via the Support function in the UI to discuss removal.
   </Accordion>
 
   <Accordion title="What are Token Extensions?">
@@ -229,15 +229,18 @@ Find answers to common questions about trading, providing liquidity, and using O
 
 ## More Help
 
-<CardGroup cols={2}>
-  <Card title="Discord Support" icon="discord" href="https://discord.gg/orca-so">
-    Open a support ticket or ask in #support
+<CardGroup cols={3}>
+  <Card title="In-App Support" icon="life-ring" href="https://www.orca.so">
+    Open the Support widget in the Orca UI for the fastest help
+  </Card>
+  <Card title="Discord" icon="discord" href="https://discord.gg/orca-so">
+    Join the community on Discord
   </Card>
   <Card title="Telegram" icon="telegram" href="https://t.me/orca_so">
-    Get support on Telegram
+    Join the community on Telegram
   </Card>
 </CardGroup>
 
 <Note>
-Can't find your answer? Ask in Discord's #support-ticket channel or use the Support button in the Orca UI.
+Can't find your answer? Use the **Support** button in the Orca UI for the fastest, most secure help.
 </Note>

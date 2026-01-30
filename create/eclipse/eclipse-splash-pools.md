@@ -20,12 +20,12 @@ In *Splash Pools*, liquidity providers (LPs) receive a pool position NFT that re
 
 ### How to create a Splash Pool
 
-The Pool Creation tool is intended for expert and professional users only. If you are neither of these, please carefully research this subject before using the tool. Alternatively create a ticket by accessing the [🤖│support-ticket](https://discord.gg/orca-so) channel on Discord.
+The Pool Creation tool is intended for expert and professional users only. If you are neither of these, please carefully research this subject before using the tool. Alternatively, open a ticket using the `Support` function in the wallet menu. You can also reach the community on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so).
 
 This guide is for Orca Splash Pools: if you want to create a regular CLMM pool, please refer to [How to create an initial pool for an asset.](/create/eclipse/eclipse-clmm-pools)
 
 NOTE: If you have not added your token to the Orca Token List, please refer to the guide [how to add a token to the Orca Token List](/create/eclipse/eclipse-orca-token-list).
-If additional support is required, please reach out to Orca through an open communication channel or via [#❓│dev-questions](https://discord.com/channels/798712664590254081/838660851178274866) on Discord.
+If additional support is required, please reach out to Orca through the `Support` function in the wallet menu, or via [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so).
 
 ### How to Create a pool on Orca, permissionlessly
 
@@ -57,6 +57,6 @@ UI tooltips are provided in the pool creation modal. These contain useful inform
     * Congratulations! You have completed your pool creation. Carefully read the displayed message, note the grayed out buttons, these will change once your pool is fully active.
     * Once the pool is fully active in the Orca UI, the Trade and Provide Liquidity buttons will become active, all users will be able to see, trade against, and deposit to the pool now.
     
-If your token is not on Orca's Token List it will carry a warning triangle. To remove this sign, please contact Orca via channels of communication your already have open, or create a ticket using the `Support` function in the wallet menu or by accessing the [🤖│support-ticket](https://discord.gg/orca-so) channel on Discord.
+If your token is not on Orca's Token List it will carry a warning triangle. To remove this sign, please contact Orca via channels of communication you already have open, or open a ticket using the `Support` function in the wallet menu.
 
 If you want to add rewards to your pool, please see [How to add rewards to a pool](/create/eclipse/eclipse-adding-rewards).

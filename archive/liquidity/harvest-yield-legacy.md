@@ -33,10 +33,10 @@ You have successfully harvested yield from your position.
 
 **Need support or want to share feedback?**
 
-* Open a support ticket directly from the Orca UI by clicking `Support`
-* Reach out via [Discord](https://discord.gg/deRXbXWXk8) or Telegram
+* Open a support ticket directly from the Orca UI by clicking `Support` (recommended)
+* Reach out on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so)
 
 **Have suggestions, requests or feedback?**
 
 * Share them by clicking `Feedback` in the Orca UI
-* Use the [`#✍│feedback`](https://discord.gg/TdRtv4GCKF) channel on Discord
+* Reach out on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so)

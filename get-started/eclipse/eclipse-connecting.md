@@ -24,4 +24,4 @@ Once you have installed a compatible wallet and bridged some assets you are read
 
    ![](/images/image_34.jpg)
 
-If you need any support or have any feedback or suggestions, feel free to open a support ticket from the Orca UI by either clicking `Support` in the wallet menu, or on [Orca's Discord](https://discord.gg/orca-so), or [Orca's Telegram](https://t.me/orca_so).
+If you need any support or have any feedback or suggestions, feel free to open a support ticket from the Orca UI by clicking `Support` in the wallet menu. You can also reach the community on [Discord](https://discord.gg/orca-so) or [Telegram](https://t.me/orca_so).
