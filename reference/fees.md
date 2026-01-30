@@ -41,5 +41,3 @@ Users of the SDK can also openPosition without Metadata - for detail liaise with
 ### Pool Creation Fees
 
 When you create a new pool there will be additional fees to pay, as well as applicable fees from above. These fees will vary depending on the fee rate selected and the chosen *Price range for initial deposit.* The cost will be higher if more TickArrays need to be initialized. Tick size is proportional to fee rate, creation costs will be higher for a wider range on a lower fee rate pool. The UI will provide an estimate of fees.
-
-![](/images/image_72.jpg)
